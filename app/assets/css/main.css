@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-beon-blue: #017dc0;
+  --color-beon-blue-50: #f0f9ff;
+  --color-beon-blue-100: #e0f2fe;
+  --color-beon-blue-200: #bae6fd;
+  --color-beon-blue-300: #7dd3fc;
+  --color-beon-blue-400: #38bdf8;
+  --color-beon-blue-500: #0ea5e9;
+  --color-beon-blue-600: #017dc0;
+  --color-beon-blue-700: #0369a1;
+  --color-beon-blue-800: #075985;
+  --color-beon-blue-900: #0c4a6e;
+  --color-beon-blue-950: #082f49;
+}
+
+:root {
+  --ui-bg: var(--ui-color-neutral-50);
+  --ui-bg-muted: var(--ui-color-neutral-100);
+  --ui-bg-elevated: var(--ui-color-neutral-50);
+  --ui-bg-accented: var(--ui-color-neutral-200);
+  --ui-border: var(--ui-color-neutral-200);
+  --ui-text: var(--ui-color-neutral-900);
+  --ui-text-muted: var(--ui-color-neutral-500);
+  --ui-text-highlighted: var(--ui-color-neutral-950);
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
+  --ui-border: var(--ui-color-neutral-800);
+  --ui-text: var(--ui-color-neutral-50);
+  --ui-text-muted: var(--ui-color-neutral-400);
+  --ui-text-highlighted: var(--ui-color-neutral-50);
+}
