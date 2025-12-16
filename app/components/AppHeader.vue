@@ -3,66 +3,48 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Product",
-    to: "#",
+    label: "Home",
+    to: "/",
+  },
+  {
+    label: "Our Solutions",
     children: [
       {
-        label: "Features",
+        label: "Solution 1",
         to: "#",
-        description: "Explore our powerful features",
+        description: "Description for solution 1",
       },
       {
-        label: "Integrations",
+        label: "Solution 2",
         to: "#",
-        description: "Connect with your favorite tools",
+        description: "Description for solution 2",
       },
     ],
   },
   {
-    label: "Industries",
-    to: "#",
-    children: [
-      {
-        label: "SaaS",
-        to: "#",
-        description: "Solutions for software companies",
-      },
-      {
-        label: "E-commerce",
-        to: "#",
-        description: "Boost your online store",
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    to: "#",
-    children: [
-      {
-        label: "Blog",
-        to: "#",
-        description: "Latest news and updates",
-      },
-      {
-        label: "Documentation",
-        to: "#",
-        description: "Learn how to use our platform",
-      },
-    ],
-  },
-  {
-    label: "Pricing",
+    label: "Features",
     to: "#",
   },
   {
-    label: "Why Us",
+    label: "Contact us",
+    to: "/contact",
+  },
+  {
+    label: "Support",
     to: "#",
+  },
+  {
+    label: "Blogs",
+    to: "/blog",
   },
 ]);
 </script>
 
 <template>
-  <UHeader mode="drawer">
+  <UHeader
+    mode="drawer"
+    class="max-w-7xl mx-auto border rounded-xl top-4 dark:bg-gray-900 shadow-lg"
+  >
     <template #title>
       <AppLogo />
     </template>
@@ -70,25 +52,17 @@ const items = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu :items="items" />
 
     <template #right>
-      <UColorModeButton />
-
       <UButton
         color="neutral"
         variant="ghost"
-        icon="i-heroicons-globe-alt"
+        icon="i-emojione-flag-for-egypt"
         aria-label="Language"
       />
+      <UColorModeButton />
 
       <UButton label="Login" color="neutral" variant="ghost" to="/login" />
 
-      <UButton
-        label="Talk to Sales"
-        color="neutral"
-        variant="outline"
-        to="/contact"
-      />
-
-      <UButton label="Start Free Trial" color="primary" to="/signup" />
+      <UButton label="Start Your Free Trial" color="primary" to="/signup" />
     </template>
 
     <template #body>

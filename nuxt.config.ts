@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
 
   devtools: {
@@ -14,6 +16,11 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://beon.saas', // Placeholder, should be env var or actual domain
+    name: 'Beon SaaS',
+  },
 
   ui: {
     theme: {
@@ -29,6 +36,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
+    compressPublicAssets: true,
     prerender: {
       routes: [
         '/'
