@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://beon.saas', // Placeholder, should be env var or actual domain
-    name: 'Beon SaaS',
+    name: 'Beon',
   },
 
   ui: {

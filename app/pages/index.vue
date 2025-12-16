@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import HeroSection from "~/components/home/HeroSection.vue";
+import Logos from "~/components/home/Logos.vue";
+import Services from "~/components/home/Services.vue";
 
 useSeoMeta({
-  title: "All-in-One Communication Platform",
+  title: "Home",
   description:
     "Streamline your customer communication with our comprehensive SaaS platform. Integrate chat, CRM, and team management in one place.",
-  ogTitle: "Beon SaaS - All-in-One Communication Platform",
+  ogTitle: "Home",
   ogDescription:
     "Streamline your customer communication with our comprehensive SaaS platform. Integrate chat, CRM, and team management in one place.",
   ogImage: "https://beon.saas/og-image.png", // Placeholder
@@ -14,5 +16,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <HeroSection />
+  <div>
+    <HeroSection />
+    <Logos />
+    <Services />
+  </div>
 </template>

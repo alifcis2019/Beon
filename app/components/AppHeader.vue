@@ -60,13 +60,41 @@ const items = computed<NavigationMenuItem[]>(() => [
       />
       <UColorModeButton />
 
-      <UButton label="Login" color="neutral" variant="ghost" to="/login" />
+      <UButton
+        label="Login"
+        color="neutral"
+        variant="ghost"
+        to="/login"
+        class="hidden lg:flex"
+      />
 
-      <UButton label="Start Your Free Trial" color="primary" to="/signup" />
+      <UButton
+        label="Start Your Free Trial"
+        color="primary"
+        to="/signup"
+        class="hidden lg:flex"
+      />
     </template>
 
     <template #body>
       <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <div class="mt-4 flex flex-col gap-2">
+        <UButton
+          label="Login"
+          color="neutral"
+          variant="ghost"
+          to="/login"
+          block
+          class="justify-start"
+        />
+        <UButton
+          label="Start Your Free Trial"
+          color="primary"
+          to="/signup"
+          block
+          class="justify-center"
+        />
+      </div>
     </template>
   </UHeader>
 </template>
