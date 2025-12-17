@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const footerLinks = [
   { label: "Home", to: "/" },
-  { label: "Features", to: "/#features" },
+
   { label: "Contact us", to: "/contact" },
-  { label: "Privacy Policy", to: "/privacy" },
-  { label: "Terms & Conditions", to: "/terms" },
+  { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Terms & Conditions", to: "/terms-conditions" },
 ];
 
 const socialLinks = [
@@ -89,11 +89,10 @@ const socialLinks = [
 
           <!-- Phone Mockup -->
           <img
-                src="/images/footer/appScreen.webp"
-                alt="App Screenshot"
-                class="w-full aspect-square object-contain opacity-80"
-              />
-
+            src="/images/footer/appScreen.webp"
+            alt="App Screenshot"
+            class="w-full aspect-square object-contain opacity-80"
+          />
         </div>
       </div>
     </div>
@@ -123,7 +122,8 @@ const socialLinks = [
             class="px-8 py-3 rounded-full border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-white"
           />
           <UButton
-            to="#"
+            to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+            target="_blank"
             label="Start Your Free Trial"
             color="primary"
             variant="solid"

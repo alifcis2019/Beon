@@ -24,9 +24,11 @@
             <span class="flex items-center gap-2">
               <UIcon name="i-simple-icons-meta" class="w-4 h-4 text-blue-500" />
               Meta Provider & SMS Integration
-              <span
+              <a
+                href="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+                target="_blank"
                 class="text-primary-500 font-medium cursor-pointer hover:underline"
-                >Try now →</span
+                >Try now →</a
               >
             </span>
           </UBadge>
@@ -54,10 +56,22 @@
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           "
         >
-          <UButton size="xl" color="white" variant="solid" class="px-8"
+          <UButton
+            to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+            target="_blank"
+            size="xl"
+            color="neutral"
+            variant="solid"
+            class="px-8"
             >Subscribe now</UButton
           >
-          <UButton size="xl" color="primary" variant="solid" class="px-8"
+          <UButton
+            to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+            target="_blank"
+            size="xl"
+            color="primary"
+            variant="solid"
+            class="px-8"
             >Try Free Trial</UButton
           >
         </div>

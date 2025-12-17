@@ -53,12 +53,16 @@ onMounted(() => {
           <span class="text-xs sm:text-sm"
             >Meta Provider & SMS Integration</span
           >
-          <a
-            href="#"
-            class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-1 transition-colors text-xs sm:text-sm"
+          <UButton
+            to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+            target="_blank"
+            color="primary"
+            variant="solid"
+            size="xs"
+            class="px-3 py-1.5 rounded-full shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all duration-300 hover:scale-105 text-xs sm:text-sm"
           >
             Try now <UIcon name="i-heroicons-arrow-right" class="w-3 h-3" />
-          </a>
+          </UButton>
         </div>
       </div>
 
@@ -85,6 +89,8 @@ onMounted(() => {
         "
       >
         <UButton
+          to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+          target="_blank"
           label="Subscribe now"
           color="neutral"
           variant="solid"

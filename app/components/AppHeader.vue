@@ -32,10 +32,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       },
     ],
   },
-  {
-    label: "Features",
-    to: "#",
-  },
+
   {
     label: "Contact us",
     to: "/contact",
@@ -82,14 +79,16 @@ const items = computed<NavigationMenuItem[]>(() => [
         label="Login"
         color="neutral"
         variant="ghost"
-        to="/login"
+        to="https://app.beon.chat/login"
+        target="_blank"
         class="hidden lg:flex transition-transform hover:scale-105"
       />
 
       <UButton
         label="Start Your Free Trial"
         color="primary"
-        to="/signup"
+        to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+        target="_blank"
         class="hidden lg:flex transition-transform hover:scale-105 shadow-md hover:shadow-lg"
       />
     </template>
@@ -101,14 +100,16 @@ const items = computed<NavigationMenuItem[]>(() => [
           label="Login"
           color="neutral"
           variant="ghost"
-          to="/login"
+          to="https://app.beon.chat/login"
+          target="_blank"
           block
           class="justify-start"
         />
         <UButton
           label="Start Your Free Trial"
           color="primary"
-          to="/signup"
+          to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+          target="_blank"
           block
           class="justify-center"
         />

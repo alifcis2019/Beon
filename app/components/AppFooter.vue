@@ -1,59 +1,58 @@
 <script setup lang="ts">
-const columns = [{
-  label: 'Resources',
-  children: [{
-    label: 'Help center'
-  }, {
-    label: 'Docs'
-  }, {
-    label: 'Roadmap'
-  }, {
-    label: 'Changelog'
-  }]
-}, {
-  label: 'Features',
-  children: [{
-    label: 'Affiliates'
-  }, {
-    label: 'Portal'
-  }, {
-    label: 'Jobs'
-  }, {
-    label: 'Sponsors'
-  }]
-}, {
-  label: 'Company',
-  children: [{
-    label: 'About'
-  }, {
-    label: 'Pricing'
-  }, {
-    label: 'Careers'
-  }, {
-    label: 'Blog'
-  }]
-}]
+const columns = [
+  {
+    label: "Resources",
+    children: [
+      {
+        label: "Help center",
+      },
+      {
+        label: "Docs",
+      },
+      {
+        label: "Roadmap",
+      },
+      {
+        label: "Changelog",
+      },
+    ],
+  },
+  {
+    label: "Company",
+    children: [
+      {
+        label: "About",
+      },
+      {
+        label: "Pricing",
+      },
+      {
+        label: "Careers",
+      },
+      {
+        label: "Blog",
+      },
+    ],
+  },
+];
 
-const toast = useToast()
+const toast = useToast();
 
-const email = ref('')
-const loading = ref(false)
+const email = ref("");
+const loading = ref(false);
 
 function onSubmit() {
-  loading.value = true
+  loading.value = true;
 
   toast.add({
-    title: 'Subscribed!',
-    description: 'You\'ve been subscribed to our newsletter.'
-  })
+    title: "Subscribed!",
+    description: "You've been subscribed to our newsletter.",
+  });
 }
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
+  <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" />
 
   <UFooter :ui="{ top: 'border-b border-default' }">
     <template #top>

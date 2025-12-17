@@ -55,7 +55,13 @@
                   : 'opacity-0 translate-y-4'
               "
             >
-              <UButton size="xl" color="primary" variant="solid" class="px-8"
+              <UButton
+                to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
+                target="_blank"
+                size="xl"
+                color="primary"
+                variant="solid"
+                class="px-8"
                 >Subscribe now</UButton
               >
             </div>
@@ -238,8 +244,9 @@ const isVisible = ref(false);
 
 useIntersectionObserver(
   target,
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
+  (entries) => {
+    const entry = entries[0];
+    if (entry && entry.isIntersecting) {
       isVisible.value = true;
     }
   },
