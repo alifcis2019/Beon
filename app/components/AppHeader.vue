@@ -14,7 +14,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     children: [
       {
         label: "Fast & Secure OTP Generation",
-        to: "#",
+        to: "/solutions/otp",
         description: "Send secure one-time passwords instantly",
         icon: "i-heroicons-shield-check",
       },
