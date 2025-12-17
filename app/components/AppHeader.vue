@@ -10,14 +10,22 @@ const items = computed<NavigationMenuItem[]>(() => [
     label: "Our Solutions",
     children: [
       {
-        label: "Solution 1",
+        label: "Fast & Secure OTP Generation",
         to: "#",
-        description: "Description for solution 1",
+        description: "Send secure one-time passwords instantly",
+        icon: "i-heroicons-shield-check",
       },
       {
-        label: "Solution 2",
+        label: "SMS Messages",
         to: "#",
-        description: "Description for solution 2",
+        description: "Deliver marketing and transactional texts",
+        icon: "i-heroicons-envelope",
+      },
+      {
+        label: "WhatsApp Messaging",
+        to: "#",
+        description: "Engage customers through WhatsApp",
+        icon: "i-simple-icons-whatsapp",
       },
     ],
   },

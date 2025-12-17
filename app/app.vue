@@ -4,7 +4,7 @@ useHead({
     lang: "en",
   },
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - Beon SaaS` : "Beon SaaS";
+    return titleChunk ? `${titleChunk} - Beon` : "Beon";
   },
 });
 </script>

@@ -8,6 +8,6 @@
       <slot />
     </UMain>
 
-    <AppFooter />
+    <Footer />
   </div>
 </template>

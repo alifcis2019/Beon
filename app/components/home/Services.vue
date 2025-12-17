@@ -13,7 +13,7 @@ interface ServiceItem {
 
 <template>
   <div class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
         <h2
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"

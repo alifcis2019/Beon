@@ -15,10 +15,24 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://app.beon.chat/widget.js',
+          tagPosition: 'bodyClose',
+          'data-api-key': 'df73436fd31e7c4a42d187e049f746b5',
+          async: true,
+          defer: true
+        }
+      ]
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   site: {
-    url: 'https://beon.saas', // Placeholder, should be env var or actual domain
+    url: 'https://beon.chat/', // Placeholder, should be env var or actual domain
     name: 'Beon',
   },
 
