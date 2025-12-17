@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 min-h-screen">
+  <div class="bg-white dark:bg-gray-900 min-h-screen">
     <WhatsappHero />
     <WhatsappTrust />
     <WhatsappBento />

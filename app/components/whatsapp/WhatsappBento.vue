@@ -1,6 +1,6 @@
 <template>
   <section
-    class="py-24 bg-gray-900 relative overflow-hidden"
+    class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden"
     ref="containerRef"
   >
     <!-- Background Gradient -->
@@ -10,10 +10,12 @@
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+        >
           Everything you need to scale
         </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
           Powerful features designed to help you reach, engage, and convert more
           customers on WhatsApp.
         </p>
@@ -26,7 +28,7 @@
       >
         <!-- Card 1: Rich Media (Large) -->
         <div
-          class="md:col-span-2 row-span-1 bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
+          class="md:col-span-2 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
           :style="cardStyle(0)"
           @mouseenter="activeCard = 0"
           @mouseleave="activeCard = null"
@@ -43,17 +45,17 @@
             >
               <UIcon name="i-heroicons-photo" class="w-6 h-6 text-blue-400" />
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               Rich Media Support
             </h3>
-            <p class="text-gray-400 max-w-sm">
+            <p class="text-gray-600 dark:text-gray-400 max-w-sm">
               Send images, videos, PDFs, and documents directly in the chat.
               Increase engagement with visual content.
             </p>
           </div>
           <!-- Visual Decoration -->
           <div
-            class="absolute right-[-20px] bottom-[-20px] w-64 h-48 bg-gray-900 rounded-xl border border-gray-700 transform rotate-[-5deg] group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 flex items-center justify-center overflow-hidden shadow-lg"
+            class="absolute right-[-20px] bottom-[-20px] w-64 h-48 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transform rotate-[-5deg] group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 flex items-center justify-center overflow-hidden shadow-lg"
           >
             <NuxtImg
               src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80"
@@ -62,14 +64,14 @@
               alt="Rich Media"
             />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"
+              class="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"
             ></div>
           </div>
         </div>
 
         <!-- Card 2: Green Tick (Tall) -->
         <div
-          class="md:col-span-1 md:row-span-2 bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10 flex flex-col items-center text-center"
+          class="md:col-span-1 md:row-span-2 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10 flex flex-col items-center text-center"
           :style="cardStyle(1)"
           @mouseenter="activeCard = 1"
           @mouseleave="activeCard = null"
@@ -91,16 +93,16 @@
               class="w-16 h-16 text-[#25D366] relative z-10"
             />
           </div>
-          <h3 class="text-2xl font-bold text-white mb-4">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Get Verified <br />
             <span class="text-[#25D366]">Green Tick</span>
           </h3>
-          <p class="text-gray-400 mb-8">
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
             Build trust with the official WhatsApp Business verification badge.
             We help you get verified faster.
           </p>
           <div
-            class="mt-auto w-full bg-[#202c33] p-4 rounded-xl border border-gray-700 text-left group-hover:border-[#25D366]/30 transition-colors duration-300"
+            class="mt-auto w-full bg-white dark:bg-[#202c33] p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-left group-hover:border-[#25D366]/30 transition-colors duration-300"
           >
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-white p-1">
@@ -112,7 +114,9 @@
                 />
               </div>
               <div>
-                <div class="text-white font-medium flex items-center gap-1">
+                <div
+                  class="text-gray-900 dark:text-white font-medium flex items-center gap-1"
+                >
                   BeOn
                   <UIcon
                     name="i-heroicons-check-badge-solid"
@@ -127,7 +131,7 @@
 
         <!-- Card 3: Broadcasts -->
         <div
-          class="md:col-span-1 row-span-1 bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
+          class="md:col-span-1 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
           :style="cardStyle(2)"
           @mouseenter="activeCard = 2"
           @mouseleave="activeCard = null"
@@ -147,10 +151,10 @@
                 class="w-6 h-6 text-purple-400"
               />
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
               Unlimited Broadcasts
             </h3>
-            <p class="text-gray-400 text-sm">
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
               Reach thousands of opted-in users instantly without the risk of
               getting blocked.
             </p>
@@ -168,7 +172,7 @@
 
         <!-- Card 4: Analytics -->
         <div
-          class="md:col-span-1 row-span-1 bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
+          class="md:col-span-1 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
           :style="cardStyle(3)"
           @mouseenter="activeCard = 3"
           @mouseleave="activeCard = null"
@@ -188,10 +192,10 @@
                 class="w-6 h-6 text-orange-400"
               />
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
               Real-time Analytics
             </h3>
-            <p class="text-gray-400 text-sm">
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
               Track delivery rates, open rates, and response times in real-time.
             </p>
           </div>

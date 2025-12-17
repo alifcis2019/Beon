@@ -1,11 +1,13 @@
 <template>
-  <section class="py-24 bg-gray-900 overflow-hidden">
+  <section class="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+        >
           Experience Automated Conversations
         </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
           Try our interactive demo below. See how BeOn's chatbots handle
           customer queries instantly, 24/7.
         </p>
@@ -17,21 +19,26 @@
           <div
             v-for="(scenario, index) in scenarios"
             :key="index"
-            class="p-6 rounded-2xl border border-gray-800 bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer group"
+            class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer group"
             @click="activeScenario = index"
             :class="{ 'ring-2 ring-[#25D366]': activeScenario === index }"
           >
             <div class="flex items-start gap-4">
               <div
-                class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-[#25D366] transition-colors"
+                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center group-hover:bg-[#25D366] transition-colors"
               >
-                <UIcon :name="scenario.icon" class="w-6 h-6 text-white" />
+                <UIcon
+                  :name="scenario.icon"
+                  class="w-6 h-6 text-gray-900 dark:text-white"
+                />
               </div>
               <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
+                <h3
+                  class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+                >
                   {{ scenario.title }}
                 </h3>
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
                   {{ scenario.description }}
                 </p>
               </div>

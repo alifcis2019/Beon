@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden min-h-[90vh] flex items-center bg-gray-900"
+    class="relative overflow-hidden min-h-[90vh] flex items-center bg-white dark:bg-gray-900"
     ref="heroRef"
   >
     <!-- Mouse Spotlight -->
@@ -29,25 +29,27 @@
         <!-- Text Content -->
         <div class="max-w-2xl">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] text-sm font-medium mb-8 backdrop-blur-sm"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/5 dark:bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] text-sm font-medium mb-8 backdrop-blur-sm"
           >
             <UIcon name="i-simple-icons-whatsapp" class="w-4 h-4" />
             <span>Official WhatsApp Business Partner</span>
           </div>
 
           <h1
-            class="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-8 leading-tight min-h-[160px] sm:min-h-[220px]"
+            class="text-5xl sm:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight min-h-[160px] sm:min-h-[220px]"
           >
             Unlock the Power of <br />
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-[#25D366] to-emerald-400"
             >
               {{ displayedText }}
-              <span class="animate-blink text-white">|</span>
+              <span class="animate-blink text-gray-900 dark:text-white">|</span>
             </span>
           </h1>
 
-          <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-lg">
+          <p
+            class="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed max-w-lg"
+          >
             Transform customer communication with the world's most popular
             messaging app. Automate, engage, and sell directly on WhatsApp.
           </p>
@@ -65,7 +67,7 @@
               size="xl"
               color="gray"
               variant="ghost"
-              class="px-8 py-4 text-lg text-white hover:bg-white/10 transition-all duration-300"
+              class="px-8 py-4 text-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
             >
               Book Demo <UIcon name="i-heroicons-arrow-right" class="ml-2" />
             </UButton>
@@ -81,7 +83,7 @@
           >
             <!-- Phone Frame -->
             <div
-              class="absolute inset-0 bg-gray-950 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden"
+              class="absolute inset-0 bg-gray-950 rounded-[3rem] border-[8px] border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden"
             >
               <!-- Screen Content -->
               <div class="w-full h-full bg-[#0b141a] relative flex flex-col">

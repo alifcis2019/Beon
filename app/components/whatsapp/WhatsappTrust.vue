@@ -1,5 +1,7 @@
 <template>
-  <div class="py-16 bg-gray-950 border-t border-gray-800">
+  <div
+    class="py-16 bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
+  >
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-10">
       <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest">
         Trusted by innovative companies worldwide
@@ -15,7 +17,9 @@
           class="mx-8 flex items-center justify-center grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
         >
           <!-- Placeholder Logos (using text for now, replaced with icons/svgs in real app) -->
-          <div class="flex items-center gap-2 text-xl font-bold text-white">
+          <div
+            class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white"
+          >
             <UIcon name="i-heroicons-building-office-2" class="w-8 h-8" />
             <span>Company {{ i }}</span>
           </div>
@@ -30,7 +34,9 @@
           :key="i + 10"
           class="mx-8 flex items-center justify-center grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
         >
-          <div class="flex items-center gap-2 text-xl font-bold text-white">
+          <div
+            class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white"
+          >
             <UIcon name="i-heroicons-building-office-2" class="w-8 h-8" />
             <span>Company {{ i }}</span>
           </div>
