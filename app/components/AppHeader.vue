@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
 
+const { y } = useWindowScroll();
+const isScrolled = computed(() => y.value > 20);
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Home",
@@ -51,10 +54,16 @@ const items = computed<NavigationMenuItem[]>(() => [
 <template>
   <UHeader
     mode="drawer"
-    class="max-w-7xl mx-auto border rounded-xl top-4 dark:bg-gray-900 shadow-lg"
+    :class="[
+      'max-w-7xl mx-auto rounded-xl  z-50 transition-all duration-300 ease-in-out',
+      isScrolled
+        ? 'top-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-gray-200 dark:border-gray-800'
+        : 'top-6 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm shadow-sm border-transparent',
+    ]"
+    class="border"
   >
     <template #title>
-      <AppLogo />
+      <AppLogo class="transition-transform duration-300 hover:scale-105" />
     </template>
 
     <UNavigationMenu :items="items" />
@@ -65,22 +74,23 @@ const items = computed<NavigationMenuItem[]>(() => [
         variant="ghost"
         icon="i-emojione-flag-for-egypt"
         aria-label="Language"
+        class="transition-transform hover:scale-110"
       />
-      <UColorModeButton />
+      <UColorModeButton class="transition-transform hover:scale-110" />
 
       <UButton
         label="Login"
         color="neutral"
         variant="ghost"
         to="/login"
-        class="hidden lg:flex"
+        class="hidden lg:flex transition-transform hover:scale-105"
       />
 
       <UButton
         label="Start Your Free Trial"
         color="primary"
         to="/signup"
-        class="hidden lg:flex"
+        class="hidden lg:flex transition-transform hover:scale-105 shadow-md hover:shadow-lg"
       />
     </template>
 

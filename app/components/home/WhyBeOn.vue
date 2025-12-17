@@ -1,13 +1,32 @@
 <script setup lang="ts">
 import { whyBeOn } from "~/data/whyBeOn";
+
+const sectionRef = ref(null);
+const isVisible = ref(false);
+
+useIntersectionObserver(
+  sectionRef,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) {
+      isVisible.value = true;
+    }
+  },
+  { threshold: 0.1 },
+);
 </script>
 
 <template>
   <div
+    ref="sectionRef"
     class="py-16 sm:py-24 bg-sky-50 dark:bg-slate-900 transition-colors duration-300"
   >
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div
+        class="text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ease-out"
+        :class="
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        "
+      >
         <h2
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-6"
         >
@@ -27,7 +46,14 @@ import { whyBeOn } from "~/data/whyBeOn";
         <div
           v-for="(card, index) in whyBeOn"
           :key="index"
-          class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-slate-700 group"
+          class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-500 border border-gray-100 dark:border-slate-700 group"
+          :class="[
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-12',
+            `delay-${(index + 1) * 200}`,
+          ]"
+          :style="{ transitionDelay: `${(index + 1) * 150}ms` }"
         >
           <div
             class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-slate-700 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:scale-110 transition-transform duration-300"
