@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import PlatformShowcase from "~/components/home/PlatformShowcase.vue";
+
 useSeoMeta({
   title: "Home",
   description:
