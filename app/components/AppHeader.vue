@@ -20,7 +20,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       },
       {
         label: "SMS Messages",
-        to: "#",
+        to: "/solutions/sms",
         description: "Deliver marketing and transactional texts",
         icon: "i-heroicons-envelope",
       },
