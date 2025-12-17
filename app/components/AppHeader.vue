@@ -26,7 +26,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       },
       {
         label: "WhatsApp Messaging",
-        to: "#",
+        to: "/solutions/whatsapp",
         description: "Engage customers through WhatsApp",
         icon: "i-simple-icons-whatsapp",
       },
