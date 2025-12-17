@@ -33,8 +33,12 @@
 <script setup lang="ts">
 import OtpHero from "~/components/otp/OtpHero.vue";
 
-definePageMeta({
+useSeoMeta({
   title: "OTP Solutions - BeOn",
   description: "Secure and instant OTP delivery via SMS and WhatsApp.",
+  ogTitle: "OTP Solutions - BeOn",
+  ogDescription: "Secure and instant OTP delivery via SMS and WhatsApp.",
+  ogImage: "https://beon.chat/og-image.png",
+  twitterCard: "summary_large_image",
 });
 </script>

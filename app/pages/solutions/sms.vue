@@ -36,8 +36,12 @@ import SmsFeature from "~/components/sms/SmsFeature.vue";
 import SmsIntegration from "~/components/sms/SmsIntegration.vue";
 import SmsVideo from "~/components/sms/SmsVideo.vue";
 
-definePageMeta({
+useSeoMeta({
   title: "SMS Solutions - BeOn",
   description: "Reliable Bulk SMS for marketing and notifications.",
+  ogTitle: "SMS Solutions - BeOn",
+  ogDescription: "Reliable Bulk SMS for marketing and notifications.",
+  ogImage: "https://beon.chat/og-image.png",
+  twitterCard: "summary_large_image",
 });
 </script>

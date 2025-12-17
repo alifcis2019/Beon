@@ -13,9 +13,14 @@ import WhatsappDemo from "~/components/whatsapp/WhatsappDemo.vue";
 import WhatsappBento from "~/components/whatsapp/WhatsappBento.vue";
 import WhatsappTrust from "~/components/whatsapp/WhatsappTrust.vue";
 
-definePageMeta({
+useSeoMeta({
   title: "WhatsApp Business API - BeOn",
   description:
     "Automate customer communication with the official WhatsApp Business API.",
+  ogTitle: "WhatsApp Business API - BeOn",
+  ogDescription:
+    "Automate customer communication with the official WhatsApp Business API.",
+  ogImage: "https://beon.chat/og-image.png",
+  twitterCard: "summary_large_image",
 });
 </script>
