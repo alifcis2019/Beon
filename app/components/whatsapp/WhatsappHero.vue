@@ -36,7 +36,7 @@
           </div>
 
           <h1
-            class="text-5xl sm:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight min-h-[160px] sm:min-h-[220px]"
+            class="text-4xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight min-h-[160px] sm:min-h-[120px]"
           >
             Unlock the Power of <br />
             <span
@@ -99,7 +99,7 @@
                     class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1"
                   >
                     <NuxtImg
-                      src="/logo.svg"
+                      src="/logoDark.svg"
                       alt="BeOn Logo"
                       class="w-full h-full object-contain"
                       loading="lazy"
@@ -150,19 +150,14 @@
                         class="h-32 bg-gray-700 rounded-md mb-2 overflow-hidden relative group"
                       >
                         <NuxtImg
-                          src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80"
+                          src="/logo.svg"
                           alt="Video Thumbnail"
                           class="w-full h-full object-cover"
                           loading="lazy"
                         />
                         <div
                           class="absolute inset-0 bg-black/20 flex items-center justify-center"
-                        >
-                          <UIcon
-                            name="i-heroicons-play-circle"
-                            class="w-12 h-12 text-white/80"
-                          />
-                        </div>
+                        ></div>
                       </div>
                       <p class="text-gray-100 text-sm px-1">
                         Check out our latest features video! 🚀
