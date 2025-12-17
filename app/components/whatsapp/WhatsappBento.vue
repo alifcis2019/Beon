@@ -1,5 +1,8 @@
 <template>
-  <div class="py-24 bg-gray-900 relative overflow-hidden" ref="containerRef">
+  <section
+    class="py-24 bg-gray-900 relative overflow-hidden"
+    ref="containerRef"
+  >
     <!-- Background Gradient -->
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#25D366]/5 rounded-full blur-[120px] pointer-events-none"
@@ -52,9 +55,11 @@
           <div
             class="absolute right-[-20px] bottom-[-20px] w-64 h-48 bg-gray-900 rounded-xl border border-gray-700 transform rotate-[-5deg] group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 flex items-center justify-center overflow-hidden shadow-lg"
           >
-            <img
+            <NuxtImg
               src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80"
               class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+              loading="lazy"
+              alt="Rich Media"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"
@@ -99,7 +104,12 @@
           >
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-white p-1">
-                <img src="/logo.svg" class="w-full h-full object-contain" />
+                <NuxtImg
+                  src="/logo.svg"
+                  class="w-full h-full object-contain"
+                  alt="BeOn Logo"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <div class="text-white font-medium flex items-center gap-1">
@@ -208,7 +218,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

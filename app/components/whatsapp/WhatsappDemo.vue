@@ -1,5 +1,5 @@
 <template>
-  <div class="py-24 bg-gray-900 overflow-hidden">
+  <section class="py-24 bg-gray-900 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
@@ -55,7 +55,12 @@
               <div
                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1"
               >
-                <img src="/logo.svg" class="w-full h-full object-contain" />
+                <NuxtImg
+                  src="/logo.svg"
+                  alt="BeOn Logo"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <div class="flex-1">
                 <div class="text-gray-100 font-medium">BeOn Support</div>
@@ -162,12 +167,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import confetti from "canvas-confetti";
-
 interface Message {
   text: string;
   isUser: boolean;
@@ -284,7 +287,8 @@ const handleOptionClick = (option: Option) => {
   }, 1500);
 };
 
-const triggerConfetti = () => {
+const triggerConfetti = async () => {
+  const confetti = (await import("canvas-confetti")).default;
   const count = 200;
   const defaults = {
     origin: { y: 0.7 },

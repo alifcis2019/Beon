@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="relative overflow-hidden min-h-[90vh] flex items-center bg-gray-900"
     ref="heroRef"
   >
@@ -96,7 +96,12 @@
                   <div
                     class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1"
                   >
-                    <img src="/logo.svg" class="w-full h-full object-contain" />
+                    <NuxtImg
+                      src="/logo.svg"
+                      alt="BeOn Logo"
+                      class="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                   <div class="flex-1">
                     <div
@@ -119,7 +124,7 @@
                   class="flex-1 p-4 overflow-hidden relative"
                   style="
                     background-image: url(&quot;https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png&quot;);
-                    background-opacity: 0.1;
+                    opacity: 0.9;
                   "
                 >
                   <div class="space-y-4 mt-4">
@@ -142,9 +147,11 @@
                       <div
                         class="h-32 bg-gray-700 rounded-md mb-2 overflow-hidden relative group"
                       >
-                        <img
+                        <NuxtImg
                           src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80"
+                          alt="Video Thumbnail"
                           class="w-full h-full object-cover"
+                          loading="lazy"
                         />
                         <div
                           class="absolute inset-0 bg-black/20 flex items-center justify-center"
@@ -214,7 +221,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -244,6 +251,8 @@ const typingSpeed = ref(100);
 
 const type = () => {
   const currentWord = words[currentWordIndex.value];
+  if (!currentWord) return; // Fix lint error
+
   if (isDeleting.value) {
     displayedText.value = currentWord.substring(
       0,

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="relative overflow-hidden py-24 sm:py-32 bg-gray-50 dark:bg-gray-900"
   >
     <!-- Modern Gradient Backgrounds -->
@@ -75,7 +75,7 @@
           >
             <!-- SMS Phone -->
             <div class="relative">
-              <OtpPhoneMockup>
+              <PhoneMockup>
                 <div class="bg-white h-full flex flex-col">
                   <!-- Status Bar -->
                   <div class="h-12 flex justify-between items-center px-6 pt-2">
@@ -117,7 +117,7 @@
                     </div>
                   </div>
                 </div>
-              </OtpPhoneMockup>
+              </PhoneMockup>
               <div
                 class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
               >
@@ -135,7 +135,7 @@
 
             <!-- WhatsApp Phone -->
             <div class="relative">
-              <OtpPhoneMockup>
+              <PhoneMockup>
                 <div
                   class="bg-[#EFE7DE] h-full flex flex-col bg-opacity-50"
                   style="
@@ -163,7 +163,12 @@
                     <div
                       class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200"
                     >
-                      <img src="/logo.svg" class="w-5 h-5 object-contain" />
+                      <NuxtImg
+                        src="/logo.svg"
+                        class="w-5 h-5 object-contain"
+                        loading="lazy"
+                        alt="BeOn Logo"
+                      />
                     </div>
                     <div class="flex-1">
                       <div class="text-sm font-semibold">BeOn</div>
@@ -202,7 +207,7 @@
                     </div>
                   </div>
                 </div>
-              </OtpPhoneMockup>
+              </PhoneMockup>
               <div
                 class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
               >
@@ -221,10 +226,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
+import PhoneMockup from "~/components/otp/PhoneMockup.vue";
+
 const isVisible = ref(false);
 
 onMounted(() => {
