@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden min-h-[90vh] flex items-center bg-white dark:bg-gray-900"
+    class="relative overflow-hidden min-h-dvh flex items-center bg-white dark:bg-gray-900"
     ref="heroRef"
   >
     <!-- Mouse Spotlight -->
@@ -14,10 +14,10 @@
     <!-- Background Effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
-        class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#25D366]/20 rounded-full blur-[120px] animate-pulse"
+        class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse"
       ></div>
       <div
-        class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse delay-1000"
+        class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse delay-1000"
       ></div>
       <div
         class="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-emerald-500/10 rounded-full blur-[100px]"
@@ -55,12 +55,7 @@
           </p>
 
           <div class="flex flex-wrap gap-4">
-            <UButton
-              size="xl"
-              color="primary"
-              variant="solid"
-              class="px-8 py-4 text-lg bg-[#25D366] hover:bg-[#20bd5a] text-white border-none ring-0 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:-translate-y-1"
-            >
+            <UButton size="xl" color="primary" variant="solid">
               Start Free Trial
             </UButton>
             <UButton

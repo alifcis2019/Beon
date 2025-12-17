@@ -6,18 +6,19 @@
 @theme static {
   --font-sans: "Public Sans", sans-serif;
 
-  --color-beon-blue: #017dc0;
-  --color-beon-blue-50: #f0f9ff;
-  --color-beon-blue-100: #e0f2fe;
-  --color-beon-blue-200: #bae6fd;
-  --color-beon-blue-300: #7dd3fc;
-  --color-beon-blue-400: #38bdf8;
-  --color-beon-blue-500: #0ea5e9;
-  --color-beon-blue-600: #017dc0;
-  --color-beon-blue-700: #0369a1;
-  --color-beon-blue-800: #075985;
-  --color-beon-blue-900: #0c4a6e;
-  --color-beon-blue-950: #082f49;
+  --color-beon-blue: #0f578d;
+
+  --color-beon-blue-50: #f1f7fb;
+  --color-beon-blue-100: #e3eff7;
+  --color-beon-blue-200: #c1dced;
+  --color-beon-blue-300: #8fbddc;
+  --color-beon-blue-400: #5698c6;
+  --color-beon-blue-500: #2b74aa;
+  --color-beon-blue-600: #0f578d; /* base color */
+  --color-beon-blue-700: #0c4a78;
+  --color-beon-blue-800: #0a3c61;
+  --color-beon-blue-900: #082f4b;
+  --color-beon-blue-950: #051e32;
 }
 
 :root {

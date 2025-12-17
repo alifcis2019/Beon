@@ -47,7 +47,7 @@ onMounted(() => {
         "
       >
         <div
-          class="rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 text-sm font-medium text-gray-600 dark:text-gray-300 shadow-sm ring-1 ring-inset ring-gray-200/50 dark:ring-gray-700/50 flex items-center gap-2"
+          class="rounded-full p-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 text-sm font-medium text-gray-600 dark:text-gray-300 shadow-sm ring-1 ring-inset ring-gray-200/50 dark:ring-gray-700/50 flex items-center gap-2"
         >
           <UIcon name="i-simple-icons-meta" class="text-blue-500 w-5 h-5" />
           <span class="text-xs sm:text-sm"
