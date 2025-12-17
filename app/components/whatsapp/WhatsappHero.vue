@@ -1,7 +1,16 @@
 <template>
   <div
     class="relative overflow-hidden min-h-[90vh] flex items-center bg-gray-900"
+    ref="heroRef"
   >
+    <!-- Mouse Spotlight -->
+    <div
+      class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
+      :style="{
+        background: `radial-gradient(600px circle at ${elementX}px ${elementY}px, rgba(37, 211, 102, 0.15), transparent 40%)`,
+      }"
+    ></div>
+
     <!-- Background Effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -27,13 +36,14 @@
           </div>
 
           <h1
-            class="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-8 leading-tight"
+            class="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-8 leading-tight min-h-[160px] sm:min-h-[220px]"
           >
             Unlock the Power of <br />
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-[#25D366] to-emerald-400"
             >
-              2 Billion Users
+              {{ displayedText }}
+              <span class="animate-blink text-white">|</span>
             </span>
           </h1>
 
@@ -47,7 +57,7 @@
               size="xl"
               color="primary"
               variant="solid"
-              class="px-8 py-4 text-lg bg-[#25D366] hover:bg-[#20bd5a] text-white border-none ring-0 shadow-[0_0_20px_rgba(37,211,102,0.3)]"
+              class="px-8 py-4 text-lg bg-[#25D366] hover:bg-[#20bd5a] text-white border-none ring-0 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:-translate-y-1"
             >
               Start Free Trial
             </UButton>
@@ -55,7 +65,7 @@
               size="xl"
               color="gray"
               variant="ghost"
-              class="px-8 py-4 text-lg text-white hover:bg-white/10"
+              class="px-8 py-4 text-lg text-white hover:bg-white/10 transition-all duration-300"
             >
               Book Demo <UIcon name="i-heroicons-arrow-right" class="ml-2" />
             </UButton>
@@ -183,7 +193,7 @@
 
             <!-- Floating Elements (3D Effect) -->
             <div
-              class="absolute -right-12 top-20 bg-[#25D366] p-4 rounded-2xl shadow-xl animate-bounce-slow z-20"
+              class="absolute -right-12 top-20 bg-[#25D366] p-4 rounded-2xl shadow-xl animate-bounce-slow z-20 hover:scale-110 transition-transform duration-300"
             >
               <UIcon
                 name="i-heroicons-chat-bubble-left-ellipsis-solid"
@@ -191,7 +201,7 @@
               />
             </div>
             <div
-              class="absolute -left-8 bottom-32 bg-white p-3 rounded-xl shadow-xl animate-bounce-slow delay-700 z-20"
+              class="absolute -left-8 bottom-32 bg-white p-3 rounded-xl shadow-xl animate-bounce-slow delay-700 z-20 hover:scale-110 transition-transform duration-300"
             >
               <div class="flex items-center gap-2">
                 <div
@@ -208,11 +218,14 @@
 </template>
 
 <script setup lang="ts">
-import { useMouse, useWindowSize } from "@vueuse/core";
+import { useMouse, useWindowSize, useElementBounding } from "@vueuse/core";
 
+const heroRef = ref(null);
 const { x, y } = useMouse();
 const { width, height } = useWindowSize();
+const { x: elementX, y: elementY } = useElementBounding(heroRef);
 
+// Parallax Effect
 const parallaxStyle = computed(() => {
   const moveX = (x.value - width.value / 2) / 50;
   const moveY = (y.value - height.value / 2) / 50;
@@ -220,6 +233,45 @@ const parallaxStyle = computed(() => {
     transform: `rotateY(${moveX}deg) rotateX(${-moveY}deg) translateZ(50px)`,
     transformStyle: "preserve-3d",
   };
+});
+
+// Typing Effect
+const words = ["2 Billion Users", "Automation", "Sales", "Support"];
+const displayedText = ref("");
+const currentWordIndex = ref(0);
+const isDeleting = ref(false);
+const typingSpeed = ref(100);
+
+const type = () => {
+  const currentWord = words[currentWordIndex.value];
+  if (isDeleting.value) {
+    displayedText.value = currentWord.substring(
+      0,
+      displayedText.value.length - 1,
+    );
+    typingSpeed.value = 50;
+  } else {
+    displayedText.value = currentWord.substring(
+      0,
+      displayedText.value.length + 1,
+    );
+    typingSpeed.value = 150;
+  }
+
+  if (!isDeleting.value && displayedText.value === currentWord) {
+    isDeleting.value = true;
+    typingSpeed.value = 2000; // Pause at end
+  } else if (isDeleting.value && displayedText.value === "") {
+    isDeleting.value = false;
+    currentWordIndex.value = (currentWordIndex.value + 1) % words.length;
+    typingSpeed.value = 500; // Pause before new word
+  }
+
+  setTimeout(type, typingSpeed.value);
+};
+
+onMounted(() => {
+  type();
 });
 </script>
 
@@ -247,5 +299,19 @@ const parallaxStyle = computed(() => {
 
 .animate-bounce-slow {
   animation: bounce 3s infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 </style>

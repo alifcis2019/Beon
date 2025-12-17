@@ -90,7 +90,7 @@
                           : 'bg-[#202c33] text-gray-100 rounded-tl-none',
                       ]"
                     >
-                      <p>{{ msg.text }}</p>
+                      <p class="whitespace-pre-line">{{ msg.text }}</p>
                       <div
                         class="text-[10px] text-right mt-1 opacity-70 flex items-center justify-end gap-1"
                       >
@@ -166,6 +166,8 @@
 </template>
 
 <script setup lang="ts">
+import confetti from "canvas-confetti";
+
 interface Message {
   text: string;
   isUser: boolean;
@@ -175,7 +177,8 @@ interface Message {
 interface Option {
   label: string;
   response: string;
-  nextOptions?: Option[];
+  reply: string;
+  celebrate?: boolean;
 }
 
 const scenarios = [
@@ -190,6 +193,7 @@ const scenarios = [
         response: "I'd like to track my order #12345.",
         reply:
           "Checking... 🔍\nYour order #12345 is out for delivery! It should arrive by 5 PM today.",
+        celebrate: true,
       },
       {
         label: "Return Policy ↩️",
@@ -211,6 +215,7 @@ const scenarios = [
         response: "Yes, I'd like to book a demo.",
         reply:
           "Great! Please select a time slot:\n1. Tomorrow 10 AM\n2. Tomorrow 2 PM",
+        celebrate: true,
       },
       {
         label: "Talk to Human 👤",
@@ -257,7 +262,7 @@ const addMessage = (text: string, isUser: boolean) => {
   scrollToBottom();
 };
 
-const handleOptionClick = (option: any) => {
+const handleOptionClick = (option: Option) => {
   showOptions.value = false;
   addMessage(option.response, true);
 
@@ -266,12 +271,55 @@ const handleOptionClick = (option: any) => {
     isTyping.value = false;
     addMessage(option.reply, false);
     scrollToBottom();
+
+    if (option.celebrate) {
+      triggerConfetti();
+    }
+
     // Reset options after a delay for demo purposes
     setTimeout(() => {
       showOptions.value = true;
       scrollToBottom();
-    }, 2000);
+    }, 3000);
   }, 1500);
+};
+
+const triggerConfetti = () => {
+  const count = 200;
+  const defaults = {
+    origin: { y: 0.7 },
+  };
+
+  function fire(particleRatio: number, opts: any) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
+  }
+
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+  });
+  fire(0.2, {
+    spread: 60,
+  });
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
 };
 
 const scrollToBottom = () => {

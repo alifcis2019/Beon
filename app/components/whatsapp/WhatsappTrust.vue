@@ -8,7 +8,7 @@
 
     <!-- Infinite Scroll Marquee -->
     <div class="relative flex overflow-hidden group">
-      <div class="flex animate-marquee whitespace-nowrap">
+      <div class="flex animate-marquee whitespace-nowrap group-hover:paused">
         <div
           v-for="i in 10"
           :key="i"
@@ -22,7 +22,9 @@
         </div>
       </div>
 
-      <div class="flex absolute top-0 animate-marquee2 whitespace-nowrap">
+      <div
+        class="flex absolute top-0 animate-marquee2 whitespace-nowrap group-hover:paused"
+      >
         <div
           v-for="i in 10"
           :key="i + 10"
@@ -44,6 +46,10 @@
 }
 .animate-marquee2 {
   animation: marquee2 25s linear infinite;
+}
+
+.group-hover\:paused:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
