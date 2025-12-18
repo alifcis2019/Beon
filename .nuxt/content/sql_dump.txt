@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_index', false, 'GKtIuruOc5v6odM9Aoucv7yoFc9K0V5pQTEaRD2R3is', 'v3.5.0--GKtIuruOc5v6odM9Aoucv7yoFc9K0V5pQTEaRD2R3is', '6sJcATr1WI7Btz8gB434Net3Y8K9NaVEvLZ3GRgxdko'); -- meta
+DROP TABLE IF EXISTS _content_index; -- structure
+CREATE TABLE IF NOT EXISTS _content_index (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "cta" TEXT, "description" VARCHAR, "extension" VARCHAR, "features" TEXT, "hero" TEXT, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "sections" TEXT, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "testimonials" TEXT, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_index'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_docs', false, 'quFkNIUZZFAwcn0ok74-KsIERem9u0p5DW-cqEgxrPA', 'v3.5.0--quFkNIUZZFAwcn0ok74-KsIERem9u0p5DW-cqEgxrPA', 'DACVbgrcV3ccxWw-hGvGRSQunW7LIZxvGWXFTjw-ALo'); -- meta
+DROP TABLE IF EXISTS _content_docs; -- structure
+CREATE TABLE IF NOT EXISTS _content_docs (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "description" VARCHAR, "extension" VARCHAR, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_docs'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_pricing', false, 'wnIt1a1XoCZg6ky0KqFYWZKtcfAx5Hi2rT-cJUdyfBQ', 'v3.5.0--wnIt1a1XoCZg6ky0KqFYWZKtcfAx5Hi2rT-cJUdyfBQ', 'UVKM4528nvB6Mk8jlCUqLKaDh0YI7-IJsF5OJX-Hcbg'); -- meta
+DROP TABLE IF EXISTS _content_pricing; -- structure
+CREATE TABLE IF NOT EXISTS _content_pricing (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "description" VARCHAR, "extension" VARCHAR, "faq" TEXT, "logos" TEXT, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "plans" TEXT, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_pricing'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_blog', false, 'Y1etdP_gPJyLnAPA-R6OXTtYJcGa1HXFvcJtTz6twZI', 'v3.5.0--Y1etdP_gPJyLnAPA-R6OXTtYJcGa1HXFvcJtTz6twZI', 'MFX3vkeJSyxDBi3ZLQHDVAo-BS6QQgMYkMehmxLyIK0'); -- meta
+DROP TABLE IF EXISTS _content_blog; -- structure
+CREATE TABLE IF NOT EXISTS _content_blog (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "description" VARCHAR, "extension" VARCHAR, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_blog'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_posts', false, 'T1f9Z6lBxtlaYr0h3zyERNYd5Hd-UBL_sslgdeO0wVU', 'v3.5.0--T1f9Z6lBxtlaYr0h3zyERNYd5Hd-UBL_sslgdeO0wVU', 'OIKbqWGxiw4gRp0Di1bVSb9A4p71MljbpAH8pSq5y4U'); -- meta
+DROP TABLE IF EXISTS _content_posts; -- structure
+CREATE TABLE IF NOT EXISTS _content_posts (id TEXT PRIMARY KEY, "title" VARCHAR, "authors" TEXT, "badge" TEXT, "body" TEXT, "date" DATE, "description" VARCHAR, "extension" VARCHAR, "image" TEXT, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_posts'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_changelog', false, 'Mh2KMIQmN9c-GcsurZte8r6y9ct4ABLLMLnLT_vCW64', 'v3.5.0--Mh2KMIQmN9c-GcsurZte8r6y9ct4ABLLMLnLT_vCW64', 'HjPfY8OqX-d_gcjQMmxTT-6r428tdNfmnFR90IQgEQY'); -- meta
+DROP TABLE IF EXISTS _content_changelog; -- structure
+CREATE TABLE IF NOT EXISTS _content_changelog (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "description" VARCHAR, "extension" VARCHAR, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_changelog'; -- meta
+CREATE TABLE IF NOT EXISTS _content_info (id TEXT PRIMARY KEY, "ready" BOOLEAN, "structureVersion" VARCHAR, "version" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+INSERT INTO _content_info VALUES ('checksum_versions', false, '8U1kRoF-UyCLgtEY4L5Cie4qKP-qTKRdzzKbPn83hms', 'v3.5.0--8U1kRoF-UyCLgtEY4L5Cie4qKP-qTKRdzzKbPn83hms', 'Up_nx2rOLKCOCS_wUdC9yUaW85I7pq9W9MpIyMc4f3Q'); -- meta
+DROP TABLE IF EXISTS _content_versions; -- structure
+CREATE TABLE IF NOT EXISTS _content_versions (id TEXT PRIMARY KEY, "title" VARCHAR, "body" TEXT, "date" DATE, "description" VARCHAR, "extension" VARCHAR, "image" VARCHAR, "meta" TEXT, "navigation" TEXT DEFAULT true, "path" VARCHAR, "seo" TEXT DEFAULT '{}', "stem" VARCHAR, "__hash__" TEXT UNIQUE); -- structure
+UPDATE _content_info SET ready = true WHERE id = 'checksum_versions'; -- meta

@@ -1,0 +1,1 @@
+export { default } from "file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

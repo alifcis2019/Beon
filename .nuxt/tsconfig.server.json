@@ -225,7 +225,7 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/satori/renderer"
       ],
       "#og-image/renderers/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/chromium/renderer"
       ],
       "#og-image/bindings/css-inline": [
         "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
@@ -240,22 +240,7 @@
         "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/satori/node"
       ],
       "#og-image/bindings/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/null"
-      ],
-      "electron": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
-      ],
-      "bufferutil": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
-      ],
-      "utf-8-validate": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
-      ],
-      "queue": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
-      ],
-      "chromium-bidi": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/proxy-cjs"
+        "../node_modules/nuxt-og-image/dist/runtime/server/og-image/bindings/chromium/chrome-launcher"
       ]
     },
     "lib": [

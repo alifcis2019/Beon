@@ -201,7 +201,7 @@
         "./mdc-imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/938381ef-4007-41fe-927c-6acbac004421"
+        "./manifest/meta/dev"
       ],
       "#build": [
         "."
