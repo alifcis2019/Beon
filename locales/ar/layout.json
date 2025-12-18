@@ -1,0 +1,51 @@
+{
+    "header": {
+        "home": "الرئيسية",
+        "solutions": {
+            "label": "حلولنا",
+            "otp": {
+                "label": "توليد رموز OTP سريعة وآمنة",
+                "description": "أرسل كلمات مرور لمرة واحدة آمنة فوراً"
+            },
+            "sms": {
+                "label": "رسائل SMS",
+                "description": "أرسل رسائل تسويقية ومعاملات"
+            },
+            "whatsapp": {
+                "label": "مراسلات واتساب",
+                "description": "تفاعل مع العملاء عبر واتساب"
+            }
+        },
+        "contact": "اتصل بنا",
+        "support": "الدعم",
+        "blogs": "المدونة",
+        "login": "تسجيل الدخول",
+        "start_trial": "ابدأ تجربتك المجانية"
+    },
+    "footer": {
+        "home": "الرئيسية",
+        "contact": "اتصل بنا",
+        "privacy_policy": "سياسة الخصوصية",
+        "terms_conditions": "الشروط والأحكام",
+        "app_download": {
+            "title": "تتبع إحصائياتك،\nأدر حملاتك، أرسل رسائل\n{highlight}",
+            "highlight": "— كل ذلك من التطبيق.",
+            "description": "مع تطبيق BeOn، لديك كل ما تحتاجه في متناول يدك — من تتبع مقاييس الأداء التفصيلية، وإدارة وجدولة الحملات التسويقية، إلى إرسال الرسائل عبر قنوات متعددة — في أي وقت وفي أي مكان.",
+            "google_play": {
+                "subtitle": "احصل عليه من",
+                "title": "Google Play"
+            },
+            "app_store": {
+                "subtitle": "حمله من",
+                "title": "App Store"
+            }
+        },
+        "cta": {
+            "title": "ابدأ التواصل بذكاء، انضم إلى BeOn الآن.",
+            "talk_sales": "تحدث للمبيعات",
+            "start_trial": "ابدأ تجربتك المجانية"
+        },
+        "copyright": "حقوق النشر © {year} Unlimited Software. جميع الحقوق محفوظة.",
+        "meta_partner": "شركاء ميتا للأعمال"
+    }
+}
