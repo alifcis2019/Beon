@@ -20,7 +20,7 @@
         "phone": "Phone Number",
         "phone_placeholder": "Add phone number",
         "email": "Email",
-        "email_placeholder": "example@email.com",
+        "email_placeholder": "example{'@'}email.com",
         "submit": "Request"
     }
 }

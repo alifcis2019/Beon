@@ -1,0 +1,1 @@
+export { default } from "/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue";
