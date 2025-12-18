@@ -1,212 +1,365 @@
+<script setup lang="ts">
+import { useMouseInElement } from '@vueuse/core'
+
+const target = ref(null)
+const { elementX, elementY, isOutside, elementHeight, elementWidth }
+  = useMouseInElement(target)
+
+const cardTransform = computed(() => {
+  if (isOutside.value) return ''
+  const MAX_ROTATION = 20
+  const rX = (
+    MAX_ROTATION / 2
+    - (elementY.value / elementHeight.value) * MAX_ROTATION
+  ).toFixed(2)
+  const rY = (
+    (elementX.value / elementWidth.value) * MAX_ROTATION
+    - MAX_ROTATION / 2
+  ).toFixed(2)
+  return `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg)`
+})
+
+const isVisible = ref(false)
+onMounted(() => {
+  setTimeout(() => {
+    isVisible.value = true
+  }, 100)
+})
+</script>
+
 <template>
   <section
-    class="relative overflow-hidden min-h-dvh flex items-center bg-white dark:bg-gray-900"
-    ref="heroRef"
+    ref="target"
+    class="relative overflow-hidden py-24 sm:py-32 bg-white dark:bg-[#0a1014] min-h-[95vh] flex items-center transition-colors duration-300"
   >
-    <!-- Mouse Spotlight -->
-    <div
-      class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
-      :style="{
-        background: `radial-gradient(600px circle at ${elementX}px ${elementY}px, rgba(37, 211, 102, 0.15), transparent 40%)`,
-      }"
-    ></div>
-
-    <!-- Background Effects -->
+    <!-- Dynamic Background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Glowing Orbs -->
       <div
-        class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse"
-      ></div>
+        class="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-green-200/40 dark:bg-[#25D366]/10 rounded-full blur-[120px] animate-pulse"
+      />
       <div
-        class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse delay-1000"
-      ></div>
+        class="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-emerald-200/40 dark:bg-emerald-600/10 rounded-full blur-[120px] animate-pulse delay-1000"
+      />
+
+      <!-- Hexagon Pattern -->
       <div
-        class="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-emerald-500/10 rounded-full blur-[100px]"
-      ></div>
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/hexellence.png')] opacity-[0.03] dark:opacity-[0.03] invert dark:invert-0"
+      />
+
+      <!-- Floating Particles -->
+      <div class="absolute inset-0">
+        <div
+          v-for="n in 20"
+          :key="n"
+          class="absolute w-1 h-1 bg-green-500 dark:bg-[#25D366] rounded-full animate-float-random opacity-20"
+          :style="{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${5 + Math.random() * 10}s`
+          }"
+        />
+      </div>
     </div>
 
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Text Content -->
         <div class="max-w-2xl">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/5 dark:bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] text-sm font-medium mb-8 backdrop-blur-sm"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-[#25D366]/10 border border-green-100 dark:border-[#25D366]/20 text-green-600 dark:text-[#25D366] text-sm font-medium mb-8 transition-all duration-700 backdrop-blur-md"
+            :class="
+              isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-4'
+            "
           >
-            <UIcon name="i-simple-icons-whatsapp" class="w-4 h-4" />
-            <span>Official WhatsApp Business Partner</span>
+            <UIcon
+              name="i-simple-icons-whatsapp"
+              class="w-4 h-4"
+            />
+            Official Business Solution Provider
           </div>
 
           <h1
-            class="text-4xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight min-h-[160px] sm:min-h-[120px]"
+            class="text-5xl sm:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight transition-all duration-700 delay-100"
+            :class="
+              isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            "
           >
-            Unlock the Power of <br />
+            Automate.<br>
+            Engage.<br>
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-[#25D366] to-emerald-400"
-            >
-              {{ displayedText }}
-              <span class="animate-blink text-gray-900 dark:text-white">|</span>
-            </span>
+              class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 dark:from-[#25D366] dark:to-emerald-400"
+            >Scale on WhatsApp.</span>
           </h1>
 
           <p
-            class="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed max-w-lg"
+            class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed max-w-lg transition-all duration-700 delay-200"
+            :class="
+              isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            "
           >
-            Transform customer communication with the world's most popular
-            messaging app. Automate, engage, and sell directly on WhatsApp.
+            Transform your customer communication with the world's most popular
+            messaging app. Build chatbots, send broadcasts, and drive sales—all
+            on autopilot.
           </p>
 
-          <div class="flex flex-wrap gap-4">
-            <UButton size="xl" color="primary" variant="solid">
+          <div
+            class="flex flex-wrap gap-4 transition-all duration-700 delay-300"
+            :class="
+              isVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            "
+          >
+            <UButton
+              size="xl"
+              color="primary"
+              variant="solid"
+              class="px-8 py-4 rounded-full shadow-lg shadow-green-500/20 dark:shadow-[#25D366]/20 hover:scale-105 transition-transform font-bold bg-green-600 dark:bg-[#25D366] hover:bg-green-500 dark:hover:bg-[#1ebc57] text-white border-none"
+            >
               Start Free Trial
+              <template #trailing>
+                <UIcon
+                  name="i-heroicons-rocket-launch"
+                  class="w-5 h-5"
+                />
+              </template>
             </UButton>
             <UButton
               size="xl"
-              color="gray"
+              color="neutral"
               variant="ghost"
-              class="px-8 py-4 text-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
+              class="px-8 py-4 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-900 dark:text-white"
             >
-              Book Demo <UIcon name="i-heroicons-arrow-right" class="ml-2" />
+              Book Demo
             </UButton>
           </div>
         </div>
 
-        <!-- Parallax Phone Visual -->
-        <div class="relative lg:h-[800px] flex items-center justify-center">
+        <!-- 3D Visual -->
+        <div
+          class="relative perspective-1000"
+          :style="{ transform: cardTransform }"
+        >
           <div
-            ref="phoneRef"
-            class="relative w-[320px] h-[650px] transition-transform duration-100 ease-out"
-            :style="parallaxStyle"
+            class="relative mx-auto w-[340px] h-[680px] bg-gray-100 dark:bg-[#111b21] rounded-[3.5rem] border-[10px] border-white dark:border-[#2a3942] shadow-2xl transition-all duration-1000 delay-500 transform-style-3d"
+            :class="
+              isVisible
+                ? 'opacity-100 translate-y-0 rotate-y-[-12deg]'
+                : 'opacity-0 translate-y-20'
+            "
           >
-            <!-- Phone Frame -->
+            <!-- Screen Content -->
             <div
-              class="absolute inset-0 bg-gray-950 rounded-[3rem] border-[8px] border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden"
+              class="absolute inset-0 bg-[#e5ddd5] dark:bg-[#0b141a] rounded-[3rem] overflow-hidden flex flex-col"
             >
-              <!-- Screen Content -->
-              <div class="w-full h-full bg-[#0b141a] relative flex flex-col">
-                <!-- Header -->
-                <div
-                  class="bg-[#202c33] px-4 py-3 flex items-center gap-3 shadow-md z-10"
-                >
+              <!-- Status Bar -->
+              <div
+                class="h-14 flex justify-between items-center px-6 text-gray-800 dark:text-gray-400 bg-[#f0f2f5] dark:bg-[#202c33]"
+              >
+                <span class="text-sm font-medium">9:41</span>
+                <div class="flex gap-2">
                   <UIcon
-                    name="i-heroicons-chevron-left"
-                    class="text-[#00a884] w-6 h-6"
+                    name="i-heroicons-signal"
+                    class="w-4 h-4"
                   />
+                  <UIcon
+                    name="i-heroicons-wifi"
+                    class="w-4 h-4"
+                  />
+                  <UIcon
+                    name="i-heroicons-battery-100"
+                    class="w-4 h-4"
+                  />
+                </div>
+              </div>
+
+              <!-- Chat Header -->
+              <div
+                class="px-4 py-3 bg-[#f0f2f5] dark:bg-[#202c33] flex items-center gap-3 shadow-md z-10"
+              >
+                <UIcon
+                  name="i-heroicons-chevron-left"
+                  class="text-gray-600 dark:text-gray-400 w-6 h-6"
+                />
+                <div
+                  class="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center"
+                >
+                  <NuxtImg
+                    src="/logoDark.svg"
+                    alt="Logo"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <div class="flex-1">
                   <div
-                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1"
+                    class="text-gray-900 dark:text-white font-medium flex items-center gap-1"
                   >
-                    <NuxtImg
-                      src="/logoDark.svg"
-                      alt="BeOn Logo"
-                      class="w-full h-full object-contain"
-                      loading="lazy"
+                    BeOn
+                    <UIcon
+                      name="i-heroicons-check-badge-solid"
+                      class="text-green-500 dark:text-[#25D366] w-4 h-4"
                     />
                   </div>
-                  <div class="flex-1">
-                    <div
-                      class="text-gray-100 font-medium flex items-center gap-1"
-                    >
-                      BeOn
-                      <UIcon
-                        name="i-heroicons-check-badge-solid"
-                        class="text-[#25D366] w-4 h-4"
-                      />
-                    </div>
-                    <div class="text-xs text-gray-400">
-                      Official Business Account
-                    </div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">
+                    Official Business Account
                   </div>
                 </div>
+              </div>
 
-                <!-- Chat Area -->
-                <div
-                  class="flex-1 p-4 overflow-hidden relative"
-                  style="
-                    background-image: url(&quot;https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png&quot;);
-                    opacity: 0.9;
-                  "
-                >
-                  <div class="space-y-4 mt-4">
-                    <!-- Message 1 -->
+              <!-- Chat Area -->
+              <div
+                class="flex-1 p-4 overflow-hidden relative bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-opacity-50 dark:bg-opacity-5"
+              >
+                <div class="space-y-4 mt-4">
+                  <!-- Bot Message -->
+                  <div
+                    class="flex flex-col gap-1 animate-slide-in-left"
+                    style="animation-delay: 1s"
+                  >
                     <div
-                      class="bg-[#202c33] p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm animate-fade-in-up"
+                      class="self-start bg-white dark:bg-[#202c33] p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm"
                     >
-                      <p class="text-gray-100 text-sm">
-                        Hello! 👋 Welcome to BeOn. How can we help you today?
+                      <p class="text-gray-900 dark:text-gray-100 text-sm">
+                        Hello! 👋 Welcome to BeOn. How can we help you scale
+                        your business today?
                       </p>
-                      <div class="text-[10px] text-gray-400 text-right mt-1">
+                      <div
+                        class="text-[10px] text-gray-500 dark:text-gray-400 text-right mt-1"
+                      >
                         10:00 AM
                       </div>
                     </div>
+                  </div>
 
-                    <!-- Message 2 (Rich Media) -->
+                  <!-- User Reply -->
+                  <div
+                    class="flex flex-col gap-1 items-end animate-slide-in-right"
+                    style="animation-delay: 2.5s"
+                  >
                     <div
-                      class="bg-[#202c33] p-2 rounded-lg rounded-tl-none max-w-[85%] shadow-sm animate-fade-in-up delay-300"
+                      class="bg-[#d9fdd3] dark:bg-[#005c4b] p-3 rounded-lg rounded-tr-none max-w-[85%] shadow-sm"
                     >
-                      <div
-                        class="h-32 bg-gray-700 rounded-md mb-2 overflow-hidden relative group"
-                      >
-                        <NuxtImg
-                          src="/logo.svg"
-                          alt="Video Thumbnail"
-                          class="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                        <div
-                          class="absolute inset-0 bg-black/20 flex items-center justify-center"
-                        ></div>
-                      </div>
-                      <p class="text-gray-100 text-sm px-1">
-                        Check out our latest features video! 🚀
+                      <p class="text-gray-900 dark:text-white text-sm">
+                        I want to automate my customer support. 🤖
                       </p>
-                      <div class="text-[10px] text-gray-400 text-right mt-1">
+                      <div
+                        class="text-[10px] text-gray-500 dark:text-white/70 text-right mt-1 flex items-center justify-end gap-1"
+                      >
                         10:01 AM
+                        <UIcon
+                          name="i-heroicons-check-badge"
+                          class="w-3 h-3 text-[#53bdeb]"
+                        />
                       </div>
                     </div>
+                  </div>
 
-                    <!-- Message 3 (Buttons) -->
+                  <!-- Bot Response with Buttons -->
+                  <div
+                    class="flex flex-col gap-1 animate-slide-in-left"
+                    style="animation-delay: 4s"
+                  >
                     <div
-                      class="bg-[#202c33] p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm animate-fade-in-up delay-500"
+                      class="self-start bg-white dark:bg-[#202c33] p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm"
                     >
-                      <p class="text-gray-100 text-sm mb-3">
-                        Choose an option:
+                      <p class="text-gray-900 dark:text-gray-100 text-sm mb-3">
+                        Great choice! Our AI chatbots can handle 80% of queries
+                        instantly. Would you like a demo?
                       </p>
                       <div class="space-y-2">
                         <button
-                          class="w-full py-2 px-4 bg-[#2a3942] hover:bg-[#354550] text-[#00a884] text-sm font-medium rounded transition-colors"
+                          class="w-full py-2 px-4 bg-gray-50 dark:bg-[#2a3942] hover:bg-gray-100 dark:hover:bg-[#354550] text-blue-500 dark:text-[#00a884] text-sm font-medium rounded transition-colors"
+                        >
+                          Yes, show me! 🚀
+                        </button>
+                        <button
+                          class="w-full py-2 px-4 bg-gray-50 dark:bg-[#2a3942] hover:bg-gray-100 dark:hover:bg-[#354550] text-blue-500 dark:text-[#00a884] text-sm font-medium rounded transition-colors"
                         >
                           View Pricing
                         </button>
-                        <button
-                          class="w-full py-2 px-4 bg-[#2a3942] hover:bg-[#354550] text-[#00a884] text-sm font-medium rounded transition-colors"
-                        >
-                          Talk to Sales
-                        </button>
                       </div>
-                      <div class="text-[10px] text-gray-400 text-right mt-1">
+                      <div
+                        class="text-[10px] text-gray-500 dark:text-gray-400 text-right mt-1"
+                      >
                         10:01 AM
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Input Area -->
+              <div
+                class="p-3 bg-[#f0f2f5] dark:bg-[#202c33] flex items-center gap-2"
+              >
+                <UIcon
+                  name="i-heroicons-plus"
+                  class="text-gray-500 dark:text-gray-400 w-6 h-6"
+                />
+                <div
+                  class="flex-1 bg-white dark:bg-[#2a3942] rounded-lg h-10 px-4 flex items-center text-gray-400 text-sm"
+                >
+                  Type a message...
+                </div>
+                <UIcon
+                  name="i-heroicons-microphone"
+                  class="text-gray-500 dark:text-gray-400 w-6 h-6"
+                />
+              </div>
             </div>
 
-            <!-- Floating Elements (3D Effect) -->
+            <!-- Floating Elements -->
             <div
-              class="absolute -right-12 top-20 bg-[#25D366] p-4 rounded-2xl shadow-xl animate-bounce-slow z-20 hover:scale-110 transition-transform duration-300"
+              class="absolute -right-16 top-1/4 bg-white/90 dark:bg-[#202c33]/90 backdrop-blur-xl p-4 rounded-2xl border border-gray-200 dark:border-[#2a3942] shadow-xl transform translate-z-40 animate-float"
             >
-              <UIcon
-                name="i-heroicons-chat-bubble-left-ellipsis-solid"
-                class="w-8 h-8 text-white"
-              />
-            </div>
-            <div
-              class="absolute -left-8 bottom-32 bg-white p-3 rounded-xl shadow-xl animate-bounce-slow delay-700 z-20 hover:scale-110 transition-transform duration-300"
-            >
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-3">
                 <div
-                  class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                ></div>
-                <span class="text-xs font-bold text-gray-900">Online 24/7</span>
+                  class="w-12 h-12 rounded-full bg-green-100 dark:bg-[#25D366]/20 flex items-center justify-center text-green-600 dark:text-[#25D366]"
+                >
+                  <UIcon
+                    name="i-heroicons-chat-bubble-left-right"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 dark:text-white">
+                    24/7
+                  </div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">
+                    Automated Support
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -left-12 bottom-1/3 bg-white/90 dark:bg-[#202c33]/90 backdrop-blur-xl p-4 rounded-2xl border border-gray-200 dark:border-[#2a3942] shadow-xl transform translate-z-60 animate-float-delayed"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400"
+                >
+                  <UIcon
+                    name="i-heroicons-bolt"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 dark:text-white">
+                    Instant
+                  </div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">
+                    Response Time
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -216,103 +369,87 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import { useMouse, useWindowSize, useElementBounding } from "@vueuse/core";
-
-const heroRef = ref(null);
-const { x, y } = useMouse();
-const { width, height } = useWindowSize();
-const { x: elementX, y: elementY } = useElementBounding(heroRef);
-
-// Parallax Effect
-const parallaxStyle = computed(() => {
-  const moveX = (x.value - width.value / 2) / 50;
-  const moveY = (y.value - height.value / 2) / 50;
-  return {
-    transform: `rotateY(${moveX}deg) rotateX(${-moveY}deg) translateZ(50px)`,
-    transformStyle: "preserve-3d",
-  };
-});
-
-// Typing Effect
-const words = ["2 Billion Users", "Automation", "Sales", "Support"];
-const displayedText = ref("");
-const currentWordIndex = ref(0);
-const isDeleting = ref(false);
-const typingSpeed = ref(100);
-
-const type = () => {
-  const currentWord = words[currentWordIndex.value];
-  if (!currentWord) return; // Fix lint error
-
-  if (isDeleting.value) {
-    displayedText.value = currentWord.substring(
-      0,
-      displayedText.value.length - 1,
-    );
-    typingSpeed.value = 50;
-  } else {
-    displayedText.value = currentWord.substring(
-      0,
-      displayedText.value.length + 1,
-    );
-    typingSpeed.value = 150;
-  }
-
-  if (!isDeleting.value && displayedText.value === currentWord) {
-    isDeleting.value = true;
-    typingSpeed.value = 2000; // Pause at end
-  } else if (isDeleting.value && displayedText.value === "") {
-    isDeleting.value = false;
-    currentWordIndex.value = (currentWordIndex.value + 1) % words.length;
-    typingSpeed.value = 500; // Pause before new word
-  }
-
-  setTimeout(type, typingSpeed.value);
-};
-
-onMounted(() => {
-  type();
-});
-</script>
-
 <style scoped>
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
-  opacity: 0;
-  transform: translateY(10px);
+.perspective-1000 {
+  perspective: 1000px;
 }
-
-.delay-300 {
-  animation-delay: 0.3s;
+.transform-style-3d {
+  transform-style: preserve-3d;
 }
-
-.delay-500 {
-  animation-delay: 0.5s;
+.translate-z-40 {
+  transform: translateZ(40px);
 }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.translate-z-60 {
+  transform: translateZ(60px);
 }
-
-.animate-bounce-slow {
-  animation: bounce 3s infinite;
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-20px);
     opacity: 0;
   }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+  opacity: 0;
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+  opacity: 0;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateZ(40px) translateY(0);
+  }
+  50% {
+    transform: translateZ(40px) translateY(-10px);
+  }
+}
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateZ(60px) translateY(0);
+  }
+  50% {
+    transform: translateZ(60px) translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite 1s;
+}
+@keyframes float-random {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -10px);
+  }
+  50% {
+    transform: translate(-5px, 15px);
+  }
+  75% {
+    transform: translate(-15px, -5px);
+  }
+}
+.animate-float-random {
+  animation: float-random 10s ease-in-out infinite;
 }
 </style>

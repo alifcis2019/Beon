@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const posts = [
   {
     title: "The Future of Customer Communication",
@@ -15,6 +14,7 @@ const posts = [
     },
     category: "Trends",
     slug: "future-of-customer-communication",
+    readTime: "5 min read",
   },
   {
     title: "Mastering WhatsApp Business API",
@@ -30,6 +30,7 @@ const posts = [
     },
     category: "Tutorials",
     slug: "mastering-whatsapp-business-api",
+    readTime: "8 min read",
   },
   {
     title: "Why Multi-Channel Support Matters",
@@ -45,6 +46,7 @@ const posts = [
     },
     category: "Strategy",
     slug: "why-multi-channel-support-matters",
+    readTime: "6 min read",
   },
   {
     title: "Automating Your Sales Funnel",
@@ -60,6 +62,7 @@ const posts = [
     },
     category: "Automation",
     slug: "automating-your-sales-funnel",
+    readTime: "7 min read",
   },
   {
     title: "5 Tips for Better SMS Campaigns",
@@ -75,6 +78,7 @@ const posts = [
     },
     category: "Marketing",
     slug: "5-tips-for-better-sms-campaigns",
+    readTime: "4 min read",
   },
   {
     title: "Understanding Chatbot Analytics",
@@ -90,9 +94,13 @@ const posts = [
     },
     category: "Analytics",
     slug: "understanding-chatbot-analytics",
+    readTime: "5 min read",
   },
 ];
 
+const featuredPost = posts[0];
+const recentPosts = posts.slice(1);
+
 useSeoMeta({
   title: "Blog - BeOn",
   description: "Latest news, updates, and insights from the BeOn team.",
@@ -101,130 +109,238 @@ useSeoMeta({
   ogImage: "https://beon.chat/og-image.png",
   twitterCard: "summary_large_image",
 });
-
-useHead({
-  script: [
-    {
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        name: "BeOn Blog",
-        description: "Latest news, updates, and insights from the BeOn team.",
-        url: "https://beon.chat/blog",
-        publisher: {
-          "@type": "Organization",
-          name: "BeOn",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://beon.chat/logo.png",
-          },
-        },
-        blogPost: posts.map((post) => ({
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.description,
-          datePublished: post.date,
-          author: {
-            "@type": "Person",
-            name: post.author.name,
-          },
-          url: `https://beon.chat/blog/${post.slug}`,
-          image: post.image,
-        })),
-      }),
-    },
-  ],
-});
-useSeoMeta({
-  title: "Blog - BeOn",
-  description: "Latest news, updates, and insights from the BeOn team.",
-  ogTitle: "Blog - BeOn",
-  ogDescription: "Latest news, updates, and insights from the BeOn team.",
-  ogImage: "https://beon.chat/og-image.png",
-  twitterCard: "summary_large_image",
-});
-
-useHead({
-  script: [
-    {
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        name: "BeOn Blog",
-        description: "Latest news, updates, and insights from the BeOn team.",
-        url: "https://beon.chat/blog",
-        publisher: {
-          "@type": "Organization",
-          name: "BeOn",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://beon.chat/logo.png",
-          },
-        },
-        blogPost: posts.map((post) => ({
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.description,
-          datePublished: post.date,
-          author: {
-            "@type": "Person",
-            name: post.author.name,
-          },
-          url: `https://beon.chat/blog/${post.slug}`,
-          image: post.image,
-        })),
-      }),
-    },
-  ],
-});
-
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-950 min-h-screen py-16 lg:py-24">
-    <UContainer>
-      <!-- Header -->
-      <div class="max-w-2xl mx-auto text-center mb-16 animate-fade-in-up">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Our Blog
-        </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400">
-          Insights, updates, and guides to help you master customer
-          communication and grow your business with BeOn.
-        </p>
-      </div>
-
-      <!-- Blog Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <BlogPost
-          v-for="(post, index) in posts"
-          :key="post.slug"
-          :post="post"
-          class="animate-fade-in-up"
-          :style="{ animationDelay: `${index * 100}ms` }"
+  <div
+    class="bg-white dark:bg-gray-950 min-h-screen transition-colors duration-300"
+  >
+    <!-- Hero Section (Featured Post) -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900/10 dark:to-transparent"
+        />
+        <div
+          class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[100px] animate-pulse"
         />
       </div>
-    </UContainer>
+
+      <UContainer>
+        <div class="text-center mb-16">
+          <h1
+            class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight"
+          >
+            The
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400"
+              >BeOn Blog</span
+            >
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Insights, strategies, and updates to help you scale your customer
+            communication.
+          </p>
+        </div>
+
+        <!-- Featured Post Card -->
+        <div
+          class="group relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl transition-all duration-500 hover:shadow-primary-500/10"
+        >
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="relative h-[400px] md:h-auto overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse"
+                v-if="!featuredPost.image"
+              />
+              <NuxtImg
+                :src="featuredPost.image"
+                :alt="featuredPost.title"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="eager"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"
+              />
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center relative">
+              <div class="flex items-center gap-3 mb-6">
+                <span
+                  class="px-3 py-1 rounded-full text-xs font-bold bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 uppercase tracking-wider"
+                >
+                  {{ featuredPost.category }}
+                </span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                  featuredPost.readTime
+                }}</span>
+              </div>
+
+              <h2
+                class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
+              >
+                <NuxtLink :to="`/blog/${featuredPost.slug}`">
+                  {{ featuredPost.title }}
+                </NuxtLink>
+              </h2>
+
+              <p
+                class="text-lg text-gray-600 dark:text-gray-400 mb-8 line-clamp-3"
+              >
+                {{ featuredPost.description }}
+              </p>
+
+              <div class="flex items-center justify-between mt-auto">
+                <div class="flex items-center gap-3">
+                  <UAvatar
+                    :src="featuredPost.author.avatar"
+                    :alt="featuredPost.author.name"
+                    size="sm"
+                  />
+                  <div>
+                    <div
+                      class="text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      {{ featuredPost.author.name }}
+                    </div>
+                    <div class="text-xs text-gray-500">
+                      {{ featuredPost.date }}
+                    </div>
+                  </div>
+                </div>
+                <UButton
+                  :to="`/blog/${featuredPost.slug}`"
+                  variant="ghost"
+                  color="gray"
+                  class="group/btn"
+                >
+                  Read Article
+                  <template #trailing>
+                    <UIcon
+                      name="i-heroicons-arrow-right"
+                      class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                    />
+                  </template>
+                </UButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </UContainer>
+    </section>
+
+    <!-- Recent Posts Grid -->
+    <section
+      class="py-20 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800"
+    >
+      <UContainer>
+        <div class="flex items-center justify-between mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Recent Articles
+          </h2>
+          <div class="flex gap-2">
+            <UButton variant="ghost" color="gray" icon="i-heroicons-funnel" />
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="pl-9 pr-4 py-1.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm focus:ring-2 ring-primary-500 outline-none transition-all w-48 focus:w-64"
+              />
+              <UIcon
+                name="i-heroicons-magnifying-glass"
+                class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="(post, index) in recentPosts"
+            :key="post.slug"
+            class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-xl hover:border-primary-500/30 dark:hover:border-primary-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+            :style="{ animationDelay: `${index * 100}ms` }"
+          >
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <NuxtImg
+                :src="post.image"
+                :alt="post.title"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-gray-900/90 backdrop-blur text-gray-900 dark:text-white shadow-sm"
+                >
+                  {{ post.category }}
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-1">
+              <div
+                class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3"
+              >
+                <time>{{ post.date }}</time>
+                <span>•</span>
+                <span>{{ post.readTime }}</span>
+              </div>
+
+              <h3
+                class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2"
+              >
+                <NuxtLink :to="`/blog/${post.slug}`">
+                  {{ post.title }}
+                </NuxtLink>
+              </h3>
+
+              <p
+                class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2 flex-1"
+              >
+                {{ post.description }}
+              </p>
+
+              <div
+                class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800"
+              >
+                <UAvatar
+                  :src="post.author.avatar"
+                  :alt="post.author.name"
+                  size="xs"
+                />
+                <span
+                  class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >{{ post.author.name }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-16 flex justify-center">
+          <div class="flex gap-2">
+            <UButton
+              variant="outline"
+              color="gray"
+              icon="i-heroicons-arrow-left"
+              disabled
+            />
+            <UButton variant="solid" color="primary">1</UButton>
+            <UButton variant="ghost" color="gray">2</UButton>
+            <UButton variant="ghost" color="gray">3</UButton>
+            <UButton
+              variant="outline"
+              color="gray"
+              icon="i-heroicons-arrow-right"
+            />
+          </div>
+        </div>
+      </UContainer>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Custom Scrollbar for this page if needed */
 </style>

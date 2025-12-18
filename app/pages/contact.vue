@@ -1,59 +1,74 @@
 ```
 <script setup lang="ts">
+const { t } = useI18n()
+
 useSeoMeta({
-  title: "Contact Us - BeOn",
-  description: "Get in touch with our sales or support team.",
-  ogTitle: "Contact Us - BeOn",
-  ogDescription: "Get in touch with our sales or support team.",
-  ogImage: "https://beon.chat/og-image.png",
-  twitterCard: "summary_large_image",
-});
+  title: () => t('contact.meta.title'),
+  description: () => t('contact.meta.description'),
+  ogTitle: () => t('contact.meta.title'),
+  ogDescription: () => t('contact.meta.description'),
+  ogImage: 'https://beon.chat/og-image.png',
+  twitterCard: 'summary_large_image'
+})
 
 const form = ref({
-  name: "",
-  email: "",
-  phone: "",
-});
+  name: '',
+  email: '',
+  phone: ''
+})
 
 const onSubmit = () => {
   // Handle form submission
-  console.log("Form submitted:", form.value);
-};
+  console.log('Form submitted:', form.value)
+}
 
-const features = [
+const features = computed(() => [
   {
-    icon: "i-heroicons-chat-bubble-left-right",
-    text: "Send Bulk SMS with high deliverability",
+    icon: 'i-heroicons-chat-bubble-left-right',
+    text: t('contact.features.sms')
   },
   {
-    icon: "i-heroicons-paper-airplane",
-    text: "Launch targeted and personalized campaigns",
+    icon: 'i-heroicons-paper-airplane',
+    text: t('contact.features.campaigns')
   },
   {
-    icon: "i-heroicons-users",
-    text: "Reach customers across multiple channels",
+    icon: 'i-heroicons-users',
+    text: t('contact.features.channels')
   },
   {
-    icon: "i-heroicons-chart-bar",
-    text: "Track performance with real-time analytics",
-  },
-];
+    icon: 'i-heroicons-chart-bar',
+    text: t('contact.features.analytics')
+  }
+])
 </script>
 
 <template>
   <div
-    class="bg-gray-50 dark:bg-[#0B1120] min-h-screen py-12 lg:py-24 flex items-center justify-center transition-colors duration-300"
+    class="bg-white dark:bg-[#0a1014] min-h-screen py-12 lg:py-24 flex items-center justify-center transition-colors duration-300 relative overflow-hidden"
   >
-    <UContainer class="w-full">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse"
+      />
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] animate-pulse delay-1000"
+      />
+    </div>
+
+    <UContainer class="w-full relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         <!-- Left Column: Content -->
         <div class="space-y-8">
           <!-- Meta Partner Badge -->
           <div
-            class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold animate-fade-in-up"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 font-medium animate-fade-in-up"
           >
-            <UIcon name="i-simple-icons-meta" class="w-6 h-6" />
-            <span>Meta Business Partners</span>
+            <UIcon
+              name="i-simple-icons-meta"
+              class="w-4 h-4"
+            />
+            <span class="text-sm">{{ $t("contact.meta_partner") }}</span>
           </div>
 
           <!-- Headline -->
@@ -61,132 +76,145 @@ const features = [
             <h1
               class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-6"
             >
-              Start Your Free Trial 🚀 <br />
-              <span class="text-blue-600 dark:text-blue-500"
-                >— No commitments. Just results.</span
-              >
+              {{ $t("contact.headline") }} <br>
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
+              >{{ $t("contact.subheadline") }}</span>
             </h1>
-            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-              Take the first step towards engaging your audience through
-              powerful, data-driven advertising campaigns. Register and discover
-              how easy it is to connect, convert, and grow. — all from one
-              platform.
+            <p
+              class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-lg"
+            >
+              {{ $t("contact.description") }}
             </p>
           </div>
 
           <!-- Feature List -->
-          <div class="space-y-5 animate-fade-in-up delay-200">
+          <div class="space-y-6 animate-fade-in-up delay-200">
             <div
               v-for="(feature, index) in features"
               :key="index"
-              class="flex items-center gap-3 text-gray-700 dark:text-gray-300"
+              class="flex items-center gap-4 group"
             >
-              <UIcon
-                :name="feature.icon"
-                class="w-5 h-5 text-blue-500 flex-shrink-0"
-              />
-              <span class="font-medium">{{ feature.text }}</span>
+              <div
+                class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+              >
+                <UIcon
+                  :name="feature.icon"
+                  class="w-5 h-5 text-gray-900 dark:text-white"
+                />
+              </div>
+              <span class="font-medium text-gray-700 dark:text-gray-300">{{
+                feature.text
+              }}</span>
             </div>
           </div>
         </div>
 
         <!-- Right Column: Form -->
         <div
-          class="bg-white dark:bg-[#111827] rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-800 animate-fade-in-up delay-300 hover:shadow-2xl transition-shadow duration-300"
+          class="bg-white dark:bg-[#111b21] rounded-3xl shadow-2xl p-8 border border-gray-100 dark:border-[#2a3942] animate-fade-in-up delay-300 hover:shadow-blue-500/5 transition-all duration-500"
         >
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            Contact Us Now
+            {{ $t("contact.form.title") }}
           </h2>
 
-          <form class="space-y-5" @submit.prevent="onSubmit">
-            <div class="grid grid-cols-1 gap-5">
+          <form
+            class="space-y-6"
+            @submit.prevent="onSubmit"
+          >
+            <div class="grid grid-cols-1 gap-6">
               <UFormGroup
-                label="Name"
+                :label="$t('contact.form.name')"
                 name="name"
                 class="w-full"
                 :ui="{
                   label: {
-                    base: 'text-gray-700 dark:text-gray-300 font-medium mb-1.5',
-                  },
+                    base: 'text-gray-700 dark:text-gray-300 font-medium mb-2'
+                  }
                 }"
               >
                 <template #label>
                   <div class="flex items-center gap-2">
                     <UIcon
                       name="i-heroicons-user"
-                      class="w-4 h-4 text-blue-500"
+                      class="w-4 h-4 text-blue-500 dark:text-blue-400"
                     />
-                    <span>Name</span>
+                    <span>{{ $t("contact.form.name") }}</span>
                   </div>
                 </template>
                 <UInput
                   v-model="form.name"
-                  placeholder="Add your name"
-                  size="lg"
-                  class="dark:bg-gray-900/50 w-full"
+                  :placeholder="$t('contact.form.name_placeholder')"
+                  size="xl"
+                  class="w-full"
                   :ui="{
-                    base: 'bg-gray-50 dark:bg-[#1F2937] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500 transition-all duration-200',
+                    base: 'bg-gray-50 dark:bg-[#202c33] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-[#2a3942] focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-200',
+                    placeholder:
+                      'placeholder-gray-400 dark:placeholder-gray-500'
                   }"
                 />
               </UFormGroup>
 
               <UFormGroup
-                label="Phone Number"
+                :label="$t('contact.form.phone')"
                 name="phone"
                 :ui="{
                   label: {
-                    base: 'text-gray-700 dark:text-gray-300 font-medium mb-1.5',
-                  },
+                    base: 'text-gray-700 dark:text-gray-300 font-medium mb-2'
+                  }
                 }"
               >
                 <template #label>
                   <div class="flex items-center gap-2">
                     <UIcon
                       name="i-heroicons-phone"
-                      class="w-4 h-4 text-blue-500"
+                      class="w-4 h-4 text-blue-500 dark:text-blue-400"
                     />
-                    <span>Phone Number</span>
+                    <span>{{ $t("contact.form.phone") }}</span>
                   </div>
                 </template>
                 <UInput
                   v-model="form.phone"
                   type="tel"
-                  placeholder="Add phone number"
-                  size="lg"
-                  class="dark:bg-gray-900/50 w-full"
+                  :placeholder="$t('contact.form.phone_placeholder')"
+                  size="xl"
+                  class="w-full"
                   :ui="{
-                    base: 'bg-gray-50 dark:bg-[#1F2937] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500 transition-all duration-200',
+                    base: 'bg-gray-50 dark:bg-[#202c33] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-[#2a3942] focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-200',
+                    placeholder:
+                      'placeholder-gray-400 dark:placeholder-gray-500'
                   }"
                 />
               </UFormGroup>
             </div>
 
             <UFormGroup
-              label="Email"
+              :label="$t('contact.form.email')"
               name="email"
               :ui="{
                 label: {
-                  base: 'text-gray-700 dark:text-gray-300 font-medium mb-1.5',
-                },
+                  base: 'text-gray-700 dark:text-gray-300 font-medium mb-2'
+                }
               }"
             >
               <template #label>
                 <div class="flex items-center gap-2">
                   <UIcon
                     name="i-heroicons-envelope"
-                    class="w-4 h-4 text-blue-500"
+                    class="w-4 h-4 text-blue-500 dark:text-blue-400"
                   />
-                  <span>Email</span>
+                  <span>{{ $t("contact.form.email") }}</span>
                 </div>
               </template>
               <UInput
                 v-model="form.email"
                 type="email"
-                placeholder="example@email.com"
-                size="lg"
-                class="dark:bg-gray-900/50 w-full"
+                :placeholder="$t('contact.form.email_placeholder')"
+                size="xl"
+                class="w-full"
                 :ui="{
-                  base: 'bg-gray-50 dark:bg-[#1F2937] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500 transition-all duration-200',
+                  base: 'bg-gray-50 dark:bg-[#202c33] text-gray-900 dark:text-white ring-1 ring-gray-200 dark:ring-[#2a3942] focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 rounded-xl transition-all duration-200',
+                  placeholder: 'placeholder-gray-400 dark:placeholder-gray-500'
                 }"
               />
             </UFormGroup>
@@ -196,9 +224,9 @@ const features = [
               block
               size="xl"
               color="primary"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 mt-2 transition-transform duration-200 hover:scale-[1.02]"
+              class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold py-4 rounded-xl mt-4 transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-blue-500/20"
             >
-              Request
+              {{ $t("contact.form.submit") }}
             </UButton>
           </form>
         </div>

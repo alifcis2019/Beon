@@ -1,5 +1,8 @@
 <template>
-  <div ref="target" class="py-24 sm:py-32 bg-gray-50 dark:bg-gray-900">
+  <div
+    ref="target"
+    class="py-24 sm:py-32 bg-gray-50 dark:bg-gray-900"
+  >
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
         class="relative rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 transition-all duration-1000 ease-out"
@@ -17,7 +20,7 @@
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2426&q=80"
               alt="Dashboard Preview"
               class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300"
-            />
+            >
 
             <!-- Play Button -->
             <div
@@ -32,7 +35,7 @@
             <!-- Overlay Gradient -->
             <div
               class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent pointer-events-none"
-            ></div>
+            />
           </div>
         </div>
       </div>
@@ -41,18 +44,18 @@
 </template>
 
 <script setup lang="ts">
-import { useIntersectionObserver } from "@vueuse/core";
+import { useIntersectionObserver } from '@vueuse/core'
 
-const target = ref(null);
-const isVisible = ref(false);
+const target = ref(null)
+const isVisible = ref(false)
 
 useIntersectionObserver(
   target,
   ([{ isIntersecting }]) => {
     if (isIntersecting) {
-      isVisible.value = true;
+      isVisible.value = true
     }
   },
-  { threshold: 0.3 },
-);
+  { threshold: 0.3 }
+)
 </script>

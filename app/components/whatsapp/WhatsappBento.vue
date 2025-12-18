@@ -1,19 +1,80 @@
+<script setup lang="ts">
+import { useMouseInElement } from '@vueuse/core'
+
+const containerRef = ref(null)
+const { elementX, elementY } = useMouseInElement(containerRef)
+const activeCard = ref<number | null>(null)
+
+// Spotlight Effect
+const spotlightStyle = computed(() => {
+  return {
+    background: `radial-gradient(600px circle at ${elementX.value}px ${elementY.value}px, rgba(37, 211, 102, 0.05), transparent 40%)`
+  }
+})
+
+const cards = [
+  {
+    title: 'Rich Media Support',
+    description:
+      'Send images, videos, PDFs, and documents directly in the chat. Increase engagement with visual content.',
+    icon: 'i-heroicons-photo',
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10',
+    colSpan: 'md:col-span-2',
+    rowSpan: 'row-span-1',
+    image:
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    title: 'Green Tick Verification',
+    description:
+      'Build trust with the official WhatsApp Business verification badge. We help you get verified faster.',
+    icon: 'i-heroicons-check-badge',
+    color: 'text-[#25D366]',
+    bg: 'bg-[#25D366]/10',
+    colSpan: 'md:col-span-1',
+    rowSpan: 'md:row-span-2',
+    isVertical: true
+  },
+  {
+    title: 'Unlimited Broadcasts',
+    description:
+      'Reach thousands of opted-in users instantly without the risk of getting blocked.',
+    icon: 'i-heroicons-megaphone',
+    color: 'text-purple-400',
+    bg: 'bg-purple-500/10',
+    colSpan: 'md:col-span-1',
+    rowSpan: 'row-span-1'
+  },
+  {
+    title: 'Real-time Analytics',
+    description:
+      'Track delivery rates, open rates, and response times in real-time.',
+    icon: 'i-heroicons-chart-bar',
+    color: 'text-orange-400',
+    bg: 'bg-orange-500/10',
+    colSpan: 'md:col-span-1',
+    rowSpan: 'row-span-1'
+  }
+]
+</script>
+
 <template>
   <section
-    class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden"
     ref="containerRef"
+    class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300"
   >
     <!-- Background Gradient -->
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#25D366]/5 rounded-full blur-[120px] pointer-events-none"
-    ></div>
+    />
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
         <h2
           class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
         >
-          Everything you need to scale
+          Everything you need to <span class="text-[#25D366]">scale</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
           Powerful features designed to help you reach, engage, and convert more
@@ -22,202 +83,103 @@
       </div>
 
       <!-- Bento Grid -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]"
-        @mousemove="handleMouseMove"
-      >
-        <!-- Card 1: Rich Media (Large) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
         <div
-          class="md:col-span-2 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
-          :style="cardStyle(0)"
-          @mouseenter="activeCard = 0"
+          v-for="(card, index) in cards"
+          :key="index"
+          :class="[
+            card.colSpan,
+            card.rowSpan,
+            'relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#25D366]/10 group'
+          ]"
+          @mouseenter="activeCard = index"
           @mouseleave="activeCard = null"
         >
-          <!-- Spotlight Border -->
+          <!-- Spotlight -->
           <div
-            class="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             :style="spotlightStyle"
-          ></div>
+          />
 
-          <div class="relative z-10">
+          <div class="relative z-10 p-8 h-full flex flex-col">
+            <!-- Icon -->
             <div
-              class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+              :class="card.bg"
             >
-              <UIcon name="i-heroicons-photo" class="w-6 h-6 text-blue-400" />
+              <UIcon
+                :name="card.icon"
+                class="w-6 h-6"
+                :class="card.color"
+              />
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-              Rich Media Support
+
+            <!-- Content -->
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#25D366] transition-colors"
+            >
+              {{ card.title }}
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 max-w-sm">
-              Send images, videos, PDFs, and documents directly in the chat.
-              Increase engagement with visual content.
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {{ card.description }}
             </p>
-          </div>
-          <!-- Visual Decoration -->
-          <div
-            class="absolute right-[-20px] bottom-[-20px] w-64 h-48 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transform rotate-[-5deg] group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 flex items-center justify-center overflow-hidden shadow-lg"
-          >
-            <NuxtImg
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80"
-              class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-              loading="lazy"
-              alt="Rich Media"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"
-            ></div>
-          </div>
-        </div>
 
-        <!-- Card 2: Green Tick (Tall) -->
-        <div
-          class="md:col-span-1 md:row-span-2 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10 flex flex-col items-center text-center"
-          :style="cardStyle(1)"
-          @mouseenter="activeCard = 1"
-          @mouseleave="activeCard = null"
-        >
-          <!-- Spotlight Border -->
-          <div
-            class="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            :style="spotlightStyle"
-          ></div>
-
-          <div
-            class="w-24 h-24 rounded-full bg-[#25D366]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 relative"
-          >
+            <!-- Visuals -->
             <div
-              class="absolute inset-0 rounded-full bg-[#25D366]/20 animate-ping opacity-0 group-hover:opacity-100"
-            ></div>
-            <UIcon
-              name="i-heroicons-check-badge-solid"
-              class="w-16 h-16 text-[#25D366] relative z-10"
-            />
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Get Verified <br />
-            <span class="text-[#25D366]">Green Tick</span>
-          </h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-8">
-            Build trust with the official WhatsApp Business verification badge.
-            We help you get verified faster.
-          </p>
-          <div
-            class="mt-auto w-full bg-white dark:bg-[#202c33] p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-left group-hover:border-[#25D366]/30 transition-colors duration-300"
-          >
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-white p-1">
-                <NuxtImg
-                  src="/logo.svg"
-                  class="w-full h-full object-contain"
-                  alt="BeOn Logo"
-                  loading="lazy"
+              v-if="card.image"
+              class="absolute right-0 bottom-0 w-1/2 h-full mask-image-gradient"
+            >
+              <NuxtImg
+                :src="card.image"
+                class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            <div
+              v-if="card.isVertical"
+              class="mt-auto flex justify-center pt-8"
+            >
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-[#25D366] blur-xl opacity-20 animate-pulse"
+                />
+                <UIcon
+                  name="i-heroicons-check-badge-solid"
+                  class="w-24 h-24 text-[#25D366] relative z-10 drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div>
-                <div
-                  class="text-gray-900 dark:text-white font-medium flex items-center gap-1"
-                >
-                  BeOn
-                  <UIcon
-                    name="i-heroicons-check-badge-solid"
-                    class="w-4 h-4 text-[#25D366]"
-                  />
-                </div>
-                <div class="text-xs text-gray-400">Official Business</div>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Card 3: Broadcasts -->
-        <div
-          class="md:col-span-1 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
-          :style="cardStyle(2)"
-          @mouseenter="activeCard = 2"
-          @mouseleave="activeCard = null"
-        >
-          <!-- Spotlight Border -->
-          <div
-            class="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            :style="spotlightStyle"
-          ></div>
-
-          <div class="relative z-10">
             <div
-              class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              v-if="card.title === 'Unlimited Broadcasts'"
+              class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
             >
               <UIcon
-                name="i-heroicons-megaphone"
-                class="w-6 h-6 text-purple-400"
+                name="i-heroicons-paper-airplane"
+                class="w-40 h-40 text-purple-500 transform rotate-45 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500"
               />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Unlimited Broadcasts
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
-              Reach thousands of opted-in users instantly without the risk of
-              getting blocked.
-            </p>
-          </div>
-          <!-- Visual Decoration -->
-          <div
-            class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-          >
-            <UIcon
-              name="i-heroicons-paper-airplane"
-              class="w-32 h-32 text-purple-500 transform rotate-45"
-            />
-          </div>
-        </div>
 
-        <!-- Card 4: Analytics -->
-        <div
-          class="md:col-span-1 row-span-1 bg-gray-50 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 rounded-3xl p-8 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/10"
-          :style="cardStyle(3)"
-          @mouseenter="activeCard = 3"
-          @mouseleave="activeCard = null"
-        >
-          <!-- Spotlight Border -->
-          <div
-            class="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            :style="spotlightStyle"
-          ></div>
-
-          <div class="relative z-10">
             <div
-              class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              v-if="card.title === 'Real-time Analytics'"
+              class="absolute bottom-0 left-0 w-full h-24 flex items-end gap-1 px-8 pb-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500"
             >
-              <UIcon
-                name="i-heroicons-chart-bar"
-                class="w-6 h-6 text-orange-400"
+              <div
+                class="w-1/5 bg-orange-500 h-[40%] rounded-t-sm transition-all duration-500 group-hover:h-[60%]"
+              />
+              <div
+                class="w-1/5 bg-orange-500 h-[70%] rounded-t-sm transition-all duration-500 group-hover:h-[90%] delay-75"
+              />
+              <div
+                class="w-1/5 bg-orange-500 h-[50%] rounded-t-sm transition-all duration-500 group-hover:h-[70%] delay-150"
+              />
+              <div
+                class="w-1/5 bg-orange-500 h-[90%] rounded-t-sm transition-all duration-500 group-hover:h-[100%] delay-200"
+              />
+              <div
+                class="w-1/5 bg-orange-500 h-[60%] rounded-t-sm transition-all duration-500 group-hover:h-[80%] delay-300"
               />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Real-time Analytics
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
-              Track delivery rates, open rates, and response times in real-time.
-            </p>
-          </div>
-          <!-- Mini Chart Visual -->
-          <div
-            class="absolute bottom-0 left-0 w-full h-16 flex items-end gap-1 px-8 pb-8 opacity-50 group-hover:opacity-80 transition-opacity duration-300"
-          >
-            <div
-              class="w-1/5 bg-orange-500/50 h-[40%] rounded-t-sm transition-all duration-500 group-hover:h-[60%]"
-            ></div>
-            <div
-              class="w-1/5 bg-orange-500/50 h-[70%] rounded-t-sm transition-all duration-500 group-hover:h-[90%] delay-75"
-            ></div>
-            <div
-              class="w-1/5 bg-orange-500/50 h-[50%] rounded-t-sm transition-all duration-500 group-hover:h-[70%] delay-150"
-            ></div>
-            <div
-              class="w-1/5 bg-orange-500/50 h-[90%] rounded-t-sm transition-all duration-500 group-hover:h-[100%] delay-200"
-            ></div>
-            <div
-              class="w-1/5 bg-orange-500/50 h-[60%] rounded-t-sm transition-all duration-500 group-hover:h-[80%] delay-300"
-            ></div>
           </div>
         </div>
       </div>
@@ -225,36 +187,8 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import { ref, computed } from "vue";
-import { useMouseInElement } from "@vueuse/core";
-
-const containerRef = ref(null);
-const { elementX, elementY } = useMouseInElement(containerRef);
-const activeCard = ref<number | null>(null);
-
-// Spotlight Effect
-const spotlightStyle = computed(() => {
-  return {
-    background: `radial-gradient(600px circle at ${elementX.value}px ${elementY.value}px, rgba(37, 211, 102, 0.1), transparent 40%)`,
-    border: "1px solid rgba(37, 211, 102, 0.3)",
-  };
-});
-
-// 3D Tilt Effect (Simplified)
-const cardStyle = (index: number) => {
-  if (activeCard.value !== index) return {};
-
-  // Calculate tilt based on mouse position relative to container (simplified for demo)
-  // For a real per-card tilt, we'd need useMouseInElement for each card.
-  // Here we'll just do a subtle scale up for now to keep it performant and clean.
-  return {
-    transform: "scale(1.02)",
-    zIndex: 10,
-  };
-};
-
-const handleMouseMove = (e: MouseEvent) => {
-  // Logic handled by useMouseInElement
-};
-</script>
+<style scoped>
+.mask-image-gradient {
+  mask-image: linear-gradient(to left, black, transparent);
+}
+</style>

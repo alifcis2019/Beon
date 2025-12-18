@@ -1,51 +1,53 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from "@nuxt/ui";
+import type { NavigationMenuItem } from '@nuxt/ui'
 
-const { y } = useWindowScroll();
-const isScrolled = computed(() => y.value > 20);
+const { t } = useI18n()
+
+const { y } = useWindowScroll()
+const isScrolled = computed(() => y.value > 20)
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Home",
-    to: "/",
+    label: t('layout.header.home'),
+    to: '/'
   },
   {
-    label: "Our Solutions",
+    label: t('layout.header.solutions.label'),
     children: [
       {
-        label: "Fast & Secure OTP Generation",
-        to: "/solutions/otp",
-        description: "Send secure one-time passwords instantly",
-        icon: "i-heroicons-shield-check",
+        label: t('layout.header.solutions.otp.label'),
+        to: '/solutions/otp',
+        description: t('layout.header.solutions.otp.description'),
+        icon: 'i-heroicons-shield-check'
       },
       {
-        label: "SMS Messages",
-        to: "/solutions/sms",
-        description: "Deliver marketing and transactional texts",
-        icon: "i-heroicons-envelope",
+        label: t('layout.header.solutions.sms.label'),
+        to: '/solutions/sms',
+        description: t('layout.header.solutions.sms.description'),
+        icon: 'i-heroicons-envelope'
       },
       {
-        label: "WhatsApp Messaging",
-        to: "/solutions/whatsapp",
-        description: "Engage customers through WhatsApp",
-        icon: "i-simple-icons-whatsapp",
-      },
-    ],
+        label: t('layout.header.solutions.whatsapp.label'),
+        to: '/solutions/whatsapp',
+        description: t('layout.header.solutions.whatsapp.description'),
+        icon: 'i-simple-icons-whatsapp'
+      }
+    ]
   },
 
   {
-    label: "Contact us",
-    to: "/contact",
+    label: t('layout.header.contact'),
+    to: '/contact'
   },
   {
-    label: "Support",
-    to: "#",
+    label: t('layout.header.support'),
+    to: '#'
   },
   {
-    label: "Blogs",
-    to: "/blog",
-  },
-]);
+    label: t('layout.header.blogs'),
+    to: '/blog'
+  }
+])
 </script>
 
 <template>
@@ -55,7 +57,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       'max-w-7xl mx-auto rounded-xl  z-50 transition-all duration-300 ease-in-out',
       isScrolled
         ? 'top-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-gray-200 dark:border-gray-800'
-        : 'top-6 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm shadow-sm border-transparent',
+        : 'top-6 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm shadow-sm border-transparent'
     ]"
     class="border"
   >
@@ -66,13 +68,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu :items="items" />
 
     <template #right>
-      <UButton
-        color="neutral"
-        variant="ghost"
-        icon="i-emojione-flag-for-egypt"
-        aria-label="Language"
-        class="transition-transform hover:scale-110"
-      />
+      <LanguageSwitcher />
       <UColorModeButton class="transition-transform hover:scale-110" />
 
       <UButton
@@ -94,7 +90,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
       <div class="mt-4 flex flex-col gap-2">
         <UButton
           label="Login"

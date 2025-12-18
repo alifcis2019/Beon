@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: "Terms & Conditions - BeOn",
-  description: "Terms and Conditions for BeOn services.",
-});
+  title: 'Terms & Conditions - BeOn',
+  description: 'Terms and Conditions for BeOn services.'
+})
 </script>
 
 <template>
@@ -15,7 +15,9 @@ useSeoMeta({
       </h1>
 
       <div class="prose dark:prose-invert max-w-none">
-        <p class="lead">Last updated: {{ new Date().toLocaleDateString() }}</p>
+        <p class="lead">
+          Last updated: {{ new Date().toLocaleDateString() }}
+        </p>
 
         <h2>1. Agreement to Terms</h2>
         <p>

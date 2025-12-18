@@ -1,23 +1,26 @@
 <script setup lang="ts">
 defineProps<{
   post: {
-    title: string;
-    description: string;
-    date: string;
-    image: string;
+    title: string
+    description: string
+    date: string
+    image: string
     author: {
-      name: string;
-      avatar: string;
-      role: string;
-    };
-    category: string;
-    slug: string;
-  };
-}>();
+      name: string
+      avatar: string
+      role: string
+    }
+    category: string
+    slug: string
+  }
+}>()
 </script>
 
 <template>
-  <NuxtLink :to="`/blog/${post.slug}`" class="group flex flex-col gap-4">
+  <NuxtLink
+    :to="`/blog/${post.slug}`"
+    class="group flex flex-col gap-4"
+  >
     <div
       class="relative aspect-[16/9] overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800"
     >
@@ -57,7 +60,11 @@ defineProps<{
       </p>
 
       <div class="mt-2 flex items-center gap-3">
-        <UAvatar :src="post.author.avatar" :alt="post.author.name" size="xs" />
+        <UAvatar
+          :src="post.author.avatar"
+          :alt="post.author.name"
+          size="xs"
+        />
         <div class="text-sm">
           <p class="font-medium text-gray-900 dark:text-white">
             {{ post.author.name }}

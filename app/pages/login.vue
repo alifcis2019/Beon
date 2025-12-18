@@ -1,17 +1,21 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 useSeoMeta({
-  title: "Login - BeOn",
-  description: "Access your BeOn dashboard.",
-  ogTitle: "Login - BeOn",
-  ogDescription: "Access your BeOn dashboard.",
-  ogImage: "https://beon.chat/og-image.png",
-  twitterCard: "summary_large_image",
-});
+  title: t('login.meta.title'),
+  description: t('login.meta.description'),
+  ogTitle: t('login.meta.ogTitle'),
+  ogDescription: t('login.meta.ogDescription'),
+  twitterTitle: t('login.meta.twitterTitle'),
+  twitterDescription: t('login.meta.twitterDescription')
+})
 </script>
 
 <template>
   <UContainer class="py-12">
-    <h1 class="text-3xl font-bold mb-4">Login</h1>
-    <p>Coming soon...</p>
+    <h1 class="text-3xl font-bold mb-4">
+      {{ $t("login.title") }}
+    </h1>
+    <p>{{ $t("login.coming_soon") }}</p>
   </UContainer>
 </template>

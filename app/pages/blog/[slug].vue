@@ -1,24 +1,24 @@
 <script setup lang="ts">
-const route = useRoute();
-const slug = route.params.slug as string;
+const route = useRoute()
+const slug = route.params.slug as string
 
 // Simulating fetching data based on slug
 // In a real app, this would be an API call or Nuxt Content query
 const posts = [
   {
-    title: "The Future of Customer Communication",
+    title: 'The Future of Customer Communication',
     description:
-      "Discover how AI and automation are reshaping the way businesses interact with their customers in 2024 and beyond.",
-    date: "Dec 12, 2024",
+      'Discover how AI and automation are reshaping the way businesses interact with their customers in 2024 and beyond.',
+    date: 'Dec 12, 2024',
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     author: {
-      name: "Sarah Johnson",
-      avatar: "https://i.pravatar.cc/150?u=sarah",
-      role: "Product Manager",
+      name: 'Sarah Johnson',
+      avatar: 'https://i.pravatar.cc/150?u=sarah',
+      role: 'Product Manager'
     },
-    category: "Trends",
-    slug: "future-of-customer-communication",
+    category: 'Trends',
+    slug: 'future-of-customer-communication',
     content: `
       <p>The landscape of customer communication is undergoing a seismic shift. As we move further into 2024, the integration of Artificial Intelligence (AI) and automation tools is no longer a luxury but a necessity for businesses aiming to stay competitive.</p>
 
@@ -33,22 +33,22 @@ const posts = [
 
       <h2>Conclusion</h2>
       <p>Embracing these technologies is key to building lasting relationships with your customers. The future is automated, personalized, and omnipresent.</p>
-    `,
+    `
   },
   {
-    title: "Mastering WhatsApp Business API",
+    title: 'Mastering WhatsApp Business API',
     description:
-      "A comprehensive guide to leveraging the WhatsApp Business API to scale your sales and support operations effectively.",
-    date: "Dec 10, 2024",
+      'A comprehensive guide to leveraging the WhatsApp Business API to scale your sales and support operations effectively.',
+    date: 'Dec 10, 2024',
     image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
     author: {
-      name: "Michael Chen",
-      avatar: "https://i.pravatar.cc/150?u=michael",
-      role: "Tech Lead",
+      name: 'Michael Chen',
+      avatar: 'https://i.pravatar.cc/150?u=michael',
+      role: 'Tech Lead'
     },
-    category: "Tutorials",
-    slug: "mastering-whatsapp-business-api",
+    category: 'Tutorials',
+    slug: 'mastering-whatsapp-business-api',
     content: `
       <p>WhatsApp is the world's most popular messaging app, and for businesses, it represents a massive opportunity. The WhatsApp Business API unlocks features that go far beyond the standard app, allowing for automation, integration, and scale.</p>
 
@@ -64,33 +64,33 @@ const posts = [
 
       <h2>Getting Started</h2>
       <p>To get started, you'll need a Business Solution Provider (BSP) or direct access through Meta. Once verified, you can start building templates and designing your conversational flows.</p>
-    `,
+    `
   },
   // Fallback for other slugs to avoid 404 in this demo
   {
-    title: "Sample Blog Post",
+    title: 'Sample Blog Post',
     description:
-      "This is a generic placeholder for any other blog post slug you might click on.",
-    date: "Dec 01, 2024",
+      'This is a generic placeholder for any other blog post slug you might click on.',
+    date: 'Dec 01, 2024',
     image:
-      "https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&w=1978&auto=format&fit=crop",
+      'https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&w=1978&auto=format&fit=crop',
     author: {
-      name: "BeOn Team",
-      avatar: "https://beon.chat/favicon.ico",
-      role: "Editor",
+      name: 'BeOn Team',
+      avatar: 'https://beon.chat/favicon.ico',
+      role: 'Editor'
     },
-    category: "General",
-    slug: "sample",
+    category: 'General',
+    slug: 'sample',
     content: `
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    `,
-  },
-];
+    `
+  }
+]
 
 const post = computed(() => {
-  return posts.find((p) => p.slug === slug) || posts[posts.length - 1];
-});
+  return posts.find(p => p.slug === slug) || posts[posts.length - 1]
+})
 
 useSeoMeta({
   title: () => `${post.value?.title} - BeOn Blog`,
@@ -98,39 +98,39 @@ useSeoMeta({
   ogTitle: () => `${post.value?.title} - BeOn Blog`,
   ogDescription: () => post.value?.description,
   ogImage: () => post.value?.image,
-  twitterCard: "summary_large_image",
-});
+  twitterCard: 'summary_large_image'
+})
 
 useHead({
   script: [
     {
-      type: "application/ld+json",
+      type: 'application/ld+json',
       children: computed(() => {
-        if (!post.value) return "";
+        if (!post.value) return ''
         return JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: post.value.title,
-          description: post.value.description,
-          image: post.value.image,
-          datePublished: post.value.date,
-          author: {
-            "@type": "Person",
-            name: post.value.author.name,
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          'headline': post.value.title,
+          'description': post.value.description,
+          'image': post.value.image,
+          'datePublished': post.value.date,
+          'author': {
+            '@type': 'Person',
+            'name': post.value.author.name
           },
-          publisher: {
-            "@type": "Organization",
-            name: "BeOn",
-            logo: {
-              "@type": "ImageObject",
-              url: "https://beon.chat/logo.png",
-            },
-          },
-        });
-      }),
-    },
-  ],
-});
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'BeOn',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://beon.chat/logo.png'
+            }
+          }
+        })
+      })
+    }
+  ]
+})
 </script>
 
 <template>
@@ -141,7 +141,10 @@ useHead({
         to="/blog"
         class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
       >
-        <UIcon name="i-heroicons-arrow-left" class="w-4 h-4" />
+        <UIcon
+          name="i-heroicons-arrow-left"
+          class="w-4 h-4"
+        />
         Back to Blog
       </NuxtLink>
 

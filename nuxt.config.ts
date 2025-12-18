@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/i18n'
   ],
 
   devtools: {
@@ -19,11 +20,11 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://app.beon.chat/widget.js',
-          tagPosition: 'bodyClose',
+          'src': 'https://app.beon.chat/widget.js',
+          'tagPosition': 'bodyClose',
           'data-api-key': 'df73436fd31e7c4a42d187e049f746b5',
-          async: true,
-          defer: true
+          'async': true,
+          'defer': true
         }
       ]
     }
@@ -33,7 +34,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://beon.chat/', // Placeholder, should be env var or actual domain
-    name: 'Beon',
+    name: 'Beon'
   },
 
   ui: {
@@ -65,6 +66,23 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.ts' },
+      { code: 'ar', name: 'Arabic', file: 'ar.ts', dir: 'rtl' }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: '../locales',
+    strategy: 'prefix_except_default'
+  },
+
+  icon: {
+    serverBundle: {
+      collections: ['circle-flags', 'lucide', 'simple-icons', 'heroicons']
     }
   }
 })

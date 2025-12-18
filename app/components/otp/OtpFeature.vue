@@ -1,225 +1,184 @@
+<script setup lang="ts">
+import { useIntersectionObserver } from '@vueuse/core'
+
+defineProps<{
+  title: string
+  features: string[]
+  imageSide: 'left' | 'right'
+  type: 'sms' | 'whatsapp'
+}>()
+
+const target = ref(null)
+const isVisible = ref(false)
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) isVisible.value = true
+  },
+  { threshold: 0.2 }
+)
+</script>
+
 <template>
-  <section ref="target" class="py-24 sm:py-32 overflow-hidden">
+  <section
+    ref="target"
+    class="py-24 sm:py-32 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-300"
+  >
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center"
-      >
-        <!-- Text Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Content Side -->
         <div
           :class="[
             imageSide === 'right' ? 'lg:order-1' : 'lg:order-2',
-            'lg:pr-8',
-            'lg:pt-4',
             'transition-all duration-1000 ease-out',
             isVisible
               ? 'opacity-100 translate-x-0'
               : imageSide === 'right'
                 ? 'opacity-0 -translate-x-12'
-                : 'opacity-0 translate-x-12',
+                : 'opacity-0 translate-x-12'
           ]"
         >
-          <div class="lg:max-w-lg">
-            <h2
-              class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-10"
-            >
-              {{ title }}
-            </h2>
-            <dl
-              class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 dark:text-gray-300"
-            >
-              <div
-                v-for="(feature, index) in features"
-                :key="index"
-                class="relative pl-9 transition-all duration-700 ease-out"
-                :style="{ transitionDelay: `${index * 100 + 300}ms` }"
-                :class="
-                  isVisible
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 translate-x-4'
-                "
-              >
-                <dt class="inline font-semibold text-gray-900 dark:text-white">
-                  <UIcon
-                    name="i-heroicons-check-circle"
-                    class="absolute left-1 top-1 h-5 w-5 text-blue-500"
-                  />
-                </dt>
-                <dd class="inline">{{ feature }}</dd>
-              </div>
-            </dl>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6 shadow-sm"
+          >
+            <UIcon
+              :name="
+                type === 'sms'
+                  ? 'i-heroicons-chat-bubble-left-right'
+                  : 'i-simple-icons-whatsapp'
+              "
+              class="w-4 h-4"
+            />
+            <span>{{
+              type === "sms" ? "SMS Gateway" : "WhatsApp Business API"
+            }}</span>
+          </div>
+
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl mb-8"
+          >
+            {{ title }}
+          </h2>
+
+          <div class="space-y-6">
             <div
-              class="mt-10 transition-all duration-700 delay-500 ease-out"
+              v-for="(feature, index) in features"
+              :key="index"
+              class="flex gap-4 p-4 rounded-2xl transition-all duration-500 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800 border border-gray-100 dark:border-gray-800 hover:border-primary-100 dark:hover:border-primary-900/50 shadow-sm hover:shadow-md"
+              :style="{ transitionDelay: `${index * 100}ms` }"
               :class="
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
               "
             >
-              <UButton
-                to="https://api.whatsapp.com/send/?phone=201155888086&text&type=phone_number&app_absent=0"
-                target="_blank"
-                size="xl"
-                color="primary"
-                variant="solid"
-                class="px-8"
-                >Subscribe now</UButton
+              <div
+                class="shrink-0 w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400"
               >
+                <UIcon
+                  name="i-heroicons-check"
+                  class="w-6 h-6"
+                />
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {{ feature }}
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Image/Phone Content -->
+        <!-- Visual Side -->
         <div
           :class="[
             imageSide === 'right' ? 'lg:order-2' : 'lg:order-1',
-            'flex justify-center',
-            'transition-all duration-1000 delay-300 ease-out',
-            isVisible
-              ? 'opacity-100 translate-x-0'
-              : imageSide === 'right'
-                ? 'opacity-0 translate-x-12'
-                : 'opacity-0 -translate-x-12',
+            'relative perspective-1000'
           ]"
         >
-          <div class="relative">
-            <!-- Background Circle Decoration -->
+          <div
+            class="relative aspect-square rounded-3xl overflow-hidden bg-white dark:bg-gray-800 border-4 border-gray-100 dark:border-gray-700 shadow-2xl transition-all duration-1000 delay-300"
+            :class="
+              isVisible
+                ? 'opacity-100 rotate-y-0 scale-100'
+                : 'opacity-0 rotate-y-12 scale-95'
+            "
+          >
+            <!-- Abstract UI Mockup -->
             <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gray-100 dark:bg-gray-800 rounded-full -z-10 transition-all duration-1000 delay-500"
-              :class="
-                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-              "
-            ></div>
-
-            <PhoneMockup>
-              <!-- SMS Content -->
-              <div v-if="type === 'sms'" class="bg-white h-full flex flex-col">
-                <div class="h-12 flex justify-between items-center px-6 pt-2">
-                  <span class="text-xs font-semibold">9:41</span>
-                  <div class="flex gap-1.5">
-                    <UIcon name="i-heroicons-signal" class="w-4 h-4" />
-                    <UIcon name="i-heroicons-wifi" class="w-4 h-4" />
-                    <UIcon name="i-heroicons-battery-50" class="w-4 h-4" />
-                  </div>
+              class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 p-8 flex flex-col"
+            >
+              <!-- Header -->
+              <div class="flex items-center justify-between mb-8">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-400" />
+                  <div class="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div class="w-3 h-3 rounded-full bg-green-400" />
                 </div>
                 <div
-                  class="px-4 py-2 flex items-center gap-2 border-b border-gray-100"
-                >
-                  <UIcon
-                    name="i-heroicons-chevron-left"
-                    class="w-6 h-6 text-blue-500"
-                  />
-                  <div class="flex-1 text-center">
-                    <div class="text-xs text-gray-500">BeOn OTP</div>
-                  </div>
-                  <div class="w-6"></div>
-                </div>
-                <div class="flex-1 p-4 bg-gray-50">
-                  <div class="text-center text-[10px] text-gray-400 mb-4">
-                    Today 11:40 PM
-                  </div>
-                  <div
-                    class="bg-gray-200 rounded-2xl rounded-tl-none p-4 max-w-[85%] mb-2"
-                  >
-                    <p class="text-sm text-gray-900">
-                      Your one time passcode is
-                      <span class="font-bold">505050</span>
-                    </p>
-                  </div>
-                </div>
+                  class="h-2 w-20 bg-gray-200 dark:bg-gray-700 rounded-full"
+                />
               </div>
 
-              <!-- WhatsApp Content -->
-              <div
-                v-else
-                class="bg-[#EFE7DE] h-full flex flex-col bg-opacity-50"
-                style="
-                  background-image: url(&quot;https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png&quot;);
-                "
-              >
-                <div class="h-12 flex justify-between items-center px-6 pt-2">
-                  <span class="text-xs font-semibold">9:41</span>
-                  <div class="flex gap-1.5">
-                    <UIcon name="i-heroicons-signal" class="w-4 h-4" />
-                    <UIcon name="i-heroicons-wifi" class="w-4 h-4" />
-                    <UIcon name="i-heroicons-battery-50" class="w-4 h-4" />
-                  </div>
-                </div>
-                <div
-                  class="px-4 py-2 flex items-center gap-2 bg-[#F6F6F6] border-b border-gray-200"
-                >
-                  <UIcon
-                    name="i-heroicons-chevron-left"
-                    class="w-6 h-6 text-blue-500"
+              <!-- Chat/Message UI -->
+              <div class="flex-1 space-y-4">
+                <div class="flex gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 shrink-0"
                   />
                   <div
-                    class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200"
-                  >
-                    <NuxtImg
-                      src="/logo.svg"
-                      class="w-5 h-5 object-contain"
-                      loading="lazy"
-                      alt="BeOn Logo"
-                    />
-                  </div>
-                  <div class="flex-1">
-                    <div class="text-sm font-semibold">BeOn</div>
-                    <div class="text-[10px] text-gray-500">
-                      tap here for contact info
-                    </div>
-                  </div>
-                  <div class="flex gap-3 text-blue-500">
-                    <UIcon name="i-heroicons-video-camera" class="w-6 h-6" />
-                    <UIcon name="i-heroicons-phone" class="w-6 h-6" />
-                  </div>
-                </div>
-                <div class="flex-1 p-4">
-                  <div class="flex justify-center mb-4">
-                    <span
-                      class="bg-[#DDDEDD] text-gray-600 text-[10px] px-2 py-1 rounded-lg shadow-sm"
-                      >Today</span
-                    >
-                  </div>
-                  <div
-                    class="bg-white rounded-lg p-3 max-w-[85%] shadow-sm ml-0 relative"
+                    class="bg-white dark:bg-gray-700 p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 dark:border-gray-600 max-w-[80%]"
                   >
                     <div
-                      class="absolute -left-2 top-0 w-0 h-0 border-t-[10px] border-t-white border-l-[10px] border-l-transparent"
-                    ></div>
-                    <p class="text-sm text-gray-900">
-                      Your one time passcode is
-                      <span class="font-bold">505050</span>
+                      class="h-2 w-32 bg-gray-100 dark:bg-gray-600 rounded-full mb-2"
+                    />
+                    <div
+                      class="h-2 w-24 bg-gray-100 dark:bg-gray-600 rounded-full"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex gap-3 flex-row-reverse">
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 shrink-0 flex items-center justify-center"
+                  >
+                    <UIcon
+                      name="i-heroicons-user"
+                      class="w-4 h-4 text-primary-600 dark:text-primary-400"
+                    />
+                  </div>
+                  <div
+                    class="bg-primary-500 text-white p-3 rounded-2xl rounded-tr-none shadow-md max-w-[80%]"
+                  >
+                    <p class="text-sm font-medium">
+                      Your verification code is: 5921
                     </p>
-                    <div class="text-[10px] text-gray-400 text-right mt-1">
-                      11:40
+                  </div>
+                </div>
+
+                <!-- Animated Success Badge -->
+                <div
+                  class="absolute bottom-8 right-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center gap-3 animate-bounce-slow"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"
+                  >
+                    <UIcon
+                      name="i-heroicons-check-badge"
+                      class="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="text-sm font-bold text-gray-900 dark:text-white"
+                    >
+                      Delivered
+                    </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      0.8s latency
                     </div>
                   </div>
                 </div>
               </div>
-            </PhoneMockup>
-
-            <div
-              class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-            >
-              <div
-                :class="[
-                  'p-3 rounded-2xl shadow-lg',
-                  type === 'sms' ? 'bg-[#4CA6F8]' : 'bg-[#25D366]',
-                ]"
-              >
-                <UIcon
-                  v-if="type === 'sms'"
-                  name="i-heroicons-chat-bubble-left-right-solid"
-                  class="w-8 h-8 text-white"
-                />
-                <UIcon
-                  v-else
-                  name="i-simple-icons-whatsapp"
-                  class="w-8 h-8 text-white"
-                />
-              </div>
-              <span class="font-semibold text-gray-900 dark:text-white">{{
-                type === "sms" ? "SMS OTP" : "WhatsApp OTP"
-              }}</span>
             </div>
           </div>
         </div>
@@ -228,28 +187,26 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import { useIntersectionObserver } from "@vueuse/core";
-import PhoneMockup from "~/components/otp/PhoneMockup.vue";
-
-defineProps<{
-  title: string;
-  features: string[];
-  imageSide: "left" | "right";
-  type: "sms" | "whatsapp";
-}>();
-
-const target = ref(null);
-const isVisible = ref(false);
-
-useIntersectionObserver(
-  target,
-  (entries) => {
-    const entry = entries[0];
-    if (entry && entry.isIntersecting) {
-      isVisible.value = true;
-    }
-  },
-  { threshold: 0.3 },
-);
-</script>
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+</style>
