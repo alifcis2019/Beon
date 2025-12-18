@@ -20,21 +20,16 @@ export default {
   "variants": {
     "side": {
       "top": {
-        "content": ""
+        "content": "inset-x-0 top-0 max-h-full"
       },
       "right": {
-        "content": "max-w-md"
+        "content": "right-0 inset-y-0 w-full max-w-md"
       },
       "bottom": {
-        "content": ""
+        "content": "inset-x-0 bottom-0 max-h-full"
       },
       "left": {
-        "content": "max-w-md"
-      }
-    },
-    "inset": {
-      "true": {
-        "content": "rounded-lg"
+        "content": "left-0 inset-y-0 w-full max-w-md"
       }
     },
     "transition": {
@@ -44,62 +39,6 @@ export default {
     }
   },
   "compoundVariants": [
-    {
-      "side": "top" as typeof side[number],
-      "inset": true,
-      "class": {
-        "content": "max-h-[calc(100%-2rem)] inset-x-4 top-4"
-      }
-    },
-    {
-      "side": "top" as typeof side[number],
-      "inset": false,
-      "class": {
-        "content": "max-h-full inset-x-0 top-0"
-      }
-    },
-    {
-      "side": "right" as typeof side[number],
-      "inset": true,
-      "class": {
-        "content": "w-[calc(100%-2rem)] inset-y-4 right-4"
-      }
-    },
-    {
-      "side": "right" as typeof side[number],
-      "inset": false,
-      "class": {
-        "content": "w-full inset-y-0 right-0"
-      }
-    },
-    {
-      "side": "bottom" as typeof side[number],
-      "inset": true,
-      "class": {
-        "content": "max-h-[calc(100%-2rem)] inset-x-4 bottom-4"
-      }
-    },
-    {
-      "side": "bottom" as typeof side[number],
-      "inset": false,
-      "class": {
-        "content": "max-h-full inset-x-0 bottom-0"
-      }
-    },
-    {
-      "side": "left" as typeof side[number],
-      "inset": true,
-      "class": {
-        "content": "w-[calc(100%-2rem)] inset-y-4 left-4"
-      }
-    },
-    {
-      "side": "left" as typeof side[number],
-      "inset": false,
-      "class": {
-        "content": "w-full inset-y-0 left-0"
-      }
-    },
     {
       "transition": true,
       "side": "top" as typeof side[number],

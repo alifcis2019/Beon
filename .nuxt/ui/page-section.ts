@@ -38,7 +38,7 @@ export default {
     },
     "reverse": {
       "true": {
-        "wrapper": "order-last"
+        "wrapper": "lg:order-last"
       }
     },
     "headline": {

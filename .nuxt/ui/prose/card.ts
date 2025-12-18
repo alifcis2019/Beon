@@ -56,7 +56,7 @@ export default {
       "color": "primary" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-primary/10 hover:border-primary has-focus-visible:border-primary",
+        "base": "hover:bg-primary/10 hover:border-primary",
         "externalIcon": "group-hover:text-primary"
       }
     },
@@ -64,7 +64,7 @@ export default {
       "color": "error" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-error/10 hover:border-error has-focus-visible:border-error",
+        "base": "hover:bg-error/10 hover:border-error",
         "externalIcon": "group-hover:text-error"
       }
     },
@@ -72,7 +72,7 @@ export default {
       "color": "warning" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-warning/10 hover:border-warning has-focus-visible:border-warning",
+        "base": "hover:bg-warning/10 hover:border-warning",
         "externalIcon": "group-hover:text-warning"
       }
     },
@@ -80,7 +80,7 @@ export default {
       "color": "success" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-success/10 hover:border-success has-focus-visible:border-success",
+        "base": "hover:bg-success/10 hover:border-success",
         "externalIcon": "group-hover:text-success"
       }
     },
@@ -88,7 +88,7 @@ export default {
       "color": "info" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-info/10 hover:border-info has-focus-visible:border-info",
+        "base": "hover:bg-info/10 hover:border-info",
         "externalIcon": "group-hover:text-info"
       }
     },
@@ -96,7 +96,7 @@ export default {
       "color": "neutral" as typeof color[number],
       "to": true,
       "class": {
-        "base": "hover:bg-elevated/50 hover:border-inverted has-focus-visible:border-inverted",
+        "base": "hover:bg-elevated/50 hover:border-inverted",
         "externalIcon": "group-hover:text-highlighted"
       }
     }

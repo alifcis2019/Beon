@@ -29,7 +29,6 @@ const inlineConfig = {
       "copy": "i-lucide-copy",
       "copyCheck": "i-lucide-copy-check",
       "dark": "i-lucide-moon",
-      "drag": "i-lucide-grip-vertical",
       "ellipsis": "i-lucide-ellipsis",
       "error": "i-lucide-circle-x",
       "external": "i-lucide-arrow-up-right",

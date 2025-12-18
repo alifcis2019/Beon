@@ -1,56 +1,67 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, createError, getQuery as getQuery$1, getResponseStatus, getCookie, setCookie, removeResponseHeader, readBody, setHeader, getHeader, getRouterParam, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, sendError, getResponseStatusText, H3Error } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, getResponseStatus, createError as createError$1, removeResponseHeader, getQuery as getQuery$2, readBody, setHeader, createApp, createRouter as createRouter$2, toNodeListener, lazyEventHandler as lazyEventHandler$1, getRouterParam as getRouterParam$1, getResponseStatusText } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve as resolve$1, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@vue/shared/dist/shared.cjs.js';
-import defu, { defuFn, defu as defu$1, createDefu } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/defu/dist/defu.mjs';
-import { html as html$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/satori-html/dist/index.js';
-import sizeOf from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/image-size/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, withoutLeadingSlash, joinRelativeURL, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ufo/dist/index.mjs';
-import consola, { createConsola, consola as consola$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/consola/dist/index.mjs';
-import { Launcher } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/chrome-launcher/dist/index.js';
-import playwrightCore from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/playwright-core/index.mjs';
-import { toValue, isVNode, isRef } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/vue/index.mjs';
+import { defu as defu$2, createDefu } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
+import { createError, getQuery as getQuery$1, getRequestHeader as getRequestHeader$1, getRequestURL as getRequestURL$1, getCookie, setCookie, sendRedirect as sendRedirect$1, defineEventHandler as defineEventHandler$1, setHeader as setHeader$1, getRequestHost as getRequestHost$1, getHeader, getRouterParam, eventHandler as eventHandler$1, readBody as readBody$1, lazyEventHandler, useBase, sendError, setResponseHeader as setResponseHeader$1, proxyRequest as proxyRequest$1, H3Error } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/h3@1.15.4/node_modules/h3/dist/index.mjs';
+import { html as html$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/satori-html@0.3.2/node_modules/satori-html/dist/index.js';
+import sizeOf from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/image-size@2.0.2/node_modules/image-size/dist/index.mjs';
+import { withoutTrailingSlash as withoutTrailingSlash$1, withoutBase as withoutBase$1, parseURL as parseURL$1, withQuery as withQuery$1, withoutLeadingSlash, parsePath, withLeadingSlash as withLeadingSlash$1, joinURL as joinURL$1, getQuery as getQuery$3, withTrailingSlash as withTrailingSlash$1, hasProtocol as hasProtocol$1, withBase as withBase$1, stringifyQuery, parseQuery, encodePath, stringifyParsedURL, withHttps as withHttps$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/ufo@1.6.1/node_modules/ufo/dist/index.mjs';
+import { createConsola as createConsola$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/consola@3.4.2/node_modules/consola/dist/index.mjs';
+import { Launcher } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/chrome-launcher@1.2.1/node_modules/chrome-launcher/dist/index.js';
+import playwrightCore from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/playwright-core@1.56.1/node_modules/playwright-core/index.mjs';
+import { toValue as toValue$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/vue@3.5.25_typescript@5.9.3/node_modules/vue/index.mjs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, joinRelativeURL, decodePath } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/destr/dist/index.mjs';
-import { parse, stringify, uneval } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/devalue/index.js';
+import { stringify, uneval } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/devalue/index.js';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unhead/dist/server.mjs';
-import { createStorage, prefixStorage, normalizeKey } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unstorage/dist/index.mjs';
-import lruCacheDriver from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unstorage/drivers/lru-cache.mjs';
-import { createGenerator } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@unocss/core/dist/index.mjs';
-import presetWind from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@unocss/preset-wind3/dist/index.mjs';
-import { digest, hash as hash$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ohash/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/radix3/dist/index.mjs';
-import { createUnhead } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unhead/dist/index.mjs';
+import { createStorage as createStorage$1, normalizeKey, prefixStorage as prefixStorage$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/unstorage@1.17.3_db0@0.3.4_better-sqlite3@12.5.0__ioredis@5.8.2/node_modules/unstorage/dist/index.mjs';
+import lruCacheDriver from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/unstorage@1.17.3_db0@0.3.4_better-sqlite3@12.5.0__ioredis@5.8.2/node_modules/unstorage/drivers/lru-cache.mjs';
+import { createGenerator } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/@unocss+core@66.5.4/node_modules/@unocss/core/dist/index.mjs';
+import presetWind from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/@unocss+preset-wind3@66.5.4/node_modules/@unocss/preset-wind3/dist/index.mjs';
+import { parse } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/devalue@5.6.0/node_modules/devalue/index.js';
+import { hash as hash$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
+import { toRouteMatcher as toRouteMatcher$1, createRouter as createRouter$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
+import { createUnhead } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/unhead@2.0.19/node_modules/unhead/dist/index.mjs';
+import { renderSSRHead as renderSSRHead$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/unhead@2.0.19/node_modules/unhead/dist/server.mjs';
 import { createHooks } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/hookable/dist/index.mjs';
 import { createFetch, Headers as Headers$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unstorage/drivers/fs.mjs';
+import { digest, hash as hash$2 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ohash/dist/index.mjs';
 import { klona } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, defu as defu$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/defu/dist/defu.mjs';
 import { snakeCase } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/scule/dist/index.mjs';
 import { getContext } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
+import consola, { createConsola, consola as consola$1 } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/consola/dist/index.mjs';
 import { ErrorParser } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/youch-core/build/index.js';
 import { Youch } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/youch/build/index.js';
 import { SourceMapConsumer } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nitropack/node_modules/source-map/source-map.js';
 import devalue from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { createRouterMatcher } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/vue-router/vue-router.node.mjs';
+import { toValue, isVNode, isRef } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/vue/index.mjs';
+import { createRouterMatcher } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/vue-router@4.6.3_vue@3.5.25_typescript@5.9.3_/node_modules/vue-router/vue-router.node.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/errx/dist/index.js';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$2, basename, isAbsolute } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/pathe/dist/index.mjs';
+import { dirname as dirname$1, resolve as resolve$2, basename } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/pathe/dist/index.mjs';
 import process$1 from 'node:process';
 import { renderToString } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/vue/server-renderer/index.mjs';
 import { walkResolver } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/unhead/dist/utils.mjs';
 import { getIcons } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@iconify/utils/lib/index.js';
 import { collections } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/.nuxt/nuxt-icon-server-bundle.mjs';
+import { isAbsolute } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
 import localAdapter from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/db0/dist/connectors/better-sqlite3.mjs';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/ipx/dist/index.mjs';
-import { Resvg } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@resvg/resvg-js/index.js';
-import _satori from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/satori/dist/index.js';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/ipx@3.1.1_db0@0.3.4_better-sqlite3@12.5.0__ioredis@5.8.2/node_modules/ipx/dist/index.mjs';
+import { Resvg } from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/@resvg+resvg-js@2.6.2/node_modules/@resvg/resvg-js/index.js';
+import _satori from 'file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/satori@0.15.2/node_modules/satori/dist/index.js';
 
 const serverAssets = [{"baseName":"nuxt-og-image:fonts","dir":"/home/ali/work/beon-landing-nuxt/Beon/Saas/.nuxt/cache/nuxt-og-image/_fonts"},{"baseName":"server","dir":"/home/ali/work/beon-landing-nuxt/Beon/Saas/server/assets"}];
 
@@ -632,7 +643,6 @@ const inlineAppConfig = {
       "copy": "i-lucide-copy",
       "copyCheck": "i-lucide-copy-check",
       "dark": "i-lucide-moon",
-      "drag": "i-lucide-grip-vertical",
       "ellipsis": "i-lucide-ellipsis",
       "error": "i-lucide-circle-x",
       "external": "i-lucide-arrow-up-right",
@@ -1116,7 +1126,7 @@ const _inlineRuntimeConfig = {
       }
     ],
     "credits": true,
-    "version": "7.5.0",
+    "version": "7.4.11",
     "sitemaps": {
       "index": {
         "sitemapName": "index",
@@ -1174,7 +1184,7 @@ const _inlineRuntimeConfig = {
   },
   "content": {
     "databaseVersion": "v3.5.0",
-    "version": "3.9.0",
+    "version": "3.8.2",
     "database": {
       "type": "sqlite",
       "filename": "./contents.sqlite"
@@ -1214,7 +1224,7 @@ const _inlineRuntimeConfig = {
     "multiTenancy": []
   },
   "nuxt-og-image": {
-    "version": "5.1.13",
+    "version": "5.1.12",
     "satoriOptions": {},
     "resvgOptions": {},
     "sharpOptions": {},
@@ -1229,7 +1239,7 @@ const _inlineRuntimeConfig = {
       "cacheMaxAgeSeconds": 259200
     },
     "debug": false,
-    "baseCacheKey": "/cache/nuxt-og-image/5.1.13",
+    "baseCacheKey": "/cache/nuxt-og-image/5.1.12",
     "fonts": [
       {
         "cacheKey": "Inter:undefined:400",
@@ -2124,18 +2134,18 @@ const _47bmVlkYUDplJJEYum5sIXXnoh0Qz438Um4MGHsGDIY = defineNitroPlugin(async (ni
   });
 });
 
-const htmlPayloadCache = createStorage({
+const htmlPayloadCache = createStorage$1({
   // short cache time so we don't need many entries at runtime
   driver: lruCacheDriver({ max: 50 })
 });
-const fontCache = createStorage({
+const fontCache = createStorage$1({
   driver: lruCacheDriver({ max: 10 })
 });
-const emojiCache = createStorage({
+const emojiCache = createStorage$1({
   driver: lruCacheDriver({ max: 1e3 })
 });
 
-function resolveSitePath(pathOrUrl, options) {
+function resolveSitePath$1(pathOrUrl, options) {
   let path = pathOrUrl;
   if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
     const parsed = parseURL(pathOrUrl);
@@ -2151,9 +2161,9 @@ function resolveSitePath(pathOrUrl, options) {
   }
   const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
   const resolvedUrl = withBase(path, baseWithOrigin);
-  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
+  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes$1(options.trailingSlash, resolvedUrl);
 }
-const fileExtensions = [
+const fileExtensions$1 = [
   // Images
   "jpg",
   "jpeg",
@@ -2265,14 +2275,14 @@ const fileExtensions = [
   "old",
   "sav"
 ];
-function isPathFile(path) {
+function isPathFile$1(path) {
   const lastSegment = path.split("/").pop();
   const ext = (lastSegment || path).match(/\.[0-9a-z]+$/i)?.[0];
-  return ext && fileExtensions.includes(ext.replace(".", ""));
+  return ext && fileExtensions$1.includes(ext.replace(".", ""));
 }
-function fixSlashes(trailingSlash, pathOrUrl) {
+function fixSlashes$1(trailingSlash, pathOrUrl) {
   const $url = parseURL(pathOrUrl);
-  if (isPathFile($url.pathname))
+  if (isPathFile$1($url.pathname))
     return pathOrUrl;
   const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
   return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
@@ -2334,7 +2344,7 @@ function createSitePathResolver(e, options = {}) {
   const nitroOrigin = getNitroOrigin(e);
   const nuxtBase = useRuntimeConfig(e).app.baseURL || "/";
   return (path) => {
-    return resolveSitePath(path, {
+    return resolveSitePath$1(path, {
       ...options,
       siteUrl: options.canonical !== false || false ? siteConfig.url : nitroOrigin,
       trailingSlash: siteConfig.trailingSlash,
@@ -2347,7 +2357,7 @@ function withSiteUrl(e, path, options = {}) {
   let siteUrl = e.context.siteConfigNitroOrigin;
   if ((options.canonical !== false || false) && siteConfig.url)
     siteUrl = siteConfig.url;
-  return resolveSitePath(path, {
+  return resolveSitePath$1(path, {
     absolute: true,
     siteUrl,
     trailingSlash: siteConfig.trailingSlash,
@@ -2402,7 +2412,7 @@ function filterIsOgImageOption(key) {
 }
 function separateProps(options, ignoreKeys = []) {
   options = options || {};
-  const _props = defu$1(options.props, Object.fromEntries(
+  const _props = defu$2(options.props, Object.fromEntries(
     Object.entries({ ...options }).filter(([k]) => !filterIsOgImageOption(k) && !ignoreKeys.includes(k))
   ));
   const props = {};
@@ -2482,28 +2492,28 @@ function withoutQuery$2(path) {
 }
 function createNitroRouteRuleMatcher$2() {
   const { nitro, app } = useRuntimeConfig();
-  const _routeRulesMatcher = toRouteMatcher(
-    createRouter({
+  const _routeRulesMatcher = toRouteMatcher$1(
+    createRouter$1({
       routes: Object.fromEntries(
-        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
+        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash$1(path), rules])
       )
     })
   );
   return (path) => {
-    return defu$1({}, ..._routeRulesMatcher.matchAll(
+    return defu$2({}, ..._routeRulesMatcher.matchAll(
       // radix3 does not support trailing slashes
-      withoutBase(withoutTrailingSlash(withoutQuery$2(path)), app.baseURL)
+      withoutBase$1(withoutTrailingSlash$1(withoutQuery$2(path)), app.baseURL)
     ).reverse());
   };
 }
 
-const logger$2 = createConsola({
+const logger$2 = createConsola$1({
   defaults: {
     tag: "Nuxt OG Image"
   }
 });
 
-const componentNames = [{"hash":"SOHaoKfoo4fUkREsCFGw8ewxkl4-XkkHkug2VwYRtFM","pascalName":"BrandedLogo","kebabName":"branded-logo","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/BrandedLogo.vue","category":"community"},{"hash":"tFoYPh0fXaZR3uXybAqFEOGnQuQsvz-E-Yq-CtrFlIY","pascalName":"Frame","kebabName":"frame","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Frame.vue","category":"community"},{"hash":"NPQTTXYQ8toXx5OaJ1VlRUUcxy1SNOxg-FoM7C08ZPM","pascalName":"Nuxt","kebabName":"nuxt","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Nuxt.vue","category":"community"},{"hash":"VAHSTZlVcPHzkozocV1iTnwc4-YttdoOkHsYfoSgDZ4","pascalName":"NuxtSeo","kebabName":"nuxt-seo","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.vue","category":"community"},{"hash":"8CNn4yU043gQFqO-sZNDPz9GKED-h7ahXJ-61c9ThHM","pascalName":"Pergel","kebabName":"pergel","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Pergel.vue","category":"community"},{"hash":"b-Juo-FXQepo6SOCnA478MTAqbXNZuve6-MzHgTKA7s","pascalName":"SimpleBlog","kebabName":"simple-blog","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SimpleBlog.vue","category":"community"},{"hash":"vRUm5ru-64PEHIGsBby6-vCgLBg7iUJfvFKL6VuCXtI","pascalName":"UnJs","kebabName":"un-js","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/UnJs.vue","category":"community"},{"hash":"hq07GBU-Yd16ICfETt8SfSxfaYj3qBmDAiQkTcv89nw","pascalName":"Wave","kebabName":"wave","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Wave.vue","category":"community"},{"hash":"zSwOodBXcjwS1qvFqGBJqitTEEnrvVfwQYkTeIxNpws","pascalName":"WithEmoji","kebabName":"with-emoji","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/WithEmoji.vue","category":"community"}];
+const componentNames = [{"hash":"SOHaoKfoo4fUkREsCFGw8ewxkl4-XkkHkug2VwYRtFM","pascalName":"BrandedLogo","kebabName":"branded-logo","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/BrandedLogo.vue","category":"community"},{"hash":"tFoYPh0fXaZR3uXybAqFEOGnQuQsvz-E-Yq-CtrFlIY","pascalName":"Frame","kebabName":"frame","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Frame.vue","category":"community"},{"hash":"NPQTTXYQ8toXx5OaJ1VlRUUcxy1SNOxg-FoM7C08ZPM","pascalName":"Nuxt","kebabName":"nuxt","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Nuxt.vue","category":"community"},{"hash":"VAHSTZlVcPHzkozocV1iTnwc4-YttdoOkHsYfoSgDZ4","pascalName":"NuxtSeo","kebabName":"nuxt-seo","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.vue","category":"community"},{"hash":"8CNn4yU043gQFqO-sZNDPz9GKED-h7ahXJ-61c9ThHM","pascalName":"Pergel","kebabName":"pergel","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Pergel.vue","category":"community"},{"hash":"b-Juo-FXQepo6SOCnA478MTAqbXNZuve6-MzHgTKA7s","pascalName":"SimpleBlog","kebabName":"simple-blog","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SimpleBlog.vue","category":"community"},{"hash":"vRUm5ru-64PEHIGsBby6-vCgLBg7iUJfvFKL6VuCXtI","pascalName":"UnJs","kebabName":"un-js","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/UnJs.vue","category":"community"},{"hash":"hq07GBU-Yd16ICfETt8SfSxfaYj3qBmDAiQkTcv89nw","pascalName":"Wave","kebabName":"wave","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Wave.vue","category":"community"},{"hash":"zSwOodBXcjwS1qvFqGBJqitTEEnrvVfwQYkTeIxNpws","pascalName":"WithEmoji","kebabName":"with-emoji","path":"/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/nuxt-og-image@5.1.12_@unhead+vue@2.0.19_vue@3.5.25_typescript@5.9.3___h3@1.15.4_magicas_aadd009b9b577d11ac5194818822e118/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/WithEmoji.vue","category":"community"}];
 
 function normaliseOptions(_options) {
   const options = { ..._options };
@@ -2548,7 +2558,7 @@ function resolvePathCacheKey(e, path) {
   const siteConfig = useSiteConfig(e, {
     resolveRefs: true
   });
-  const basePath = withoutTrailingSlash(withoutLeadingSlash(normalizeKey(path)));
+  const basePath = withoutTrailingSlash$1(withoutLeadingSlash(normalizeKey(path)));
   return [
     !basePath || basePath === "/" ? "index" : basePath,
     hash$1([
@@ -2564,7 +2574,7 @@ async function resolveContext(e) {
     absolute: false,
     withBase: true
   });
-  const path = resolvePathWithBase(parseURL(e.path).pathname);
+  const path = resolvePathWithBase(parseURL$1(e.path).pathname);
   const extension = path.split(".").pop();
   if (!extension) {
     return createError({
@@ -2597,16 +2607,17 @@ async function resolveContext(e) {
     }
   }
   queryParams = separateProps(queryParams);
-  const basePath = withoutTrailingSlash(
+  let basePath = withoutTrailingSlash$1(
     path.replace(`/__og-image__/image`, "").replace(`/__og-image__/static`, "").replace(`/og.${extension}`, "")
   );
-  const basePathWithQuery = queryParams._query && typeof queryParams._query === "object" ? withQuery(basePath, queryParams._query) : basePath;
+  if (queryParams._query && typeof queryParams._query === "object")
+    basePath = withQuery$1(basePath, queryParams._query);
   const isDebugJsonPayload = extension === "json" && runtimeConfig.debug;
-  const key = resolvePathCacheKey(e, basePathWithQuery);
+  const key = resolvePathCacheKey(e, basePath);
   let options = queryParams.options;
   if (!options) {
     if (!options) {
-      const payload = await fetchPathHtmlAndExtractOptions(e, basePathWithQuery, key);
+      const payload = await fetchPathHtmlAndExtractOptions(e, basePath, key);
       if (payload instanceof Error)
         return payload;
       options = payload;
@@ -2622,7 +2633,7 @@ async function resolveContext(e) {
     });
   }
   const ogImageRouteRules = separateProps(routeRules.ogImage);
-  options = defu$1(queryParams, options, ogImageRouteRules, runtimeConfig.defaults);
+  options = defu$2(queryParams, options, ogImageRouteRules, runtimeConfig.defaults);
   if (!options) {
     return createError({
       statusCode: 404,
@@ -2794,7 +2805,7 @@ async function fetchPathHtmlAndExtractOptions(e, path, key) {
   });
 }
 
-const _bHiuqJcFXH7yUQsV28k4goUdzhD1JryV0WtK87rv8RE = defineNitroPlugin(async (nitro) => {
+const _TDkig17GmRS7LqK508s9lzLSdkmaIOM6NXRS3IfgMmA = defineNitroPlugin(async (nitro) => {
   return;
 });
 
@@ -3269,7 +3280,7 @@ function useRuntimeConfigNuxtRobots(event) {
   return useRuntimeConfig(event)["nuxt-robots"];
 }
 
-const logger$1 = createConsola({
+const logger$1 = createConsola$1({
   defaults: { tag: "@nuxtjs/robots" }
 });
 
@@ -3286,7 +3297,7 @@ async function resolveRobotsTxtContext(e, nitro = useNitroApp()) {
   return generateRobotsTxtCtx;
 }
 
-const _U2sThhTBD2SYEG5JCLzfMpc7adUkDIk1g_hqRauYtto = defineNitroPlugin(async (nitroApp) => {
+const _P7vvhc0pjXusD3RWHY2054TQP1UNdi528hGHKEi0rI = defineNitroPlugin(async (nitroApp) => {
   const { isNuxtContentV2, robotsDisabledValue, botDetection } = useRuntimeConfigNuxtRobots();
   if (botDetection !== false) {
     nitroApp._robotsPatternMap = createPatternMap();
@@ -3302,7 +3313,7 @@ const _U2sThhTBD2SYEG5JCLzfMpc7adUkDIk1g_hqRauYtto = defineNitroPlugin(async (ni
       logger$1.error("Failed to read robot rules from content files.", e);
     }
     if (urls && Array.isArray(urls) && urls.length) {
-      urls.forEach((url) => nuxtContentUrls.add(withoutTrailingSlash(url)));
+      urls.forEach((url) => nuxtContentUrls.add(withoutTrailingSlash$1(url)));
     }
   }
   if (nuxtContentUrls.size) {
@@ -3515,13 +3526,13 @@ async function runTask(name, {
     return __runningTasks__[name];
   }
   if (!(name in tasks)) {
-    throw createError({
+    throw createError$1({
       message: `Task \`${name}\` is not available!`,
       statusCode: 404
     });
   }
   if (!tasks[name].resolve) {
-    throw createError({
+    throw createError$1({
       message: `Task \`${name}\` is not implemented!`,
       statusCode: 501
     });
@@ -3786,7 +3797,7 @@ const collectionQueryBuilder = (collection, fetch) => {
       return query;
     },
     path(path) {
-      return query.where("path", "=", withoutTrailingSlash(path));
+      return query.where("path", "=", withoutTrailingSlash$1(path));
     },
     skip(skip) {
       params.offset = skip;
@@ -3918,17 +3929,17 @@ function withoutQuery$1(path) {
 }
 function createNitroRouteRuleMatcher$1(e) {
   const { nitro, app } = useRuntimeConfig(e);
-  const _routeRulesMatcher = toRouteMatcher(
-    createRouter({
+  const _routeRulesMatcher = toRouteMatcher$1(
+    createRouter$1({
       routes: Object.fromEntries(
-        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash(path), rules])
+        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [withoutTrailingSlash$1(path), rules])
       )
     })
   );
   return (path) => {
-    return defu$1({}, ..._routeRulesMatcher.matchAll(
+    return defu$2({}, ..._routeRulesMatcher.matchAll(
       // radix3 does not support trailing slashes
-      withoutBase(withoutTrailingSlash(withoutQuery$1(path)), app.baseURL)
+      withoutBase$1(withoutTrailingSlash$1(withoutQuery$1(path)), app.baseURL)
     ).reverse());
   };
 }
@@ -3981,7 +3992,7 @@ function getPathRobotConfig(e, options) {
   let userAgent = options?.userAgent;
   if (!userAgent) {
     try {
-      userAgent = getRequestHeader(e, "User-Agent");
+      userAgent = getRequestHeader$1(e, "User-Agent");
     } catch {
     }
   }
@@ -4023,7 +4034,7 @@ function getPathRobotConfig(e, options) {
       break;
     }
   }
-  if (isNuxtContentV2 && nitroApp._robots?.nuxtContentUrls?.has(withoutTrailingSlash(path))) {
+  if (isNuxtContentV2 && nitroApp._robots?.nuxtContentUrls?.has(withoutTrailingSlash$1(path))) {
     return {
       indexable: false,
       rule: robotsDisabledValue,
@@ -4138,7 +4149,7 @@ function useI18nContext(event) {
 function tryUseI18nContext(event) {
   return event.context.nuxtI18n;
 }
-const getHost = (event) => getRequestURL(event, { xForwardedHost: true }).host;
+const getHost = (event) => getRequestURL$1(event, { xForwardedHost: true }).host;
 async function initializeI18nContext(event) {
   const runtimeI18n = useRuntimeI18n(void 0, event);
   const defaultLocale = runtimeI18n.defaultLocale || "";
@@ -4241,9 +4252,9 @@ function matchDomainLocale(locales, host, pathLocale) {
 
 const getCookieLocale = (event, cookieName) => (getCookie(event, cookieName)) || void 0;
 const getRouteLocale = (event, route) => getLocaleFromRoute(route);
-const getHeaderLocale = (event) => findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader(event, "accept-language") || ""));
+const getHeaderLocale = (event) => findBrowserLocale(normalizedLocales, parseAcceptLanguage(getRequestHeader$1(event, "accept-language") || ""));
 const getHostLocale = (event, path, domainLocales) => {
-  const host = getRequestURL(event, { xForwardedHost: true }).host;
+  const host = getRequestURL$1(event, { xForwardedHost: true }).host;
   const locales = normalizedLocales.map((l) => ({
     ...l,
     domain: domainLocales[l.code]?.domain ?? l.domain
@@ -4380,7 +4391,7 @@ function matchLocalized(path, locale, defaultLocale) {
       { path: alternate || "/", name: "", matched: [], params: {}, meta: {} }
     );
     const isPrefixable = prefixable(locale, defaultLocale);
-    return withLeadingSlash(joinURL(isPrefixable ? locale : "", match.path));
+    return withLeadingSlash$1(joinURL$1(isPrefixable ? locale : "", match.path));
   }
 }
 function prefixable(currentLocale, defaultLocale) {
@@ -4397,7 +4408,7 @@ function* detect(detectors, detection, path) {
   }
   yield { locale: detection.fallbackLocale, source: "fallback" };
 }
-const _pdhwgbWgizIgpeUcfqjwu8iMwTvH48ZpOEHo_uS_FFk = defineNitroPlugin(async (nitro) => {
+const _JUMzahDdc7UXZCrbOjaWibO_J6d4JbD4vJbAD_PA6I = defineNitroPlugin(async (nitro) => {
   const runtimeI18n = useRuntimeI18n();
   const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
   runtimeI18n.defaultLocale || "";
@@ -4442,7 +4453,7 @@ const _pdhwgbWgizIgpeUcfqjwu8iMwTvH48ZpOEHo_uS_FFk = defineNitroPlugin(async (ni
     }
     let resolvedPath = void 0;
     let redirectCode = 302;
-    const requestURL = getRequestURL(event);
+    const requestURL = getRequestURL$1(event);
     if (rootRedirect && requestURL.pathname === "/") {
       locale = detection.enabled && locale || defaultLocale;
       resolvedPath = isSupportedLocale(detector.route(rootRedirect.path)) && rootRedirect.path || matchLocalized(rootRedirect.path, locale, defaultLocale);
@@ -4474,21 +4485,21 @@ const _pdhwgbWgizIgpeUcfqjwu8iMwTvH48ZpOEHo_uS_FFk = defineNitroPlugin(async (ni
   });
   nitro.hooks.hook("render:before", async ({ event }) => {
     const ctx = useI18nContext(event);
-    const url = getRequestURL(event);
+    const url = getRequestURL$1(event);
     const detector = useDetectors(event, detection);
     const localeSegment = detector.route(event.path);
     const pathLocale = isSupportedLocale(localeSegment) && localeSegment || void 0;
     const path = (pathLocale && url.pathname.slice(pathLocale.length + 1)) ?? url.pathname;
-    if (!url.pathname.includes("/_i18n/wQ2cn9nS") && !isExistingNuxtRoute(path)) {
+    if (!url.pathname.includes("/_i18n/G7Y-5WY8") && !isExistingNuxtRoute(path)) {
       return;
     }
     const resolved = resolveRedirectPath(event, path, pathLocale, ctx.vueI18nOptions.defaultLocale, detector);
     if (resolved.path && resolved.path !== url.pathname) {
       ctx.detectLocale = resolved.locale;
       detection.useCookie && setCookie(event, detection.cookieKey, resolved.locale, cookieOptions);
-      await sendRedirect(
+      await sendRedirect$1(
         event,
-        joinURL(baseUrlGetter(event, ctx.vueI18nOptions.defaultLocale), resolved.path + url.search),
+        joinURL$1(baseUrlGetter(event, ctx.vueI18nOptions.defaultLocale), resolved.path + url.search),
         resolved.code
       );
       return;
@@ -4586,9 +4597,9 @@ const _ejjVwNuttTJAkBQVDWdStz26g2vc0F_kRS2BDqQgl8 = (function(nitro) {
 const plugins = [
   _k6Vc18ARKJGmK_AwMO4SzyT9DNDuj9S9vbi5cmKBU8c,
 _47bmVlkYUDplJJEYum5sIXXnoh0Qz438Um4MGHsGDIY,
-_bHiuqJcFXH7yUQsV28k4goUdzhD1JryV0WtK87rv8RE,
-_U2sThhTBD2SYEG5JCLzfMpc7adUkDIk1g_hqRauYtto,
-_pdhwgbWgizIgpeUcfqjwu8iMwTvH48ZpOEHo_uS_FFk,
+_TDkig17GmRS7LqK508s9lzLSdkmaIOM6NXRS3IfgMmA,
+_P7vvhc0pjXusD3RWHY2054TQP1UNdi528hGHKEi0rI,
+_JUMzahDdc7UXZCrbOjaWibO_J6d4JbD4vJbAD_PA6I,
 _56nrVW44sG3IksniWqKAV7HjzDjU0A2JPz5KpHF8Tps,
 _ejjVwNuttTJAkBQVDWdStz26g2vc0F_kRS2BDqQgl8
 ];
@@ -4649,7 +4660,7 @@ const _M5IJCq = eventHandler((event) => {
   if (!asset) {
     if (isPublicAssetURL(id)) {
       removeResponseHeader(event, "Cache-Control");
-      throw createError({ statusCode: 404 });
+      throw createError$1({ statusCode: 404 });
     }
     return;
   }
@@ -4703,8 +4714,6 @@ function vueInstall(head) {
 function resolveUnrefHeadInput(input) {
   return walkResolver(input, VueResolver);
 }
-
-const createHeadCore = createUnhead;
 
 // @__NO_SIDE_EFFECTS__
 function createHead(options = {}) {
@@ -4980,7 +4989,7 @@ async function getIslandContext(event) {
   const componentParts = url.substring("/__nuxt_island".length + 1).replace(ISLAND_SUFFIX_RE, "").split("_");
   const hashId = componentParts.length > 1 ? componentParts.pop() : void 0;
   const componentName = componentParts.join("_");
-  const context = event.method === "GET" ? getQuery$1(event) : await readBody(event);
+  const context = event.method === "GET" ? getQuery$2(event) : await readBody(event);
   const ctx = {
     url: "/",
     ...context,
@@ -4998,7 +5007,7 @@ const DEFAULT_ENDPOINT = "https://api.iconify.design";
 const _TMuwjk = defineCachedEventHandler(async (event) => {
   const url = getRequestURL(event);
   if (!url)
-    return createError({ status: 400, message: "Invalid icon request" });
+    return createError$1({ status: 400, message: "Invalid icon request" });
   const options = useAppConfig().icon;
   const collectionName = event.context.params?.collection?.replace(/\.json$/, "");
   const collection = collectionName ? await collections[collectionName]?.() : null;
@@ -5026,7 +5035,7 @@ const _TMuwjk = defineCachedEventHandler(async (event) => {
     const apiUrl = new URL("./" + basename(url.pathname) + url.search, apiEndPoint);
     consola$1.debug(`[Icon] fetching ${(icons || []).map((i) => "`" + collectionName + ":" + i + "`").join(",")} from iconify api`);
     if (apiUrl.host !== new URL(apiEndPoint).host) {
-      return createError({ status: 400, message: "Invalid icon request" });
+      return createError$1({ status: 400, message: "Invalid icon request" });
     }
     try {
       const data = await $fetch(apiUrl.href);
@@ -5034,19 +5043,19 @@ const _TMuwjk = defineCachedEventHandler(async (event) => {
     } catch (e) {
       consola$1.error(e);
       if (e.status === 404)
-        return createError({ status: 404 });
+        return createError$1({ status: 404 });
       else
-        return createError({ status: 500, message: "Failed to fetch fallback icon" });
+        return createError$1({ status: 500, message: "Failed to fetch fallback icon" });
     }
   }
-  return createError({ status: 404 });
+  return createError$1({ status: 404 });
 }, {
   group: "nuxt",
   name: "icon",
   getKey(event) {
     const collection = event.context.params?.collection?.replace(/\.json$/, "") || "unknown";
-    const icons = String(getQuery$1(event).icons || "");
-    return `${collection}_${icons.split(",")[0]}_${icons.length}_${hash$1(icons)}`;
+    const icons = String(getQuery$2(event).icons || "");
+    return `${collection}_${icons.split(",")[0]}_${icons.length}_${hash$2(icons)}`;
   },
   swr: true,
   maxAge: 60 * 60 * 24 * 7
@@ -5118,7 +5127,7 @@ const _zSWe_L = eventHandler(async (e) => {
   };
 });
 
-const _r4WY1H = defineEventHandler(async (e) => {
+const _oJeQat = defineEventHandler$1(async (e) => {
   const nitroApp = useNitroApp();
   const { indexable, hints } = getSiteRobotConfig(e);
   const { credits, isNuxtContentV2, cacheControl } = useRuntimeConfigNuxtRobots(e);
@@ -5170,14 +5179,14 @@ const _r4WY1H = defineEventHandler(async (e) => {
       "# END nuxt-robots"
     ].filter(Boolean).join("\n");
   }
-  setHeader(e, "Content-Type", "text/plain; charset=utf-8");
-  setHeader(e, "Cache-Control", "no-store" );
+  setHeader$1(e, "Content-Type", "text/plain; charset=utf-8");
+  setHeader$1(e, "Cache-Control", "no-store" );
   const hookCtx = { robotsTxt, e };
   await nitroApp.hooks.callHook("robots:robots-txt", hookCtx);
   return hookCtx.robotsTxt;
 });
 
-const _H8WsxL = defineEventHandler(async (e) => {
+const _A69uSD = defineEventHandler$1(async (e) => {
   if (e.path === "/robots.txt" || e.path.startsWith("/__") || e.path.startsWith("/api") || e.path.startsWith("/_nuxt"))
     return;
   const nuxtRobotsConfig = useRuntimeConfigNuxtRobots(e);
@@ -5185,18 +5194,18 @@ const _H8WsxL = defineEventHandler(async (e) => {
     const { header } = nuxtRobotsConfig;
     const robotConfig = getPathRobotConfig(e, { skipSiteIndexable: Boolean(getQuery$1(e)?.mockProductionEnv) });
     if (header) {
-      setHeader(e, "X-Robots-Tag", robotConfig.rule);
+      setHeader$1(e, "X-Robots-Tag", robotConfig.rule);
     }
     e.context.robots = robotConfig;
     {
       const productionRobotConfig = getPathRobotConfig(e, { skipSiteIndexable: true });
-      setHeader(e, "X-Robots-Production", productionRobotConfig.rule);
+      setHeader$1(e, "X-Robots-Production", productionRobotConfig.rule);
       e.context.robotsProduction = productionRobotConfig;
     }
   }
 });
 
-const _VVGqL9 = defineEventHandler(async (e) => {
+const _bbwjjr = defineEventHandler$1(async (e) => {
   const runtimeConfig = useRuntimeConfigNuxtRobots(e);
   const { indexable, hints } = getSiteRobotConfig(e);
   const siteConfig = useSiteConfig(e);
@@ -5216,7 +5225,7 @@ const _VVGqL9 = defineEventHandler(async (e) => {
   };
 });
 
-const _ELG8cb = defineEventHandler(async (e) => {
+const _gtU3hx = defineEventHandler$1(async (e) => {
   const query = getQuery$1(e);
   const path = query.path;
   const isMockProduction = Boolean(query.mockProductionEnv);
@@ -5224,7 +5233,7 @@ const _ELG8cb = defineEventHandler(async (e) => {
   let robotsHeader = null;
   let robotsContent = null;
   let robotsHint = null;
-  const res = await $fetch.raw(withQuery(path, query)).catch(() => null);
+  const res = await $fetch.raw(withQuery$1(path, query)).catch(() => null);
   if (res) {
     const html = res._data;
     robotsHeader = String(res.headers.get("x-robots-tag"));
@@ -5271,7 +5280,7 @@ const _ELG8cb = defineEventHandler(async (e) => {
   };
 });
 
-const _p7rKYb = defineEventHandler(async (e) => {
+const _LWea1X = defineEventHandler$1(async (e) => {
   const collections = [];
   for (const collection in contentManifest) {
     if (contentManifest[collection].fields.sitemap) {
@@ -5294,7 +5303,7 @@ const _p7rKYb = defineEventHandler(async (e) => {
   ).filter(Boolean);
 });
 
-const logger = createConsola({
+const logger = createConsola$1({
   defaults: {
     tag: "@nuxt/sitemap"
   }
@@ -5322,7 +5331,7 @@ function mergeOnKey(arr, key) {
   return result;
 }
 function splitForLocales(path, locales) {
-  const prefix = withLeadingSlash(path).split("/")[1];
+  const prefix = withLeadingSlash$1(path).split("/")[1];
   if (prefix && locales.includes(prefix))
     return [prefix, path.replace(`/${prefix}`, "")];
   return [null, path];
@@ -5343,7 +5352,7 @@ function createPathFilter(options = {}) {
   return (loc) => {
     let path = loc;
     try {
-      path = parseURL(loc).pathname;
+      path = parseURL$1(loc).pathname;
     } catch {
       return false;
     }
@@ -5359,11 +5368,11 @@ function createFilter(options = {}) {
   const includeRegex = include.filter((r) => r instanceof RegExp);
   const excludeStrings = exclude.filter((r) => typeof r === "string");
   const includeStrings = include.filter((r) => typeof r === "string");
-  const excludeMatcher = excludeStrings.length > 0 ? toRouteMatcher(createRouter({
+  const excludeMatcher = excludeStrings.length > 0 ? toRouteMatcher$1(createRouter$1({
     routes: Object.fromEntries(excludeStrings.map((r) => [r, true])),
     strictTrailingSlash: false
   })) : null;
-  const includeMatcher = includeStrings.length > 0 ? toRouteMatcher(createRouter({
+  const includeMatcher = includeStrings.length > 0 ? toRouteMatcher$1(createRouter$1({
     routes: Object.fromEntries(includeStrings.map((r) => [r, true])),
     strictTrailingSlash: false
   })) : null;
@@ -5728,7 +5737,7 @@ async function parseSitemapXml(xml) {
   if (!xml) {
     throw new Error("Empty XML input provided");
   }
-  const { XMLParser } = await import('file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/fast-xml-parser/src/fxp.js');
+  const { XMLParser } = await import('file:///home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/fast-xml-parser@5.3.3/node_modules/fast-xml-parser/src/fxp.js');
   const parser = new XMLParser({
     isArray: (tagName) => ["url", "image", "video", "link", "tag", "price"].includes(tagName),
     removeNSPrefix: true,
@@ -5798,13 +5807,13 @@ async function fetchDataSource(input, event) {
   const abortRequestTimeout = setTimeout(() => timeoutController.abort(), timeout);
   try {
     let isMaybeErrorResponse = false;
-    const isXmlRequest = parseURL(url).pathname.endsWith(".xml");
-    const mergedHeaders = defu$1(
+    const isXmlRequest = parseURL$1(url).pathname.endsWith(".xml");
+    const mergedHeaders = defu$2(
       options?.headers,
       {
         Accept: isXmlRequest ? "text/xml" : "application/json"
       },
-      event ? { host: getRequestHost(event, { xForwardedHost: true }) } : {}
+      event ? { host: getRequestHost$1(event, { xForwardedHost: true }) } : {}
     );
     const fetchOptions = {
       ...options,
@@ -5836,7 +5845,7 @@ async function fetchDataSource(input, event) {
     let urls = [];
     if (typeof res === "object") {
       urls = res.urls || res;
-    } else if (typeof res === "string" && parseURL(url).pathname.endsWith(".xml")) {
+    } else if (typeof res === "string" && parseURL$1(url).pathname.endsWith(".xml")) {
       const result = await parseSitemapXml(res);
       urls = result.urls;
     }
@@ -5905,7 +5914,7 @@ async function resolveSitemapSources(sources, event) {
   )).flat();
 }
 
-const _CLfmEi = defineEventHandler(async (e) => {
+const _zBKbts = defineEventHandler$1(async (e) => {
   const _runtimeConfig = useSitemapRuntimeConfig();
   const siteConfig = getSiteConfig(e);
   const { sitemaps: _sitemaps } = _runtimeConfig;
@@ -5930,27 +5939,27 @@ const _CLfmEi = defineEventHandler(async (e) => {
   };
 });
 
-const _VZ5pjY = defineEventHandler(async (e) => {
+const _2OYHuH = defineEventHandler$1(async (e) => {
   const fixPath = createSitePathResolver(e, { absolute: false, withBase: true });
   const { sitemapName: fallbackSitemapName, cacheMaxAgeSeconds, version, xslColumns, xslTips } = useSitemapRuntimeConfig();
-  setHeader(e, "Content-Type", "application/xslt+xml");
+  setHeader$1(e, "Content-Type", "application/xslt+xml");
   if (cacheMaxAgeSeconds)
-    setHeader(e, "Cache-Control", `public, max-age=${cacheMaxAgeSeconds}, must-revalidate`);
+    setHeader$1(e, "Cache-Control", `public, max-age=${cacheMaxAgeSeconds}, must-revalidate`);
   else
-    setHeader(e, "Cache-Control", `no-cache, no-store`);
+    setHeader$1(e, "Cache-Control", `no-cache, no-store`);
   const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" style="margin-right: 4px; font-size: 25px;" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#93c5fd" d="M4 26h4v4H4zm10 0h4v4h-4zm10 0h4v4h-4zm1-10h-8v-2h-2v2H7a2.002 2.002 0 0 0-2 2v6h2v-6h8v6h2v-6h8v6h2v-6a2.002 2.002 0 0 0-2-2zM9 2v10h14V2zm2 2h2v6h-2zm10 6h-6V4h6z"></path></svg>`;
   const creditName = `<a href="https://github.com/nuxt-modules/sitemap" style="color: black; display: flex; align-items: center; font-weight: 500;" target="_blank" rel="noopener">${svgIcon} Nuxt Sitemap v${version}</a>`;
   const { name: siteName, url: siteUrl } = useSiteConfig(e);
   const referrer = getHeader(e, "Referer") || "/";
-  const referrerPath = parseURL(referrer).pathname;
+  const referrerPath = parseURL$1(referrer).pathname;
   const isNotIndexButHasIndex = referrerPath !== "/sitemap.xml" && referrerPath !== "/sitemap_index.xml" && referrerPath.endsWith(".xml");
-  const sitemapName = parseURL(referrer).pathname.split("/").pop()?.split("-sitemap")[0] || fallbackSitemapName;
+  const sitemapName = parseURL$1(referrer).pathname.split("/").pop()?.split("-sitemap")[0] || fallbackSitemapName;
   const title = `${siteName}${sitemapName !== "sitemap.xml" ? ` - ${sitemapName === "sitemap_index.xml" ? "index" : sitemapName}` : ""}`.replace(/&/g, "&amp;");
-  const canonicalQuery = getQuery(referrer).canonical;
+  const canonicalQuery = getQuery$3(referrer).canonical;
   const isShowingCanonical = typeof canonicalQuery !== "undefined" && canonicalQuery !== "false";
   const conditionalTips = [
     'You are looking at a <a href="https://developer.mozilla.org/en-US/docs/Web/XSLT/Transforming_XML_with_XSLT/An_Overview" style="color: #398465" target="_blank">XML stylesheet</a>. Read the <a href="https://nuxtseo.com/sitemap/guides/customising-ui" style="color: #398465" target="_blank">docs</a> to learn how to customize it. View the page source to see the raw XML.',
-    `URLs missing? Check Nuxt Devtools Sitemap tab (or the <a href="${xmlEscape(withQuery("/__sitemap__/debug.json", { sitemap: sitemapName }))}" style="color: #398465" target="_blank">debug endpoint</a>).`
+    `URLs missing? Check Nuxt Devtools Sitemap tab (or the <a href="${xmlEscape(withQuery$1("/__sitemap__/debug.json", { sitemap: sitemapName }))}" style="color: #398465" target="_blank">debug endpoint</a>).`
   ];
   const fetchErrors = [];
   const xslQuery = getQuery$1(e);
@@ -5970,7 +5979,7 @@ const _VZ5pjY = defineEventHandler(async (e) => {
     }
   }
   if (!isShowingCanonical) {
-    const canonicalPreviewUrl = withQuery(referrer, { canonical: "" });
+    const canonicalPreviewUrl = withQuery$1(referrer, { canonical: "" });
     conditionalTips.push(`Your canonical site URL is <strong>${xmlEscape(siteUrl)}</strong>.`);
     conditionalTips.push(`You can preview your canonical sitemap by visiting <a href="${xmlEscape(canonicalPreviewUrl)}" style="color: #398465; white-space: nowrap;">${xmlEscape(fixPath(canonicalPreviewUrl))}?canonical</a>`);
   } else {
@@ -6181,24 +6190,167 @@ const _VZ5pjY = defineEventHandler(async (e) => {
 `;
 });
 
+function resolveSitePath(pathOrUrl, options) {
+  let path = pathOrUrl;
+  if (hasProtocol$1(pathOrUrl, { strict: false, acceptRelative: true })) {
+    const parsed = parseURL$1(pathOrUrl);
+    path = parsed.pathname;
+  }
+  const base = withLeadingSlash$1(options.base || "/");
+  if (base !== "/" && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  let origin = withoutTrailingSlash$1(options.siteUrl );
+  if (base !== "/" && origin.endsWith(base)) {
+    origin = origin.slice(0, origin.indexOf(base));
+  }
+  const baseWithOrigin = origin;
+  const resolvedUrl = withBase$1(path, baseWithOrigin);
+  return path === "/" && true ? withTrailingSlash$1(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
+}
+const fileExtensions = [
+  // Images
+  "jpg",
+  "jpeg",
+  "png",
+  "gif",
+  "bmp",
+  "webp",
+  "svg",
+  "ico",
+  // Documents
+  "pdf",
+  "doc",
+  "docx",
+  "xls",
+  "xlsx",
+  "ppt",
+  "pptx",
+  "txt",
+  "md",
+  "markdown",
+  // Archives
+  "zip",
+  "rar",
+  "7z",
+  "tar",
+  "gz",
+  // Audio
+  "mp3",
+  "wav",
+  "flac",
+  "ogg",
+  "opus",
+  "m4a",
+  "aac",
+  "midi",
+  "mid",
+  // Video
+  "mp4",
+  "avi",
+  "mkv",
+  "mov",
+  "wmv",
+  "flv",
+  "webm",
+  // Web
+  "html",
+  "css",
+  "js",
+  "json",
+  "xml",
+  "tsx",
+  "jsx",
+  "ts",
+  "vue",
+  "svelte",
+  "xsl",
+  "rss",
+  "atom",
+  // Programming
+  "php",
+  "py",
+  "rb",
+  "java",
+  "c",
+  "cpp",
+  "h",
+  "go",
+  // Data formats
+  "csv",
+  "tsv",
+  "sql",
+  "yaml",
+  "yml",
+  // Fonts
+  "woff",
+  "woff2",
+  "ttf",
+  "otf",
+  "eot",
+  // Executables/Binaries
+  "exe",
+  "msi",
+  "apk",
+  "ipa",
+  "dmg",
+  "iso",
+  "bin",
+  // Scripts/Config
+  "bat",
+  "cmd",
+  "sh",
+  "env",
+  "htaccess",
+  "conf",
+  "toml",
+  "ini",
+  // Package formats
+  "deb",
+  "rpm",
+  "jar",
+  "war",
+  // E-books
+  "epub",
+  "mobi",
+  // Common temporary/backup files
+  "log",
+  "tmp",
+  "bak",
+  "old",
+  "sav"
+];
+function isPathFile(path) {
+  const lastSegment = path.split("/").pop();
+  const ext = (lastSegment || path).match(/\.[0-9a-z]+$/i)?.[0];
+  return ext && fileExtensions.includes(ext.replace(".", ""));
+}
+function fixSlashes(trailingSlash, pathOrUrl) {
+  const $url = parseURL$1(pathOrUrl);
+  if (isPathFile($url.pathname))
+    return pathOrUrl;
+  const fixedPath = trailingSlash ? withTrailingSlash$1($url.pathname) : withoutTrailingSlash$1($url.pathname);
+  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
+}
+
 function withoutQuery(path) {
   return path.split("?")[0];
 }
 function createNitroRouteRuleMatcher() {
   const { nitro, app } = useRuntimeConfig();
-  const _routeRulesMatcher = toRouteMatcher(
-    createRouter({
+  const _routeRulesMatcher = toRouteMatcher$1(
+    createRouter$1({
       routes: Object.fromEntries(
-        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [path === "/" ? path : withoutTrailingSlash(path), rules])
+        Object.entries(nitro?.routeRules || {}).map(([path, rules]) => [path === "/" ? path : withoutTrailingSlash$1(path), rules])
       )
     })
   );
   return (pathOrUrl) => {
-    const path = pathOrUrl[0] === "/" ? pathOrUrl : parseURL(pathOrUrl, app.baseURL).pathname;
+    const path = pathOrUrl[0] === "/" ? pathOrUrl : parseURL$1(pathOrUrl, app.baseURL).pathname;
     const pathWithoutQuery = withoutQuery(path);
-    return defu$1({}, ..._routeRulesMatcher.matchAll(
+    return defu$2({}, ..._routeRulesMatcher.matchAll(
       // radix3 does not support trailing slashes
-      withoutBase(pathWithoutQuery === "/" ? pathWithoutQuery : withoutTrailingSlash(pathWithoutQuery), app.baseURL)
+      withoutBase$1(pathWithoutQuery === "/" ? pathWithoutQuery : withoutTrailingSlash$1(pathWithoutQuery), app.baseURL)
     ).reverse());
   };
 }
@@ -6209,7 +6361,7 @@ function resolve(s, resolvers) {
   const str = typeof s === "string" ? s : s.toString();
   if (!resolvers)
     return str;
-  if (hasProtocol(str, { acceptRelative: true, strict: false }))
+  if (hasProtocol$1(str, { acceptRelative: true, strict: false }))
     return resolvers.fixSlashes(str);
   return resolvers.canonicalUrlResolver(str);
 }
@@ -6225,32 +6377,30 @@ function preNormalizeEntry(_e, resolvers) {
   if (typeof input.loc !== "string") {
     input.loc = "";
   }
-  const skipEncoding = input._encoded === true;
   const e = input;
   e.loc = removeTrailingSlash(e.loc);
-  e._abs = hasProtocol(e.loc, { acceptRelative: false, strict: false });
+  e._abs = hasProtocol$1(e.loc, { acceptRelative: false, strict: false });
   try {
-    e._path = e._abs ? parseURL(e.loc) : parsePath(e.loc);
+    e._path = e._abs ? parseURL$1(e.loc) : parsePath(e.loc);
   } catch {
     e._path = null;
   }
   if (e._path) {
     const search = e._path.search;
     const qs = search && search.length > 1 ? stringifyQuery(parseQuery(search)) : "";
-    const pathname = skipEncoding ? e._path.pathname : encodePath(e._path.pathname);
-    e._relativeLoc = `${pathname}${qs.length ? `?${qs}` : ""}`;
+    e._relativeLoc = `${encodePath(e._path.pathname)}${qs.length ? `?${qs}` : ""}`;
     if (e._path.host) {
       e.loc = stringifyParsedURL(e._path);
     } else {
       e.loc = e._relativeLoc;
     }
-  } else if (!skipEncoding && !isEncoded(e.loc)) {
+  } else if (!isEncoded(e.loc)) {
     e.loc = encodeURI(e.loc);
   }
   if (e.loc === "")
     e.loc = `/`;
   e.loc = resolve(e.loc, resolvers);
-  e._key = `${e._sitemap || ""}${withoutTrailingSlash(e.loc)}`;
+  e._key = `${e._sitemap || ""}${withoutTrailingSlash$1(e.loc)}`;
   return e;
 }
 function isEncoded(url) {
@@ -6261,7 +6411,7 @@ function isEncoded(url) {
   }
 }
 function normaliseEntry(_e, defaults, resolvers) {
-  const e = defu$1(_e, defaults);
+  const e = defu$2(_e, defaults);
   if (e.lastmod) {
     const date = normaliseDate(e.lastmod);
     if (date)
@@ -6430,7 +6580,7 @@ function buildUrlXml(url, NL, I1, I2, I3, I4) {
   if (url.changefreq) xml += `${I2}<changefreq>${url.changefreq}</changefreq>${NL}`;
   if (url.priority !== void 0) {
     const p = typeof url.priority === "number" ? url.priority : Number.parseFloat(url.priority);
-    xml += `${I2}<priority>${p.toFixed(1)}</priority>${NL}`;
+    xml += `${I2}<priority>${p % 1 === 0 ? p : p.toFixed(1)}</priority>${NL}`;
   }
   if (url.alternatives) {
     for (const alt of url.alternatives) {
@@ -6501,7 +6651,7 @@ function buildUrlXml(url, NL, I1, I2, I3, I4) {
 function urlsToXml(urls, resolvers, { version, xsl, credits, minify }, errorInfo) {
   let xslHref = xsl ? resolvers.relativeBaseUrlResolver(xsl) : false;
   if (xslHref && errorInfo?.messages.length) {
-    xslHref = withQuery(xslHref, {
+    xslHref = withQuery$1(xslHref, {
       errors: "true",
       error_messages: errorInfo.messages,
       error_urls: errorInfo.urls
@@ -6606,7 +6756,7 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
           ].map((locale) => {
             return {
               hreflang: locale._hreflang,
-              href: joinURL(withHttps(locale.domain), e._pathWithoutPrefix)
+              href: joinURL$1(withHttps$1(locale.domain), e._pathWithoutPrefix)
             };
           });
         } else {
@@ -6623,7 +6773,7 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
               if (typeof customPath === "string")
                 loc = customPath[0] === "/" ? customPath : `/${customPath}`;
             } else if (!hasDifferentDomains && !(isPrefixExceptOrAndDefault && l.code === defaultLocale)) {
-              loc = joinURL(`/${l.code}`, pathWithoutPrefix);
+              loc = joinURL$1(`/${l.code}`, pathWithoutPrefix);
             }
             const _sitemap = isI18nMapped ? l._sitemap : void 0;
             const alternatives = [];
@@ -6638,9 +6788,9 @@ function resolveSitemapEntries(sitemap, urls, runtimeConfig, resolvers) {
                 if (typeof customPath === "string")
                   href = customPath[0] === "/" ? customPath : `/${customPath}`;
               } else if (isPrefixStrategy) {
-                href = joinURL("/", code, pathWithoutPrefix);
+                href = joinURL$1("/", code, pathWithoutPrefix);
               } else if (isPrefixExceptOrAndDefault && !isDefault) {
-                href = joinURL("/", code, pathWithoutPrefix);
+                href = joinURL$1("/", code, pathWithoutPrefix);
               }
               if (!filterPath(href))
                 continue;
@@ -6702,9 +6852,7 @@ async function buildSitemapUrls(sitemap, resolvers, runtimeConfig, nitro) {
     if (domain) {
       const _tester = resolvers.canonicalUrlResolver;
       resolvers.canonicalUrlResolver = (path) => resolveSitePath(path, {
-        absolute: true,
-        withBase: false,
-        siteUrl: withHttps(domain),
+        siteUrl: withHttps$1(domain),
         trailingSlash: _tester("/test/").endsWith("/"),
         base: "/"
       });
@@ -6785,7 +6933,7 @@ async function buildSitemapXml(event, definition, resolvers, runtimeConfig) {
       const match = splitForLocales(path, autoI18n.locales.map((l) => l.code));
       const pathWithoutPrefix = match[1];
       if (pathWithoutPrefix && pathWithoutPrefix !== path)
-        routeRules = defu$1(routeRules, routeRuleMatcher(pathWithoutPrefix));
+        routeRules = defu$2(routeRules, routeRuleMatcher(pathWithoutPrefix));
     }
     if (routeRules.sitemap === false)
       continue;
@@ -6794,7 +6942,7 @@ async function buildSitemapXml(event, definition, resolvers, runtimeConfig) {
     const hasRobotsDisabled = Object.entries(routeRules.headers || {}).some(([name, value]) => name.toLowerCase() === "x-robots-tag" && value.toLowerCase().includes("noindex"));
     if (routeRules.redirect || hasRobotsDisabled)
       continue;
-    sitemapUrls[validCount++] = routeRules.sitemap ? defu$1(u, routeRules.sitemap) : u;
+    sitemapUrls[validCount++] = routeRules.sitemap ? defu$2(u, routeRules.sitemap) : u;
   }
   sitemapUrls.length = validCount;
   const locSize = sitemapUrls.length;
@@ -6856,275 +7004,33 @@ defineCachedFunction(
 async function createSitemap(event, definition, runtimeConfig) {
   const resolvers = useNitroUrlResolvers(event);
   const xml = await buildSitemapXml(event, definition, resolvers, runtimeConfig);
-  setHeader(event, "Content-Type", "text/xml; charset=UTF-8");
+  setHeader$1(event, "Content-Type", "text/xml; charset=UTF-8");
   if (runtimeConfig.cacheMaxAgeSeconds) {
-    setHeader(event, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
+    setHeader$1(event, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
     const now = /* @__PURE__ */ new Date();
-    setHeader(event, "X-Sitemap-Generated", now.toISOString());
-    setHeader(event, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
+    setHeader$1(event, "X-Sitemap-Generated", now.toISOString());
+    setHeader$1(event, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
     const expiryTime = new Date(now.getTime() + runtimeConfig.cacheMaxAgeSeconds * 1e3);
-    setHeader(event, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
+    setHeader$1(event, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
     const remainingSeconds = Math.floor((expiryTime.getTime() - now.getTime()) / 1e3);
-    setHeader(event, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
+    setHeader$1(event, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
   } else {
-    setHeader(event, "Cache-Control", `no-cache, no-store`);
+    setHeader$1(event, "Cache-Control", `no-cache, no-store`);
   }
   event.context._isSitemap = true;
   return xml;
 }
 
-defineCachedFunction(
-  async (event, resolvers, runtimeConfig, nitro) => {
-    return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
-  },
-  {
-    name: "sitemap:index",
-    group: "sitemap",
-    maxAge: 60 * 10,
-    // 10 minutes default
-    base: "sitemap",
-    // Use the sitemap storage
-    getKey: (event) => {
-      const host = getHeader(event, "host") || getHeader(event, "x-forwarded-host") || "";
-      const proto = getHeader(event, "x-forwarded-proto") || "https";
-      return `sitemap-index-${proto}-${host}`;
-    },
-    swr: true
-    // Enable stale-while-revalidate
-  }
-);
-async function buildSitemapIndexInternal(resolvers, runtimeConfig, nitro) {
-  const {
-    sitemaps,
-    // enhancing
-    autoLastmod,
-    // chunking
-    defaultSitemapsChunkSize,
-    autoI18n,
-    isI18nMapped,
-    sortEntries,
-    sitemapsPathPrefix
-  } = runtimeConfig;
-  if (!sitemaps)
-    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
-  function maybeSort(urls) {
-    return sortEntries ? sortInPlace(urls) : urls;
-  }
-  const chunks = {};
-  const allFailedSources = [];
-  for (const sitemapName in sitemaps) {
-    if (sitemapName === "index" || sitemapName === "chunks") continue;
-    const sitemapConfig = sitemaps[sitemapName];
-    if (sitemapConfig.chunks || sitemapConfig._isChunking) {
-      sitemapConfig._isChunking = true;
-      sitemapConfig._chunkSize = typeof sitemapConfig.chunks === "number" ? sitemapConfig.chunks : sitemapConfig.chunkSize || defaultSitemapsChunkSize || 1e3;
-    } else {
-      chunks[sitemapName] = chunks[sitemapName] || { urls: [] };
-    }
-  }
-  if (typeof sitemaps.chunks !== "undefined") {
-    const sitemap = sitemaps.chunks;
-    let sourcesInput = await globalSitemapSources();
-    if (nitro && resolvers.event) {
-      const ctx = {
-        event: resolvers.event,
-        sitemapName: sitemap.sitemapName,
-        sources: sourcesInput
-      };
-      await nitro.hooks.callHook("sitemap:sources", ctx);
-      sourcesInput = ctx.sources;
-    }
-    const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
-    const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
-      url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
-      error: source.error || "Unknown error"
-    }));
-    allFailedSources.push(...failedSources);
-    const resolvedCtx = {
-      urls: sources.flatMap((s) => s.urls),
-      sitemapName: sitemap.sitemapName,
-      event: resolvers.event
-    };
-    await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
-    const normalisedUrls = resolveSitemapEntries(sitemap, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
-    const enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults));
-    const sortedUrls = maybeSort(enhancedUrls);
-    sortedUrls.forEach((url, i) => {
-      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
-      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
-      chunks[chunkIndex].urls.push(url);
-    });
-  }
-  const entries = [];
-  for (const name in chunks) {
-    const sitemap = chunks[name];
-    const entry = {
-      _sitemapName: name,
-      sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${name}.xml`))
-    };
-    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
-    if (!lastmod && autoLastmod)
-      lastmod = /* @__PURE__ */ new Date();
-    if (lastmod)
-      entry.lastmod = normaliseDate(lastmod);
-    entries.push(entry);
-  }
-  for (const sitemapName in sitemaps) {
-    const sitemapConfig = sitemaps[sitemapName];
-    if (sitemapName !== "index" && sitemapConfig._isChunking) {
-      const chunkSize = sitemapConfig._chunkSize || defaultSitemapsChunkSize || 1e3;
-      let sourcesInput = sitemapConfig.includeAppSources ? [...await globalSitemapSources(), ...await childSitemapSources(sitemapConfig)] : await childSitemapSources(sitemapConfig);
-      if (nitro && resolvers.event) {
-        const ctx = {
-          event: resolvers.event,
-          sitemapName: sitemapConfig.sitemapName,
-          sources: sourcesInput
-        };
-        await nitro.hooks.callHook("sitemap:sources", ctx);
-        sourcesInput = ctx.sources;
-      }
-      const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
-      const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
-        url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
-        error: source.error || "Unknown error"
-      }));
-      allFailedSources.push(...failedSources);
-      const resolvedCtx = {
-        urls: sources.flatMap((s) => s.urls),
-        sitemapName: sitemapConfig.sitemapName,
-        event: resolvers.event
-      };
-      await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
-      const normalisedUrls = resolveSitemapEntries(sitemapConfig, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
-      const totalUrls = normalisedUrls.length;
-      const chunkCount = Math.ceil(totalUrls / chunkSize);
-      sitemapConfig._chunkCount = chunkCount;
-      for (let i = 0; i < chunkCount; i++) {
-        const chunkName = `${sitemapName}-${i}`;
-        const entry = {
-          _sitemapName: chunkName,
-          sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix || "", `/${chunkName}.xml`))
-        };
-        const chunkUrls = normalisedUrls.slice(i * chunkSize, (i + 1) * chunkSize);
-        let lastmod = chunkUrls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
-        if (!lastmod && autoLastmod)
-          lastmod = /* @__PURE__ */ new Date();
-        if (lastmod)
-          entry.lastmod = normaliseDate(lastmod);
-        entries.push(entry);
-      }
-    }
-  }
-  if (sitemaps.index) {
-    entries.push(...sitemaps.index.sitemaps.map((entry) => {
-      return typeof entry === "string" ? { sitemap: entry } : entry;
-    }));
-  }
-  return { entries, failedSources: allFailedSources };
-}
-function urlsToIndexXml(sitemaps, resolvers, { version, xsl, credits, minify }, errorInfo) {
-  const sitemapXml = sitemaps.map((e) => [
-    "    <sitemap>",
-    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
-    // lastmod is optional
-    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
-    "    </sitemap>"
-  ].filter(Boolean).join("\n")).join("\n");
-  const xmlParts = [
-    '<?xml version="1.0" encoding="UTF-8"?>'
-  ];
-  if (xsl) {
-    let relativeBaseUrl = resolvers.relativeBaseUrlResolver?.(xsl) ?? xsl;
-    if (errorInfo && errorInfo.messages.length > 0) {
-      relativeBaseUrl = withQuery(relativeBaseUrl, {
-        errors: "true",
-        error_messages: errorInfo.messages,
-        error_urls: errorInfo.urls
-      });
-    }
-    xmlParts.push(`<?xml-stylesheet type="text/xsl" href="${escapeValueForXml(relativeBaseUrl)}"?>`);
-  }
-  xmlParts.push(
-    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    sitemapXml,
-    "</sitemapindex>"
-  );
-  if (credits) {
-    xmlParts.push(`<!-- XML Sitemap Index generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`);
-  }
-  return minify ? xmlParts.join("").replace(/(?<!<[^>]*)\s(?![^<]*>)/g, "") : xmlParts.join("\n");
-}
-async function buildSitemapIndex(resolvers, runtimeConfig, nitro) {
-  return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
-}
-
-async function sitemapXmlEventHandler(e) {
+const _clgT8l = defineEventHandler$1(async (e) => {
   const runtimeConfig = useSitemapRuntimeConfig();
   const { sitemaps } = runtimeConfig;
-  if ("index" in sitemaps)
-    return sendRedirect(e, withBase("/sitemap_index.xml", useRuntimeConfig().app.baseURL), 302 );
+  if ("index" in sitemaps) {
+    return sendRedirect$1(e, withBase$1("/sitemap_index.xml", useRuntimeConfig().app.baseURL), 302 );
+  }
   return createSitemap(e, Object.values(sitemaps)[0], runtimeConfig);
-}
-async function sitemapIndexXmlEventHandler(e) {
-  const runtimeConfig = useSitemapRuntimeConfig();
-  const nitro = useNitroApp();
-  const resolvers = useNitroUrlResolvers(e);
-  const { entries: sitemaps, failedSources } = await buildSitemapIndex(resolvers, runtimeConfig, nitro);
-  const indexResolvedCtx = { sitemaps, event: e };
-  await nitro.hooks.callHook("sitemap:index-resolved", indexResolvedCtx);
-  const errorInfo = failedSources.length > 0 ? { messages: failedSources.map((f) => f.error), urls: failedSources.map((f) => f.url) } : void 0;
-  const output = urlsToIndexXml(indexResolvedCtx.sitemaps, resolvers, runtimeConfig, errorInfo);
-  const ctx = { sitemap: output, sitemapName: "sitemap", event: e };
-  await nitro.hooks.callHook("sitemap:output", ctx);
-  setHeader(e, "Content-Type", "text/xml; charset=UTF-8");
-  if (runtimeConfig.cacheMaxAgeSeconds) {
-    setHeader(e, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
-    const now = /* @__PURE__ */ new Date();
-    setHeader(e, "X-Sitemap-Generated", now.toISOString());
-    setHeader(e, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
-    const expiryTime = new Date(now.getTime() + runtimeConfig.cacheMaxAgeSeconds * 1e3);
-    setHeader(e, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
-    const remainingSeconds = Math.floor((expiryTime.getTime() - now.getTime()) / 1e3);
-    setHeader(e, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
-  } else {
-    setHeader(e, "Cache-Control", `no-cache, no-store`);
-  }
-  return ctx.sitemap;
-}
-async function sitemapChildXmlEventHandler(e) {
-  if (!e.path.endsWith(".xml"))
-    return;
-  const runtimeConfig = useSitemapRuntimeConfig(e);
-  const { sitemaps } = runtimeConfig;
-  let sitemapName = getRouterParam(e, "sitemap");
-  if (!sitemapName) {
-    const path = e.path;
-    const match = path.match(/(?:\/__sitemap__\/)?([^/]+)\.xml$/);
-    if (match)
-      sitemapName = match[1];
-  }
-  if (!sitemapName)
-    throw createError({ statusCode: 400, message: "Invalid sitemap request" });
-  sitemapName = withoutLeadingSlash(withoutTrailingSlash(sitemapName.replace(".xml", "").replace("__sitemap__/", "").replace(runtimeConfig.sitemapsPathPrefix || "", "")));
-  const chunkInfo = parseChunkInfo(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize);
-  const isAutoChunked = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemapName));
-  const sitemapExists = sitemapName in sitemaps || chunkInfo.baseSitemapName in sitemaps || isAutoChunked;
-  if (!sitemapExists)
-    throw createError({ statusCode: 404, message: `Sitemap "${sitemapName}" not found.` });
-  if (chunkInfo.isChunked && chunkInfo.chunkIndex !== void 0) {
-    const baseSitemap = sitemaps[chunkInfo.baseSitemapName];
-    if (baseSitemap && !baseSitemap.chunks && !baseSitemap._isChunking)
-      throw createError({ statusCode: 404, message: `Sitemap "${chunkInfo.baseSitemapName}" does not support chunking.` });
-    if (baseSitemap?._chunkCount !== void 0 && chunkInfo.chunkIndex >= baseSitemap._chunkCount)
-      throw createError({ statusCode: 404, message: `Chunk ${chunkInfo.chunkIndex} does not exist for sitemap "${chunkInfo.baseSitemapName}".` });
-  }
-  const sitemapConfig = getSitemapConfig(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize || void 0);
-  return createSitemap(e, sitemapConfig, runtimeConfig);
-}
+});
 
-const _E7N3B_ = defineEventHandler(sitemapXmlEventHandler);
-
-const storage = prefixStorage(useStorage(), "i18n");
+const storage = prefixStorage$1(useStorage(), "i18n");
 function cachedFunctionI18n(fn, opts) {
   opts = { maxAge: 1, ...opts };
   const pending = {};
@@ -7207,7 +7113,7 @@ cachedFunctionI18n(_getAllMergedMessages, {
   shouldBypassCache: (locales) => !locales.every((locale) => isLocaleCacheable(locale))
 });
 
-const _messagesHandler = defineEventHandler(async (event) => {
+const _messagesHandler = defineEventHandler$1(async (event) => {
   const locale = getRouterParam(event, "locale");
   if (!locale) {
     throw createError({ status: 400, message: "Locale not specified." });
@@ -7239,11 +7145,11 @@ defineCachedEventHandler(_cachedMessageLoader, {
   swr: false,
   getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
 });
-const _hm6ny9 = _messagesHandler ;
+const _i6kCvK = _messagesHandler ;
 
-const _otAr4o = eventHandler(async (event) => {
+const _yMAJzI = eventHandler$1(async (event) => {
   const collection = getRouterParam(event, "collection");
-  setHeader(event, "Content-Type", "text/plain");
+  setHeader$1(event, "Content-Type", "text/plain");
   const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
   if (data) {
     const lineStart = `export const ${collection} = "`;
@@ -7454,47 +7360,46 @@ const SQL_COUNT_REGEX = /COUNT\((DISTINCT )?([a-z_]\w+|\*)\)/i;
 const SQL_SELECT_REGEX = /^SELECT (.*) FROM (\w+)( WHERE .*)? ORDER BY (["\w,\s]+) (ASC|DESC)( LIMIT \d+)?( OFFSET \d+)?$/;
 function assertSafeQuery(sql, collection) {
   if (!sql) {
-    throw new Error("Invalid query: Query cannot be empty");
+    throw new Error("Invalid query");
   }
   const cleanedupQuery = cleanupQuery(sql);
   if (cleanedupQuery !== sql) {
-    throw new Error("Invalid query: SQL comments are not allowed");
+    throw new Error("Invalid query");
   }
   const match = sql.match(SQL_SELECT_REGEX);
   if (!match) {
-    throw new Error("Invalid query: Query must be a valid SELECT statement with proper syntax");
+    throw new Error("Invalid query");
   }
   const [_, select, from, where, orderBy, order, limit, offset] = match;
   const columns = select?.trim().split(", ") || [];
   if (columns.length === 1) {
     if (columns[0] !== "*" && !columns[0]?.match(SQL_COUNT_REGEX) && !columns[0]?.match(/^"[a-z_]\w+"$/i)) {
-      throw new Error(`Invalid query: Column '${columns[0]}' has invalid format. Expected *, COUNT(), or a quoted column name`);
+      throw new Error("Invalid query");
     }
   } else if (!columns.every((column) => column.match(/^"[a-z_]\w+"$/i))) {
-    throw new Error("Invalid query: Multiple columns must be properly quoted and alphanumeric");
+    throw new Error("Invalid query");
   }
   if (from !== `_content_${collection}`) {
-    const collection2 = String(from || "").replace(/^_content_/, "");
-    throw new Error(`Invalid query: Collection '${collection2}' does not exist`);
+    throw new Error("Invalid query");
   }
   if (where) {
     if (!where.startsWith(" WHERE (") || !where.endsWith(")")) {
-      throw new Error("Invalid query: WHERE clause must be properly enclosed in parentheses");
+      throw new Error("Invalid query");
     }
     const noString = cleanupQuery(where, { removeString: true });
     if (noString.match(SQL_COMMANDS)) {
-      throw new Error("Invalid query: WHERE clause contains unsafe SQL commands");
+      throw new Error("Invalid query");
     }
   }
   const _order = (orderBy + " " + order).split(", ");
   if (!_order.every((column) => column.match(/^("[a-zA-Z_]+"|[a-zA-Z_]+) (ASC|DESC)$/))) {
-    throw new Error("Invalid query: ORDER BY clause must contain valid column names followed by ASC or DESC");
+    throw new Error("Invalid query");
   }
   if (limit !== void 0 && !limit.match(/^ LIMIT \d+$/)) {
-    throw new Error("Invalid query: LIMIT clause must be a positive number");
+    throw new Error("Invalid query");
   }
   if (offset !== void 0 && !offset.match(/^ OFFSET \d+$/)) {
-    throw new Error("Invalid query: OFFSET clause must be a positive number");
+    throw new Error("Invalid query");
   }
   return true;
 }
@@ -7542,8 +7447,8 @@ function cleanupQuery(query, options = { removeString: false }) {
   return result;
 }
 
-const _kasCmx = eventHandler(async (event) => {
-  const { sql } = await readBody(event);
+const _bxwURu = eventHandler$1(async (event) => {
+  const { sql } = await readBody$1(event);
   const collection = getRouterParam(event, "collection");
   assertSafeQuery(sql, collection);
   const conf = useRuntimeConfig().content;
@@ -7553,7 +7458,7 @@ const _kasCmx = eventHandler(async (event) => {
   return loadDatabaseAdapter(conf).all(sql);
 });
 
-const _kKhZD3 = lazyEventHandler(() => {
+const _ttWFgD = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -7572,38 +7477,38 @@ const _kKhZD3 = lazyEventHandler(() => {
 });
 
 const _lazy_H_Xzd6 = () => Promise.resolve().then(function () { return renderer$1; });
-const _lazy_GvmXHf = () => Promise.resolve().then(function () { return font$1; });
-const _lazy_OJIXLQ = () => Promise.resolve().then(function () { return debug_json$1; });
-const _lazy_DRXIaJ = () => Promise.resolve().then(function () { return image$1; });
-const _lazy_zDyne8 = () => Promise.resolve().then(function () { return sitemap_index_xml$1; });
-const _lazy_VoouNN = () => Promise.resolve().then(function () { return _sitemap__xml$1; });
+const _lazy_DMbZXf = () => Promise.resolve().then(function () { return font$1; });
+const _lazy_bDyBwJ = () => Promise.resolve().then(function () { return debug_json$1; });
+const _lazy_JLBK6J = () => Promise.resolve().then(function () { return image$1; });
+const _lazy_orHbTf = () => Promise.resolve().then(function () { return sitemap_index_xml$1; });
+const _lazy___Asv_ = () => Promise.resolve().then(function () { return _sitemap__xml$1; });
 
 const handlers = [
   { route: '', handler: _M5IJCq, lazy: false, middleware: true, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_H_Xzd6, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _TMuwjk, lazy: false, middleware: false, method: undefined },
-  { route: '/__og-image__/font/**', handler: _lazy_GvmXHf, lazy: true, middleware: false, method: undefined },
+  { route: '/__og-image__/font/**', handler: _lazy_DMbZXf, lazy: true, middleware: false, method: undefined },
   { route: '', handler: _etcbur, lazy: false, middleware: true, method: undefined },
   { route: '/__site-config__/debug.json', handler: _zSWe_L, lazy: false, middleware: false, method: undefined },
-  { route: '/__og-image__/debug.json', handler: _lazy_OJIXLQ, lazy: true, middleware: false, method: undefined },
-  { route: '/__og-image__/image/**', handler: _lazy_DRXIaJ, lazy: true, middleware: false, method: undefined },
-  { route: '/__og-image__/static/**', handler: _lazy_DRXIaJ, lazy: true, middleware: false, method: undefined },
-  { route: '/robots.txt', handler: _r4WY1H, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _H8WsxL, lazy: false, middleware: true, method: undefined },
-  { route: '/__robots__/debug.json', handler: _VVGqL9, lazy: false, middleware: false, method: undefined },
-  { route: '/__robots__/debug-path.json', handler: _ELG8cb, lazy: false, middleware: false, method: undefined },
-  { route: '/__sitemap__/nuxt-content-urls.json', handler: _p7rKYb, lazy: false, middleware: false, method: undefined },
-  { route: '/sitemap_index.xml', handler: _lazy_zDyne8, lazy: true, middleware: false, method: undefined },
-  { route: '/__sitemap__/**:sitemap', handler: _lazy_VoouNN, lazy: true, middleware: false, method: undefined },
-  { route: '/__sitemap__/debug.json', handler: _CLfmEi, lazy: false, middleware: false, method: undefined },
-  { route: '/__sitemap__/**:sitemap', handler: _lazy_VoouNN, lazy: true, middleware: true, method: undefined },
-  { route: '/__sitemap__/style.xsl', handler: _VZ5pjY, lazy: false, middleware: false, method: undefined },
-  { route: '/sitemap.xml', handler: _E7N3B_, lazy: false, middleware: false, method: undefined },
-  { route: '/_i18n/:hash/:locale/messages.json', handler: _hm6ny9, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/:collection/sql_dump.txt', handler: _otAr4o, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/:collection/query', handler: _kasCmx, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _kKhZD3, lazy: false, middleware: false, method: undefined },
+  { route: '/__og-image__/debug.json', handler: _lazy_bDyBwJ, lazy: true, middleware: false, method: undefined },
+  { route: '/__og-image__/image/**', handler: _lazy_JLBK6J, lazy: true, middleware: false, method: undefined },
+  { route: '/__og-image__/static/**', handler: _lazy_JLBK6J, lazy: true, middleware: false, method: undefined },
+  { route: '/robots.txt', handler: _oJeQat, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _A69uSD, lazy: false, middleware: true, method: undefined },
+  { route: '/__robots__/debug.json', handler: _bbwjjr, lazy: false, middleware: false, method: undefined },
+  { route: '/__robots__/debug-path.json', handler: _gtU3hx, lazy: false, middleware: false, method: undefined },
+  { route: '/__sitemap__/nuxt-content-urls.json', handler: _LWea1X, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap_index.xml', handler: _lazy_orHbTf, lazy: true, middleware: false, method: undefined },
+  { route: '/__sitemap__/**:sitemap', handler: _lazy___Asv_, lazy: true, middleware: false, method: undefined },
+  { route: '/__sitemap__/debug.json', handler: _zBKbts, lazy: false, middleware: false, method: undefined },
+  { route: '/__sitemap__/**:sitemap', handler: _lazy___Asv_, lazy: true, middleware: true, method: undefined },
+  { route: '/__sitemap__/style.xsl', handler: _2OYHuH, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap.xml', handler: _clgT8l, lazy: false, middleware: false, method: undefined },
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _i6kCvK, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/:collection/sql_dump.txt', handler: _yMAJzI, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/:collection/query', handler: _bxwURu, lazy: false, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _ttWFgD, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy_H_Xzd6, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_H_Xzd6, lazy: true, middleware: false, method: undefined }
 ];
@@ -7676,7 +7581,7 @@ function createNitroApp() {
       });
     }
   });
-  const router = createRouter$1({
+  const router = createRouter$2({
     preemptive: true
   });
   const nodeHandler = toNodeListener(h3App);
@@ -7702,7 +7607,7 @@ function createNitroApp() {
   globalThis.$fetch = $fetch;
   h3App.use(createRouteRulesHandler({ localFetch }));
   for (const h of handlers) {
-    let handler = h.lazy ? lazyEventHandler(h.handler) : h.handler;
+    let handler = h.lazy ? lazyEventHandler$1(h.handler) : h.handler;
     if (h.middleware || !h.route) {
       const middlewareBase = (config.app.baseURL + (h.route || "/")).replace(
         /\/+/g,
@@ -7787,9 +7692,9 @@ nitroApp.router.get(
 nitroApp.router.use(
   "/_nitro/tasks/:name",
   defineEventHandler(async (event) => {
-    const name = getRouterParam(event, "name");
+    const name = getRouterParam$1(event, "name");
     const payload = {
-      ...getQuery$1(event),
+      ...getQuery$2(event),
       ...await readBody(event).then((r) => r?.payload).catch(() => ({}))
     };
     return await runTask(name, { payload });
@@ -7848,7 +7753,7 @@ const error500 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 
 const compatibility = {"chromium":"chrome-launcher","satori":"node","resvg":"node","sharp":false,"css-inline":false};
 
-const assets = prefixStorage(useStorage(), "/assets");
+const assets = prefixStorage$1(useStorage(), "/assets");
 async function loadFont({ e, publicStoragePath }, font) {
   const { name, weight } = font;
   if (font.data)
@@ -8122,7 +8027,7 @@ const imageSrc = defineSatoriTransformer([
           const buffer = imageBuffer instanceof ArrayBuffer ? imageBuffer : imageBuffer.buffer;
           node.props.src = toBase64Image(buffer);
         } else {
-          node.props.src = `${withBase(src, `${useNitroOrigin(e)}`)}?${Date.now()}`;
+          node.props.src = `${withBase$1(src, `${useNitroOrigin(e)}`)}?${Date.now()}`;
         }
       }
     }
@@ -11851,7 +11756,7 @@ async function applyInlineCss(ctx, island) {
   const cssInline = await useCssInline();
   if (!cssInline || cssInline?.__mock__) {
     if (componentInlineStyles.length) {
-      const logger = createConsola().withTag("Nuxt OG Image");
+      const logger = createConsola$1().withTag("Nuxt OG Image");
       logger.warn("To have inline styles applied you need to install either the `@css-inline/css-inline` or `@css-inline/css-inline-wasm` package.");
     }
     return false;
@@ -11932,7 +11837,7 @@ async function createSvg(event) {
     resolveFonts(event)
   ]);
   await event._nitro.hooks.callHook("nuxt-og-image:satori:vnodes", vnodes, event);
-  const satoriOptions = defu$1(options.satori, _satoriOptions, {
+  const satoriOptions = defu$2(options.satori, _satoriOptions, {
     fonts,
     tailwindConfig: { theme },
     embedFont: true,
@@ -11949,7 +11854,7 @@ async function createPng(event) {
   if (!svg)
     throw new Error("Failed to create SVG");
   const Resvg = await useResvg();
-  const resvg = new Resvg(svg, defu$1(
+  const resvg = new Resvg(svg, defu$2(
     event.options.resvg,
     resvgOptions
   ));
@@ -11977,7 +11882,7 @@ async function createJpeg(event) {
     console.error("Sharp dependency is not accessible. Please check you have it installed and are using a compatible runtime. Falling back to png.");
     return createPng(event);
   }
-  const options = defu$1(event.options.sharp, sharpOptions);
+  const options = defu$2(event.options.sharp, sharpOptions);
   return sharp(svgBuffer, options).jpeg(options).toBuffer();
 }
 const SatoriRenderer = {
@@ -12020,7 +11925,7 @@ async function createBrowser() {
 
 async function createScreenshot({ basePath, e, options, extension }, browser) {
   const { colorPreference } = useOgImageRuntimeConfig();
-  const path = options.component === "PageScreenshot" ? basePath : joinURL("/__og-image__/image", basePath, `og.html`);
+  const path = options.component === "PageScreenshot" ? basePath : joinURL$1("/__og-image__/image", basePath, `og.html`);
   const page = await browser.newPage({
     colorScheme: colorPreference || "no-preference",
     baseURL: useNitroOrigin(e)
@@ -12028,8 +11933,8 @@ async function createScreenshot({ basePath, e, options, extension }, browser) {
   try {
     if (false && !options.html) ;
     await page.setViewportSize({
-      width: toValue(options.width) || 1200,
-      height: toValue(options.height) || 630
+      width: toValue$1(options.width) || 1200,
+      height: toValue$1(options.height) || 630
     });
     if (options.html) {
       const html = options.html;
@@ -12040,7 +11945,7 @@ async function createScreenshot({ basePath, e, options, extension }, browser) {
       }, html);
       await page.waitForLoadState("networkidle");
     } else {
-      await page.goto(withQuery(path, options.props), {
+      await page.goto(withQuery$1(path, options.props), {
         timeout: 1e4,
         waitUntil: "networkidle"
       });
@@ -13291,9 +13196,9 @@ const APP_TELEPORT_CLOSE_TAG = HAS_APP_TELEPORTS ? `</${appTeleportTag}>` : "";
 const PAYLOAD_URL_RE = /^[^?]*\/_payload.json(?:\?.*)?$/ ;
 const renderer = defineRenderHandler(async (event) => {
   const nitroApp = useNitroApp();
-  const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery$1(event) : null;
+  const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery$2(event) : null;
   if (ssrError && !("__unenv__" in event.node.req)) {
-    throw createError({
+    throw createError$1({
       statusCode: 404,
       statusMessage: "Page Not Found: /__nuxt_error"
     });
@@ -13445,6 +13350,8 @@ const renderer$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty
   default: renderer
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const createHeadCore = createUnhead;
+
 async function html(ctx) {
   const { options } = ctx;
   const { fonts } = useOgImageRuntimeConfig();
@@ -13542,7 +13449,7 @@ svg[data-emoji] {
     ]
   });
   html2 = html2.replaceAll(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
-  const headChunk = await renderSSRHead(head);
+  const headChunk = await renderSSRHead$1(head);
   return `<!DOCTYPE html>
 <html ${headChunk.htmlAttrs}>
 <head>${headChunk.headTags}</head>
@@ -13552,13 +13459,13 @@ svg[data-emoji] {
 
 async function useOgImageBufferCache(ctx, options) {
   let enabled = false;
-  prefixStorage(useStorage(), withTrailingSlash(options.baseCacheKey || "/"));
+  prefixStorage$1(useStorage(), withTrailingSlash$1(options.baseCacheKey || "/"));
   ctx.key;
   let cachedItem = false;
   {
-    setHeader(ctx.e, "Cache-Control", "no-cache, no-store, must-revalidate");
-    setHeader(ctx.e, "Pragma", "no-cache");
-    setHeader(ctx.e, "Expires", "0");
+    setHeader$1(ctx.e, "Cache-Control", "no-cache, no-store, must-revalidate");
+    setHeader$1(ctx.e, "Pragma", "no-cache");
+    setHeader$1(ctx.e, "Expires", "0");
   }
   return {
     enabled,
@@ -13570,7 +13477,7 @@ async function useOgImageBufferCache(ctx, options) {
 }
 
 async function fontEventHandler(e) {
-  const path = parseURL(e.path).pathname;
+  const path = parseURL$1(e.path).pathname;
   const { fonts } = useOgImageRuntimeConfig();
   const key = path.split("/font/")[1];
   if (key && key.includes(":")) {
@@ -13582,11 +13489,11 @@ async function fontEventHandler(e) {
         fontData = decoder.decode(fontData);
       }
       if (key.includes(".oft")) {
-        setResponseHeader(e, "Content-Type", "font/otf");
+        setResponseHeader$1(e, "Content-Type", "font/otf");
       } else if (key.includes(".woff2")) {
-        setResponseHeader(e, "Content-Type", "font/woff2");
+        setResponseHeader$1(e, "Content-Type", "font/woff2");
       } else if (key.includes(".ttf")) {
-        setResponseHeader(e, "Content-Type", "font/ttf");
+        setResponseHeader$1(e, "Content-Type", "font/ttf");
       }
       return Buffer.from(fontData, "base64");
     }
@@ -13626,10 +13533,10 @@ async function fontEventHandler(e) {
   }
   const ttfResource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
   if (ttfResource?.[1])
-    return proxyRequest(e, ttfResource[1], {});
+    return proxyRequest$1(e, ttfResource[1], {});
   const woff2Resource = css.match(/src: url\((.+)\) format\('woff2'\)/);
   if (woff2Resource?.[1])
-    return sendRedirect(e, woff2Resource[1]);
+    return sendRedirect$1(e, woff2Resource[1]);
   return createError({
     statusCode: 500,
     statusMessage: `[Nuxt OG Image] Malformed Google Font CSS ${css}`
@@ -13648,7 +13555,7 @@ async function imageEventHandler(e) {
       compatibilityHints.push("Converting PNGs to JPEGs requires Sharp which only runs on Node based systems.");
     if (options.renderer === "chromium")
       compatibilityHints.push("Using Chromium to generate images is only supported in Node based environments. It's recommended to only use this if you're prerendering");
-    setHeader(e, "Content-Type", "application/json");
+    setHeader$1(e, "Content-Type", "application/json");
     return {
       siteConfig: {
         url: e.context.siteConfig.get().url
@@ -13661,7 +13568,7 @@ async function imageEventHandler(e) {
   }
   switch (extension) {
     case "html":
-      setHeader(e, "Content-Type", `text/html`);
+      setHeader$1(e, "Content-Type", `text/html`);
       return html(ctx);
     case "svg":
       if (ctx.renderer.name !== "satori") {
@@ -13670,7 +13577,7 @@ async function imageEventHandler(e) {
           statusMessage: `[Nuxt OG Image] Generating ${extension}'s with ${renderer.name} is not supported.`
         });
       }
-      setHeader(e, "Content-Type", `image/svg+xml`);
+      setHeader$1(e, "Content-Type", `image/svg+xml`);
       return (await ctx.renderer.debug(ctx)).svg;
     case "png":
     case "jpeg":
@@ -13681,7 +13588,7 @@ async function imageEventHandler(e) {
           statusMessage: `[Nuxt OG Image] Generating ${extension}'s with ${renderer.name} is not supported.`
         });
       }
-      setHeader(e, "Content-Type", `image/${extension === "jpg" ? "jpeg" : extension}`);
+      setHeader$1(e, "Content-Type", `image/${extension === "jpg" ? "jpeg" : extension}`);
       break;
     default:
       return createError({
@@ -13713,15 +13620,15 @@ async function imageEventHandler(e) {
   return image;
 }
 
-const font = defineEventHandler(fontEventHandler);
+const font = defineEventHandler$1(fontEventHandler);
 
 const font$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: font
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const debug_json = defineEventHandler(async (e) => {
-  setHeader(e, "Content-Type", "application/json");
+const debug_json = defineEventHandler$1(async (e) => {
+  setHeader$1(e, "Content-Type", "application/json");
   const runtimeConfig = useOgImageRuntimeConfig();
   return {
     siteConfigUrl: useSiteConfig(e).url,
@@ -13736,21 +13643,278 @@ const debug_json$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProper
   default: debug_json
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const image = defineEventHandler(imageEventHandler);
+const image = defineEventHandler$1(imageEventHandler);
 
 const image$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: image
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const sitemap_index_xml = defineEventHandler(sitemapIndexXmlEventHandler);
+defineCachedFunction(
+  async (event, resolvers, runtimeConfig, nitro) => {
+    return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
+  },
+  {
+    name: "sitemap:index",
+    group: "sitemap",
+    maxAge: 60 * 10,
+    // 10 minutes default
+    base: "sitemap",
+    // Use the sitemap storage
+    getKey: (event) => {
+      const host = getHeader(event, "host") || getHeader(event, "x-forwarded-host") || "";
+      const proto = getHeader(event, "x-forwarded-proto") || "https";
+      return `sitemap-index-${proto}-${host}`;
+    },
+    swr: true
+    // Enable stale-while-revalidate
+  }
+);
+async function buildSitemapIndexInternal(resolvers, runtimeConfig, nitro) {
+  const {
+    sitemaps,
+    // enhancing
+    autoLastmod,
+    // chunking
+    defaultSitemapsChunkSize,
+    autoI18n,
+    isI18nMapped,
+    sortEntries,
+    sitemapsPathPrefix
+  } = runtimeConfig;
+  if (!sitemaps)
+    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
+  function maybeSort(urls) {
+    return sortEntries ? sortInPlace(urls) : urls;
+  }
+  const chunks = {};
+  const allFailedSources = [];
+  for (const sitemapName in sitemaps) {
+    if (sitemapName === "index" || sitemapName === "chunks") continue;
+    const sitemapConfig = sitemaps[sitemapName];
+    if (sitemapConfig.chunks || sitemapConfig._isChunking) {
+      sitemapConfig._isChunking = true;
+      sitemapConfig._chunkSize = typeof sitemapConfig.chunks === "number" ? sitemapConfig.chunks : sitemapConfig.chunkSize || defaultSitemapsChunkSize || 1e3;
+    } else {
+      chunks[sitemapName] = chunks[sitemapName] || { urls: [] };
+    }
+  }
+  if (typeof sitemaps.chunks !== "undefined") {
+    const sitemap = sitemaps.chunks;
+    let sourcesInput = await globalSitemapSources();
+    if (nitro && resolvers.event) {
+      const ctx = {
+        event: resolvers.event,
+        sitemapName: sitemap.sitemapName,
+        sources: sourcesInput
+      };
+      await nitro.hooks.callHook("sitemap:sources", ctx);
+      sourcesInput = ctx.sources;
+    }
+    const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
+    const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
+      url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
+      error: source.error || "Unknown error"
+    }));
+    allFailedSources.push(...failedSources);
+    const resolvedCtx = {
+      urls: sources.flatMap((s) => s.urls),
+      sitemapName: sitemap.sitemapName,
+      event: resolvers.event
+    };
+    await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
+    const normalisedUrls = resolveSitemapEntries(sitemap, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
+    const enhancedUrls = normalisedUrls.map((e) => defu$2(e, sitemap.defaults));
+    const sortedUrls = maybeSort(enhancedUrls);
+    sortedUrls.forEach((url, i) => {
+      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
+      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
+      chunks[chunkIndex].urls.push(url);
+    });
+  }
+  const entries = [];
+  for (const name in chunks) {
+    const sitemap = chunks[name];
+    const entry = {
+      _sitemapName: name,
+      sitemap: resolvers.canonicalUrlResolver(joinURL$1(sitemapsPathPrefix || "", `/${name}.xml`))
+    };
+    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+    if (!lastmod && autoLastmod)
+      lastmod = /* @__PURE__ */ new Date();
+    if (lastmod)
+      entry.lastmod = normaliseDate(lastmod);
+    entries.push(entry);
+  }
+  for (const sitemapName in sitemaps) {
+    const sitemapConfig = sitemaps[sitemapName];
+    if (sitemapName !== "index" && sitemapConfig._isChunking) {
+      const chunkSize = sitemapConfig._chunkSize || defaultSitemapsChunkSize || 1e3;
+      let sourcesInput = sitemapConfig.includeAppSources ? [...await globalSitemapSources(), ...await childSitemapSources(sitemapConfig)] : await childSitemapSources(sitemapConfig);
+      if (nitro && resolvers.event) {
+        const ctx = {
+          event: resolvers.event,
+          sitemapName: sitemapConfig.sitemapName,
+          sources: sourcesInput
+        };
+        await nitro.hooks.callHook("sitemap:sources", ctx);
+        sourcesInput = ctx.sources;
+      }
+      const sources = await resolveSitemapSources(sourcesInput, resolvers.event);
+      const failedSources = sources.filter((source) => source.error && source._isFailure).map((source) => ({
+        url: typeof source.fetch === "string" ? source.fetch : source.fetch?.[0] || "unknown",
+        error: source.error || "Unknown error"
+      }));
+      allFailedSources.push(...failedSources);
+      const resolvedCtx = {
+        urls: sources.flatMap((s) => s.urls),
+        sitemapName: sitemapConfig.sitemapName,
+        event: resolvers.event
+      };
+      await nitro?.hooks.callHook("sitemap:input", resolvedCtx);
+      const normalisedUrls = resolveSitemapEntries(sitemapConfig, resolvedCtx.urls, { autoI18n, isI18nMapped }, resolvers);
+      const totalUrls = normalisedUrls.length;
+      const chunkCount = Math.ceil(totalUrls / chunkSize);
+      sitemapConfig._chunkCount = chunkCount;
+      for (let i = 0; i < chunkCount; i++) {
+        const chunkName = `${sitemapName}-${i}`;
+        const entry = {
+          _sitemapName: chunkName,
+          sitemap: resolvers.canonicalUrlResolver(joinURL$1(sitemapsPathPrefix || "", `/${chunkName}.xml`))
+        };
+        const chunkUrls = normalisedUrls.slice(i * chunkSize, (i + 1) * chunkSize);
+        let lastmod = chunkUrls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+        if (!lastmod && autoLastmod)
+          lastmod = /* @__PURE__ */ new Date();
+        if (lastmod)
+          entry.lastmod = normaliseDate(lastmod);
+        entries.push(entry);
+      }
+    }
+  }
+  if (sitemaps.index) {
+    entries.push(...sitemaps.index.sitemaps.map((entry) => {
+      return typeof entry === "string" ? { sitemap: entry } : entry;
+    }));
+  }
+  return { entries, failedSources: allFailedSources };
+}
+function urlsToIndexXml(sitemaps, resolvers, { version, xsl, credits, minify }, errorInfo) {
+  const sitemapXml = sitemaps.map((e) => [
+    "    <sitemap>",
+    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
+    // lastmod is optional
+    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
+    "    </sitemap>"
+  ].filter(Boolean).join("\n")).join("\n");
+  const xmlParts = [
+    '<?xml version="1.0" encoding="UTF-8"?>'
+  ];
+  if (xsl) {
+    let relativeBaseUrl = resolvers.relativeBaseUrlResolver?.(xsl) ?? xsl;
+    if (errorInfo && errorInfo.messages.length > 0) {
+      relativeBaseUrl = withQuery$1(relativeBaseUrl, {
+        errors: "true",
+        error_messages: errorInfo.messages,
+        error_urls: errorInfo.urls
+      });
+    }
+    xmlParts.push(`<?xml-stylesheet type="text/xsl" href="${escapeValueForXml(relativeBaseUrl)}"?>`);
+  }
+  xmlParts.push(
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    sitemapXml,
+    "</sitemapindex>"
+  );
+  if (credits) {
+    xmlParts.push(`<!-- XML Sitemap Index generated by @nuxtjs/sitemap v${version} at ${(/* @__PURE__ */ new Date()).toISOString()} -->`);
+  }
+  return minify ? xmlParts.join("").replace(/(?<!<[^>]*)\s(?![^<]*>)/g, "") : xmlParts.join("\n");
+}
+async function buildSitemapIndex(resolvers, runtimeConfig, nitro) {
+  return buildSitemapIndexInternal(resolvers, runtimeConfig, nitro);
+}
+
+const sitemap_index_xml = defineEventHandler$1(async (e) => {
+  const runtimeConfig = useSitemapRuntimeConfig();
+  const nitro = useNitroApp();
+  const resolvers = useNitroUrlResolvers(e);
+  const { entries: sitemaps, failedSources } = await buildSitemapIndex(resolvers, runtimeConfig, nitro);
+  const indexResolvedCtx = { sitemaps, event: e };
+  await nitro.hooks.callHook("sitemap:index-resolved", indexResolvedCtx);
+  const errorInfo = failedSources.length > 0 ? {
+    messages: failedSources.map((f) => f.error),
+    urls: failedSources.map((f) => f.url)
+  } : void 0;
+  const output = urlsToIndexXml(indexResolvedCtx.sitemaps, resolvers, runtimeConfig, errorInfo);
+  const ctx = { sitemap: output, sitemapName: "sitemap", event: e };
+  await nitro.hooks.callHook("sitemap:output", ctx);
+  setHeader$1(e, "Content-Type", "text/xml; charset=UTF-8");
+  if (runtimeConfig.cacheMaxAgeSeconds) {
+    setHeader$1(e, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, s-maxage=${runtimeConfig.cacheMaxAgeSeconds}, stale-while-revalidate=3600`);
+    const now = /* @__PURE__ */ new Date();
+    setHeader$1(e, "X-Sitemap-Generated", now.toISOString());
+    setHeader$1(e, "X-Sitemap-Cache-Duration", `${runtimeConfig.cacheMaxAgeSeconds}s`);
+    const expiryTime = new Date(now.getTime() + runtimeConfig.cacheMaxAgeSeconds * 1e3);
+    setHeader$1(e, "X-Sitemap-Cache-Expires", expiryTime.toISOString());
+    const remainingSeconds = Math.floor((expiryTime.getTime() - now.getTime()) / 1e3);
+    setHeader$1(e, "X-Sitemap-Cache-Remaining", `${remainingSeconds}s`);
+  } else {
+    setHeader$1(e, "Cache-Control", `no-cache, no-store`);
+  }
+  return ctx.sitemap;
+});
 
 const sitemap_index_xml$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: sitemap_index_xml
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const _sitemap__xml = defineEventHandler(sitemapChildXmlEventHandler);
+const _sitemap__xml = defineEventHandler$1(async (e) => {
+  const runtimeConfig = useSitemapRuntimeConfig(e);
+  const { sitemaps } = runtimeConfig;
+  let sitemapName = getRouterParam(e, "sitemap");
+  if (!sitemapName) {
+    const path = e.path;
+    const match = path.match(/(?:\/__sitemap__\/)?([^/]+)\.xml$/);
+    if (match) {
+      sitemapName = match[1];
+    }
+  }
+  if (!sitemapName) {
+    return createError({
+      statusCode: 400,
+      message: "Invalid sitemap request"
+    });
+  }
+  sitemapName = withoutLeadingSlash(withoutTrailingSlash$1(sitemapName.replace(".xml", "").replace("__sitemap__/", "").replace(runtimeConfig.sitemapsPathPrefix || "", "")));
+  const chunkInfo = parseChunkInfo(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize);
+  const isAutoChunked = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemapName));
+  const sitemapExists = sitemapName in sitemaps || chunkInfo.baseSitemapName in sitemaps || isAutoChunked;
+  if (!sitemapExists) {
+    return createError({
+      statusCode: 404,
+      message: `Sitemap "${sitemapName}" not found.`
+    });
+  }
+  if (chunkInfo.isChunked && chunkInfo.chunkIndex !== void 0) {
+    const baseSitemap = sitemaps[chunkInfo.baseSitemapName];
+    if (baseSitemap && !baseSitemap.chunks && !baseSitemap._isChunking) {
+      return createError({
+        statusCode: 404,
+        message: `Sitemap "${chunkInfo.baseSitemapName}" does not support chunking.`
+      });
+    }
+    if (baseSitemap?._chunkCount !== void 0 && chunkInfo.chunkIndex >= baseSitemap._chunkCount) {
+      return createError({
+        statusCode: 404,
+        message: `Chunk ${chunkInfo.chunkIndex} does not exist for sitemap "${chunkInfo.baseSitemapName}".`
+      });
+    }
+  }
+  const sitemapConfig = getSitemapConfig(sitemapName, sitemaps, runtimeConfig.defaultSitemapsChunkSize || void 0);
+  return createSitemap(e, sitemapConfig, runtimeConfig);
+});
 
 const _sitemap__xml$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,

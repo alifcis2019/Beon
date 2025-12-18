@@ -1,0 +1,21 @@
+import { getBotDetection as getBotDetectionFromHeaders, getBotInfo as getBotInfoFromHeaders, isBot as isBotFromHeaders } from "@nuxtjs/robots/util";
+import { getHeaders } from "h3";
+import { useNitroApp } from "nitropack/runtime";
+export function getBotDetection(event) {
+  const headers = getHeaders(event) || {};
+  const nitroApp = useNitroApp();
+  const patternMap = nitroApp._robotsPatternMap;
+  return getBotDetectionFromHeaders(headers, patternMap);
+}
+export function isBot(event) {
+  const headers = getHeaders(event) || {};
+  const nitroApp = useNitroApp();
+  const patternMap = nitroApp._robotsPatternMap;
+  return isBotFromHeaders(headers, patternMap);
+}
+export function getBotInfo(event) {
+  const headers = getHeaders(event) || {};
+  const nitroApp = useNitroApp();
+  const patternMap = nitroApp._robotsPatternMap;
+  return getBotInfoFromHeaders(headers, patternMap);
+}

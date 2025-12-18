@@ -5,54 +5,54 @@ import type { RobotsContext } from '#robots/types'
 declare module 'nitropack/types' {
   interface NitroApp {
     _robots: {
-      ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext
+      ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext
       nuxtContentUrls?: Set<string>
     },
     _robotsRuleMatcher: (url: string) => any
-    _robotsPatternMap?: Map<string, import('../../node_modules/@nuxtjs/robots/dist/runtime/types').PatternMapValue>
+    _robotsPatternMap?: Map<string, import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').PatternMapValue>
   }
   interface NitroRouteRules {
-    robots?: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
+    robots?: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
       indexable: boolean
       rule: string
     }
   }
   interface NitroRouteConfig {
-    robots?: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
+    robots?: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
       indexable: boolean
       rule: string
     }
   }
   interface NitroRuntimeHooks {
-    'robots:config': (ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext) => void | Promise<void>
-    'robots:robots-txt': (ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsTxtContext) => void | Promise<void>
+    'robots:config': (ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext) => void | Promise<void>
+    'robots:robots-txt': (ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsTxtContext) => void | Promise<void>
   }
 }
 
 declare module 'nitropack' {
   interface NitroApp {
     _robots: {
-      ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext
+      ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext
       nuxtContentUrls?: Set<string>
     },
     _robotsRuleMatcher: (url: string) => any
-    _robotsPatternMap?: Map<string, import('../../node_modules/@nuxtjs/robots/dist/runtime/types').PatternMapValue>
+    _robotsPatternMap?: Map<string, import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').PatternMapValue>
   }
   interface NitroRouteRules {
-    robots?: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
+    robots?: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
       indexable: boolean
       rule: string
     }
   }
   interface NitroRouteConfig {
-    robots?: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
+    robots?: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').RobotsValue | {
       indexable: boolean
       rule: string
     }
   }
   interface NitroRuntimeHooks {
-    'robots:config': (ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext) => void | Promise<void>
-    'robots:robots-txt': (ctx: import('../../node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsTxtContext) => void | Promise<void>
+    'robots:config': (ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsConfigContext) => void | Promise<void>
+    'robots:robots-txt': (ctx: import('../../node_modules/.pnpm/@nuxtjs+robots@5.6.7_h3@1.15.4_magicast@0.5.1_vue@3.5.25_typescript@5.9.3__zod@4.1.13/node_modules/@nuxtjs/robots/dist/runtime/types').HookRobotsTxtContext) => void | Promise<void>
   }
 }
 

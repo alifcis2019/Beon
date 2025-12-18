@@ -1,5 +1,3 @@
-@source "/home/ali/work/beon-landing-nuxt/Beon/Saas/app/**/*";
-@source inline("isolate");
 @source "./ui";
 
 @layer base {

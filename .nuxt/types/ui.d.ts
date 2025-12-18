@@ -3,7 +3,7 @@ import type { TVConfig } from '@nuxt/ui'
 import type { defaultConfig } from 'tailwind-variants'
 import colors from 'tailwindcss/colors'
 
-type IconsConfig = Record<"arrowDown" | "arrowLeft" | "arrowRight" | "arrowUp" | "caution" | "check" | "chevronDoubleLeft" | "chevronDoubleRight" | "chevronDown" | "chevronLeft" | "chevronRight" | "chevronUp" | "close" | "copy" | "copyCheck" | "dark" | "drag" | "ellipsis" | "error" | "external" | "eye" | "eyeOff" | "file" | "folder" | "folderOpen" | "hash" | "info" | "light" | "loading" | "menu" | "minus" | "panelClose" | "panelOpen" | "plus" | "reload" | "search" | "stop" | "success" | "system" | "tip" | "upload" | "warning" | (string & {}), string>
+type IconsConfig = Record<"arrowDown" | "arrowLeft" | "arrowRight" | "arrowUp" | "caution" | "check" | "chevronDoubleLeft" | "chevronDoubleRight" | "chevronDown" | "chevronLeft" | "chevronRight" | "chevronUp" | "close" | "copy" | "copyCheck" | "dark" | "ellipsis" | "error" | "external" | "eye" | "eyeOff" | "file" | "folder" | "folderOpen" | "hash" | "info" | "light" | "loading" | "menu" | "minus" | "panelClose" | "panelOpen" | "plus" | "reload" | "search" | "stop" | "success" | "system" | "tip" | "upload" | "warning" | (string & {}), string>
 
 type NeutralColor = 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'
 type Color = Exclude<keyof typeof colors, 'inherit' | 'current' | 'transparent' | 'black' | 'white' | NeutralColor> | (string & {})

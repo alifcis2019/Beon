@@ -1,1 +1,1 @@
-export { default } from "/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"
+export { default } from "/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_better-sqlite3@12.5.0__ioredis@5.8.2_magicast@0.5.1/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"

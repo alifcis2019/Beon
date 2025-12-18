@@ -1,7 +1,7 @@
 
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="/home/ali/work/beon-landing-nuxt/Beon/Saas/node_modules/.pnpm/@nuxt+nitro-server@4.2.2_better-sqlite3@12.5.0_db0@0.3.4_better-sqlite3@12.5.0__ioredis_ebf14ed74a2789a2fe6834232612299b/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="../image/providers.d.ts" />
 /// <reference path="../module/nuxt-site-config.d.ts" />
 /// <reference path="../module/nuxt-og-image.d.ts" />

@@ -10,7 +10,7 @@ export default {
     "next": "absolute rounded-full",
     "dots": "absolute inset-x-0 -bottom-7 flex flex-wrap items-center justify-center gap-3",
     "dot": [
-      "cursor-pointer size-3 bg-accented rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+      "cursor-pointer size-3 bg-accented rounded-full",
       "transition"
     ]
   },

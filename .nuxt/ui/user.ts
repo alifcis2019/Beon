@@ -30,14 +30,14 @@ export default {
     "to": {
       "true": {
         "name": [
-          "text-default peer-hover:text-highlighted peer-focus-visible:text-highlighted",
+          "text-default peer-hover:text-highlighted",
           "transition-colors"
         ],
         "description": [
-          "peer-hover:text-toned peer-focus-visible:text-toned",
+          "peer-hover:text-toned",
           "transition-colors"
         ],
-        "avatar": "transform transition-transform duration-200 group-hover/user:scale-115 group-has-focus-visible/user:scale-115"
+        "avatar": "transform transition-transform duration-200 group-hover/user:scale-115"
       },
       "false": {
         "name": "text-highlighted",
