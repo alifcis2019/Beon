@@ -96,7 +96,34 @@
             <image:loc>https://beon.chat/images/services/1.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://beon.chat/images/services/2.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://beon.chat/images/services/3.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://beon.chat/images/services/4.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://beon.chat/images/services/5.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://beon.chat/about</loc>
+        <xhtml:link rel="alternate" href="https://beon.chat/about" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://beon.chat/about" hreflang="en" />
+        <xhtml:link rel="alternate" href="https://beon.chat/ar/about" hreflang="ar" />
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -138,7 +165,22 @@
             <image:loc>https://i.pravatar.cc/150?u=james</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://beon.chat/careers</loc>
+        <xhtml:link rel="alternate" href="https://beon.chat/careers" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://beon.chat/careers" hreflang="en" />
+        <xhtml:link rel="alternate" href="https://beon.chat/ar/careers" hreflang="ar" />
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -147,7 +189,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/contact" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/contact" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -156,7 +201,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/login" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/login" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -165,7 +213,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/privacy" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/privacy" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -174,7 +225,22 @@
         <xhtml:link rel="alternate" href="https://beon.chat/privacy-policy" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/privacy-policy" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://beon.chat/security</loc>
+        <xhtml:link rel="alternate" href="https://beon.chat/security" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://beon.chat/security" hreflang="en" />
+        <xhtml:link rel="alternate" href="https://beon.chat/ar/security" hreflang="ar" />
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -183,7 +249,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/signup" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/signup" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -192,7 +261,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/terms" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/terms" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -201,7 +273,10 @@
         <xhtml:link rel="alternate" href="https://beon.chat/terms-conditions" hreflang="en" />
         <xhtml:link rel="alternate" href="https://beon.chat/ar/terms-conditions" hreflang="ar" />
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -215,7 +290,10 @@
             <image:loc>https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&amp;amp;w=1978&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -229,7 +307,10 @@
             <image:loc>https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&amp;amp;w=1978&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -243,7 +324,10 @@
             <image:loc>https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;amp;w=2070&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -257,7 +341,10 @@
             <image:loc>https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&amp;amp;w=1974&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -271,7 +358,10 @@
             <image:loc>https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&amp;amp;w=1978&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -285,7 +375,10 @@
             <image:loc>https://images.unsplash.com/photo-1499750310159-52f8fdebafd3?q=80&amp;amp;w=1978&amp;amp;auto=format&amp;amp;fit=crop</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -294,25 +387,28 @@
         <xhtml:link rel="alternate" href="https://beon.chat/solutions/otp" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://beon.chat/solutions/otp" hreflang="en" />
         <image:image>
-            <image:loc>https://beon.chat/_ipx/_/logo.svg</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=2426&amp;amp;q=80</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://beon.chat/solutions/sms</loc>
-        <xhtml:link rel="alternate" href="https://beon.chat/ar/solutions/sms" hreflang="ar" />
         <xhtml:link rel="alternate" href="https://beon.chat/solutions/sms" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://beon.chat/solutions/sms" hreflang="en" />
+        <xhtml:link rel="alternate" href="https://beon.chat/ar/solutions/sms" hreflang="ar" />
         <image:image>
             <image:loc>https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=2340&amp;amp;q=80</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
     <url>
@@ -322,9 +418,6 @@
         <xhtml:link rel="alternate" href="https://beon.chat/ar/solutions/whatsapp" hreflang="ar" />
         <image:image>
             <image:loc>https://beon.chat/_ipx/_/logoDark.svg</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://beon.chat/_ipx/_/logo.svg</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://v3.admin.beon.chat/storage/images/logos/l2gKYvjdI0f3lgpnp8j6cKZO3IkAP9h17GpNSJTw.webp</image:loc>
@@ -417,8 +510,11 @@
             <image:loc>https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&amp;amp;fit=crop&amp;amp;w=600&amp;amp;q=80</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://beon.chat/images/footer/appScreen.webp</image:loc>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg</image:loc>
         </image:image>
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.5.0 at 2025-12-17T20:15:28.025Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.5.0 at 2025-12-18T20:17:46.409Z -->
