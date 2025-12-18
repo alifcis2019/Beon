@@ -1,50 +1,57 @@
 <script setup lang="ts">
 const footerLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Contact us', to: '/contact' },
-  { label: 'Privacy Policy', to: '/privacy-policy' },
-  { label: 'Terms & Conditions', to: '/terms-conditions' }
-]
+  { label: "Home", to: "/" },
+  { label: "Contact us", to: "/contact" },
+  { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Terms & Conditions", to: "/terms-conditions" },
+];
 
 const socialLinks = [
-  { icon: 'i-simple-icons-facebook', to: '#', label: 'Facebook' },
-  { icon: 'i-simple-icons-linkedin', to: '#', label: 'LinkedIn' },
-  { icon: 'i-simple-icons-instagram', to: '#', label: 'Instagram' },
-  { icon: 'i-simple-icons-youtube', to: '#', label: 'YouTube' }
-]
+  { icon: "i-simple-icons-facebook", to: "#", label: "Facebook" },
+  { icon: "i-simple-icons-linkedin", to: "#", label: "LinkedIn" },
+  { icon: "i-simple-icons-instagram", to: "#", label: "Instagram" },
+  { icon: "i-simple-icons-youtube", to: "#", label: "YouTube" },
+];
 
-const email = ref('')
+const email = ref("");
 const subscribe = () => {
   // Handle subscription
-  email.value = ''
-}
+  email.value = "";
+};
 </script>
 
 <template>
-  <footer class="bg-gray-900 text-white overflow-hidden relative">
+  <footer
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden relative transition-colors duration-300"
+  >
     <!-- Background Gradients -->
     <div
       class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
     >
       <div
-        class="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] bg-primary-900/20 rounded-full blur-3xl"
+        class="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] bg-primary-500/10 dark:bg-primary-900/20 rounded-full blur-3xl"
       />
       <div
-        class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-3xl"
+        class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-500/10 dark:bg-blue-900/10 rounded-full blur-3xl"
       />
     </div>
 
     <!-- CTA Section -->
-    <div class="relative border-b border-gray-800">
+    <div class="relative border-b border-gray-200 dark:border-gray-800">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 sm:py-32">
         <div class="relative z-10 text-center max-w-3xl mx-auto">
-          <h2 class="text-4xl sm:text-5xl font-bold mb-8 tracking-tight">
-            Ready to transform your<br>
+          <h2
+            class="text-4xl sm:text-5xl font-bold mb-8 tracking-tight text-gray-900 dark:text-white"
+          >
+            Ready to transform your<br />
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400"
-            >customer communication?</span>
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400"
+              >customer communication?</span
+            >
           </h2>
-          <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+          <p
+            class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed"
+          >
             Join thousands of businesses using BeOn to connect with their
             customers on WhatsApp, SMS, and more.
           </p>
@@ -61,18 +68,15 @@ const subscribe = () => {
             >
               Start Free Trial
               <template #trailing>
-                <UIcon
-                  name="i-heroicons-arrow-right"
-                  class="w-5 h-5"
-                />
+                <UIcon name="i-heroicons-arrow-right" class="w-5 h-5" />
               </template>
             </UButton>
             <UButton
               to="/contact"
               size="xl"
-              color="white"
+              color="gray"
               variant="ghost"
-              class="rounded-full px-8 py-4 text-white hover:bg-white/10 transition-all duration-300 font-semibold w-full sm:w-auto"
+              class="rounded-full px-8 py-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 font-semibold w-full sm:w-auto"
             >
               Contact Sales
             </UButton>
@@ -87,16 +91,22 @@ const subscribe = () => {
         <!-- Brand & Newsletter -->
         <div class="lg:col-span-5 space-y-8">
           <div class="flex items-center gap-2">
-            <span class="text-3xl font-bold text-white">Be<span class="text-primary-500">on</span></span>
+            <span class="text-3xl font-bold text-gray-900 dark:text-white"
+              >Be<span class="text-primary-600 dark:text-primary-500"
+                >on</span
+              ></span
+            >
           </div>
-          <p class="text-gray-400 leading-relaxed max-w-md">
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
             The all-in-one platform for WhatsApp marketing, automation, and
             customer support. Empower your team to do more with less.
           </p>
 
           <!-- Newsletter -->
           <div class="max-w-sm">
-            <h4 class="text-sm font-semibold text-white mb-3">
+            <h4
+              class="text-sm font-semibold text-gray-900 dark:text-white mb-3"
+            >
               Subscribe to our newsletter
             </h4>
             <div class="flex gap-2">
@@ -105,7 +115,7 @@ const subscribe = () => {
                 placeholder="Enter your email"
                 color="gray"
                 variant="outline"
-                class="flex-1 bg-gray-800/50 border-gray-700 text-white placeholder-gray-500 focus:border-primary-500 focus:ring-primary-500"
+                class="flex-1 bg-white dark:bg-gray-800/50 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 focus:border-primary-500 focus:ring-primary-500"
                 :ui="{ rounded: 'rounded-lg' }"
               />
               <UButton
@@ -124,7 +134,7 @@ const subscribe = () => {
           <!-- Product -->
           <div>
             <h3
-              class="text-sm font-semibold text-white tracking-wider uppercase mb-6"
+              class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-6"
             >
               Product
             </h3>
@@ -132,26 +142,30 @@ const subscribe = () => {
               <li>
                 <NuxtLink
                   to="/solutions/whatsapp"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >WhatsApp API</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >WhatsApp API</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="/solutions/sms"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >SMS Marketing</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >SMS Marketing</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="/solutions/otp"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >OTP Service</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >OTP Service</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="#"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Pricing</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Pricing</NuxtLink
+                >
               </li>
             </ul>
           </div>
@@ -159,34 +173,38 @@ const subscribe = () => {
           <!-- Company -->
           <div>
             <h3
-              class="text-sm font-semibold text-white tracking-wider uppercase mb-6"
+              class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-6"
             >
               Company
             </h3>
             <ul class="space-y-4">
               <li>
                 <NuxtLink
-                  to="/about"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >About Us</NuxtLink>
+                  to="#"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >About Us</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="/blog"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Blog</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Blog</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
-                  to="/careers"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Careers</NuxtLink>
+                  to="#"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Careers</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="/contact"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Contact</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Contact</NuxtLink
+                >
               </li>
             </ul>
           </div>
@@ -194,7 +212,7 @@ const subscribe = () => {
           <!-- Legal -->
           <div>
             <h3
-              class="text-sm font-semibold text-white tracking-wider uppercase mb-6"
+              class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-6"
             >
               Legal
             </h3>
@@ -202,20 +220,23 @@ const subscribe = () => {
               <li>
                 <NuxtLink
                   to="/privacy-policy"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Privacy Policy</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Privacy Policy</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
                   to="/terms-conditions"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Terms of Service</NuxtLink>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Terms of Service</NuxtLink
+                >
               </li>
               <li>
                 <NuxtLink
-                  to="/security"
-                  class="text-gray-400 hover:text-primary-400 transition-colors"
-                >Security</NuxtLink>
+                  to="#"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  >Security</NuxtLink
+                >
               </li>
             </ul>
           </div>
@@ -224,28 +245,22 @@ const subscribe = () => {
 
       <!-- App Download Badges (Integrated) -->
       <div
-        class="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6"
+        class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6"
       >
         <div class="flex gap-4">
-          <a
-            href="#"
-            class="opacity-70 hover:opacity-100 transition-opacity"
-          >
+          <a href="#" class="opacity-70 hover:opacity-100 transition-opacity">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
               alt="Get it on Google Play"
               class="h-10"
-            >
+            />
           </a>
-          <a
-            href="#"
-            class="opacity-70 hover:opacity-100 transition-opacity"
-          >
+          <a href="#" class="opacity-70 hover:opacity-100 transition-opacity">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
               alt="Download on the App Store"
               class="h-10"
-            >
+            />
           </a>
         </div>
         <div class="flex gap-4">
@@ -256,7 +271,7 @@ const subscribe = () => {
             :icon="social.icon"
             color="gray"
             variant="ghost"
-            class="text-gray-400 hover:text-white hover:bg-white/10"
+            class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
             :aria-label="social.label"
           />
         </div>
@@ -264,17 +279,14 @@ const subscribe = () => {
 
       <!-- Copyright -->
       <div
-        class="mt-8 text-center md:text-left text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4"
+        class="mt-8 text-center md:text-left text-xs text-gray-500 dark:text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4"
       >
         <p>
           Copyright © {{ new Date().getFullYear() }} Unlimited Software. All
           Rights Reserved.
         </p>
         <div class="flex items-center gap-2">
-          <UIcon
-            name="i-simple-icons-meta"
-            class="w-4 h-4"
-          />
+          <UIcon name="i-simple-icons-meta" class="w-4 h-4" />
           <span>Meta Business Partner</span>
         </div>
       </div>

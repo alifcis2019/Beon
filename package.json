@@ -32,7 +32,6 @@
     "@iconify-json/circle-flags": "^1.2.10",
     "@iconify-json/heroicons": "^1.2.2",
     "@nuxt/eslint": "^1.10.0",
-    "@nuxt/fonts": "^0.12.1",
     "@nuxtjs/i18n": "^10.2.1",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3",

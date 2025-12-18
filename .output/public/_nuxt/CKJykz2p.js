@@ -1,1 +1,0 @@
-import{W as n,c as p,e as r,o as c,v as u,ae as i,a5 as e}from"./Bcrl-if_.js";const m={base:"my-5 leading-7 text-pretty"},_={__name:"ProseP",props:{class:{type:null,required:!1}},setup(s){const a=s,t=n(),o=p(()=>e({extend:e(m),...t.ui?.prose?.p||{}}));return(l,d)=>(c(),r("p",{class:i(o.value({class:a.class}))},[u(l.$slots,"default")],2))}};export{_ as default};

@@ -1,12 +1,16 @@
 <script setup lang="ts">
 const { locale } = useI18n();
 const carouselRef = ref();
+const intervalId = ref<NodeJS.Timeout | null>(null);
 
-const { data: response } = await useFetch<{
+const { data: response } = useFetch<{
   status: boolean;
   message: string;
-  data: any[];
-}>("https://v3.admin.beon.chat/api/logos");
+  data: unknown[];
+}>("https://v3.admin.beon.chat/api/logos", {
+  lazy: true,
+  server: false,
+});
 
 const brands = computed(() => response.value?.data || []);
 
@@ -18,7 +22,7 @@ const uiBrands = computed(() => {
 });
 
 onMounted(() => {
-  setInterval(() => {
+  intervalId.value = setInterval(() => {
     if (!carouselRef.value) return;
 
     if (locale.value === "ar") {
@@ -27,6 +31,13 @@ onMounted(() => {
       carouselRef.value.next();
     }
   }, 3000);
+});
+
+onUnmounted(() => {
+  if (intervalId.value) {
+    clearInterval(intervalId.value);
+    intervalId.value = null;
+  }
 });
 </script>
 

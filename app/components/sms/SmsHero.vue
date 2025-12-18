@@ -1,30 +1,39 @@
 <script setup lang="ts">
-import { useMouseInElement } from '@vueuse/core'
+import { useMouseInElement } from "@vueuse/core";
 
-const target = ref(null)
-const { elementX, elementY, isOutside, elementHeight, elementWidth }
-  = useMouseInElement(target)
+const target = ref(null);
+const { elementX, elementY, isOutside, elementHeight, elementWidth } =
+  useMouseInElement(target);
 
 const cardTransform = computed(() => {
-  if (isOutside.value) return ''
-  const MAX_ROTATION = 15
+  if (isOutside.value) return "";
+  const MAX_ROTATION = 15;
   const rX = (
-    MAX_ROTATION / 2
-    - (elementY.value / elementHeight.value) * MAX_ROTATION
-  ).toFixed(2)
+    MAX_ROTATION / 2 -
+    (elementY.value / elementHeight.value) * MAX_ROTATION
+  ).toFixed(2);
   const rY = (
-    (elementX.value / elementWidth.value) * MAX_ROTATION
-    - MAX_ROTATION / 2
-  ).toFixed(2)
-  return `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg)`
-})
+    (elementX.value / elementWidth.value) * MAX_ROTATION -
+    MAX_ROTATION / 2
+  ).toFixed(2);
+  return `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg)`;
+});
 
-const isVisible = ref(false)
+const isVisible = ref(false);
+let timeoutId: NodeJS.Timeout | null = null;
+
 onMounted(() => {
-  setTimeout(() => {
-    isVisible.value = true
-  }, 100)
-})
+  timeoutId = setTimeout(() => {
+    isVisible.value = true;
+  }, 100);
+});
+
+onUnmounted(() => {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+    timeoutId = null;
+  }
+});
 </script>
 
 <template>
@@ -59,10 +68,7 @@ onMounted(() => {
                 : 'opacity-0 translate-y-4'
             "
           >
-            <UIcon
-              name="i-heroicons-globe-alt"
-              class="w-4 h-4"
-            />
+            <UIcon name="i-heroicons-globe-alt" class="w-4 h-4" />
             Global SMS Coverage
           </div>
 
@@ -74,10 +80,11 @@ onMounted(() => {
                 : 'opacity-0 translate-y-8'
             "
           >
-            Reach Everyone,<br>
+            Reach Everyone,<br />
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400"
-            >Everywhere.</span>
+              >Everywhere.</span
+            >
           </h1>
 
           <p
@@ -109,15 +116,12 @@ onMounted(() => {
             >
               Start Campaign
               <template #trailing>
-                <UIcon
-                  name="i-heroicons-paper-airplane"
-                  class="w-5 h-5"
-                />
+                <UIcon name="i-heroicons-paper-airplane" class="w-5 h-5" />
               </template>
             </UButton>
             <UButton
               size="xl"
-              color="gray"
+              color="neutral"
               variant="ghost"
               class="px-8 py-4 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-900 dark:text-white"
             >
@@ -149,18 +153,9 @@ onMounted(() => {
               >
                 <span class="text-sm font-medium">9:41</span>
                 <div class="flex gap-2">
-                  <UIcon
-                    name="i-heroicons-signal"
-                    class="w-4 h-4"
-                  />
-                  <UIcon
-                    name="i-heroicons-wifi"
-                    class="w-4 h-4"
-                  />
-                  <UIcon
-                    name="i-heroicons-battery-100"
-                    class="w-4 h-4"
-                  />
+                  <UIcon name="i-heroicons-signal" class="w-4 h-4" />
+                  <UIcon name="i-heroicons-wifi" class="w-4 h-4" />
+                  <UIcon name="i-heroicons-battery-100" class="w-4 h-4" />
                 </div>
               </div>
 
@@ -199,7 +194,8 @@ onMounted(() => {
                       class="self-start bg-gray-200 dark:bg-gray-800 rounded-2xl rounded-tl-none p-3 max-w-[85%]"
                     >
                       <p class="text-sm text-gray-800 dark:text-gray-200">
-                        🔥 <span class="font-bold">Flash Sale Alert!</span><br>
+                        🔥 <span class="font-bold">Flash Sale Alert!</span
+                        ><br />
                         Get 50% OFF everything for the next 2 hours only!
                       </p>
                     </div>
@@ -214,9 +210,11 @@ onMounted(() => {
                       class="self-start bg-gray-200 dark:bg-gray-800 rounded-2xl rounded-tl-none p-3 max-w-[85%]"
                     >
                       <p class="text-sm text-gray-800 dark:text-gray-200">
-                        📦 <span class="font-bold">Order Update</span><br>
+                        📦 <span class="font-bold">Order Update</span><br />
                         Your package has been shipped! Track it here:
-                        <span class="text-blue-500 underline">beon.link/x8j29</span>
+                        <span class="text-blue-500 underline"
+                          >beon.link/x8j29</span
+                        >
                       </p>
                     </div>
                     <span class="text-[10px] text-gray-400 ml-2">2:30 PM</span>
@@ -244,10 +242,7 @@ onMounted(() => {
                 <div
                   class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"
                 >
-                  <UIcon
-                    name="i-heroicons-chart-bar"
-                    class="w-6 h-6"
-                  />
+                  <UIcon name="i-heroicons-chart-bar" class="w-6 h-6" />
                 </div>
                 <div>
                   <div class="text-sm font-bold text-gray-900 dark:text-white">
@@ -267,10 +262,7 @@ onMounted(() => {
                 <div
                   class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400"
                 >
-                  <UIcon
-                    name="i-heroicons-users"
-                    class="w-6 h-6"
-                  />
+                  <UIcon name="i-heroicons-users" class="w-6 h-6" />
                 </div>
                 <div>
                   <div class="text-sm font-bold text-gray-900 dark:text-white">

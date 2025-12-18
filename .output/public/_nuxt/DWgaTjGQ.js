@@ -1,1 +1,0 @@
-import{W as r,c,e as n,o as p,v as u,ae as m,a5 as e}from"./Bcrl-if_.js";const i={base:"list-decimal ps-6 my-5 marker:text-muted"},_={__name:"ProseOl",props:{class:{type:null,required:!1}},setup(s){const a=s,t=r(),o=c(()=>e({extend:e(i),...t.ui?.prose?.ol||{}}));return(l,d)=>(p(),n("ol",{class:m(o.value({class:a.class}))},[u(l.$slots,"default")],2))}};export{_ as default};

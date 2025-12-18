@@ -9,15 +9,8 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/i18n',
-    '@nuxt/fonts'
+    '@nuxtjs/i18n'
   ],
-
-  fonts: {
-    providers: {
-      google: false
-    }
-  },
 
   devtools: {
     enabled: true
