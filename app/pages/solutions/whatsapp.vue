@@ -2,7 +2,7 @@
   <div class="bg-white dark:bg-gray-900 min-h-screen">
     <NuxtErrorBoundary>
       <WhatsappHero />
-      <WhatsappTrust />
+      <HomeLogos />
       <WhatsappBento />
       <WhatsappDemo />
 
@@ -27,6 +27,7 @@ import WhatsappHero from "~/components/whatsapp/WhatsappHero.vue";
 import WhatsappDemo from "~/components/whatsapp/WhatsappDemo.vue";
 import WhatsappBento from "~/components/whatsapp/WhatsappBento.vue";
 import WhatsappTrust from "~/components/whatsapp/WhatsappTrust.vue";
+import type LogosVue from "~/components/home/Logos.vue";
 
 useSeoMeta({
   title: "WhatsApp Business API - BeOn",
