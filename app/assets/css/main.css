@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-beon-blue: #0f578d;
+
+  --color-beon-blue-50: #f1f7fb;
+  --color-beon-blue-100: #e3eff7;
+  --color-beon-blue-200: #c1dced;
+  --color-beon-blue-300: #8fbddc;
+  --color-beon-blue-400: #5698c6;
+  --color-beon-blue-500: #2b74aa;
+  --color-beon-blue-600: #0f578d; /* base color */
+  --color-beon-blue-700: #0c4a78;
+  --color-beon-blue-800: #0a3c61;
+  --color-beon-blue-900: #082f4b;
+  --color-beon-blue-950: #051e32;
+}
+
+:root {
+  --ui-bg: var(--ui-color-neutral-50);
+  --ui-bg-muted: var(--ui-color-neutral-100);
+  --ui-bg-elevated: var(--ui-color-neutral-50);
+  --ui-bg-accented: var(--ui-color-neutral-200);
+  --ui-border: var(--ui-color-neutral-200);
+  --ui-text: var(--ui-color-neutral-900);
+  --ui-text-muted: var(--ui-color-neutral-500);
+  --ui-text-highlighted: var(--ui-color-neutral-950);
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
+  --ui-border: var(--ui-color-neutral-800);
+  --ui-text: var(--ui-color-neutral-50);
+  --ui-text-muted: var(--ui-color-neutral-400);
+  --ui-text-highlighted: var(--ui-color-neutral-50);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ui-color-neutral-300);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ui-color-neutral-400);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--ui-color-neutral-700);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ui-color-neutral-600);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-color-neutral-300) transparent;
+}
+
+.dark * {
+  scrollbar-color: var(--ui-color-neutral-700) transparent;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
