@@ -1,0 +1,28 @@
+{
+    "meta": {
+        "title": "Book a Free Demo | BeOn Customer Communication Platform",
+        "description": "Schedule a personalized demo to see how BeOn's WhatsApp, SMS, and CRM solutions can grow your business. No commitment required."
+    },
+    "features": {
+        "sms": "Send Bulk SMS with high deliverability",
+        "campaigns": "Launch targeted and personalized campaigns",
+        "channels": "Reach customers across multiple channels",
+        "analytics": "Track performance with real-time analytics"
+    },
+    "meta_partner": "Meta Business Partners",
+    "headline": "Start Your Free Trial 🚀",
+    "subheadline": "— No commitments. Just results.",
+    "description": "Take the first step towards engaging your audience through powerful, data-driven advertising campaigns. Register and discover how easy it is to connect, convert, and grow — all from one platform.",
+    "form": {
+        "title": "Book a Demo",
+        "name": "Name",
+        "name_placeholder": "Add your name",
+        "phone": "Phone Number",
+        "phone_placeholder": "Add phone number",
+        "email": "Email",
+        "email_placeholder": "example{'@'}email.com",
+        "company": "Company Name",
+        "company_placeholder": "Enter your company name",
+        "submit": "Schedule Demo"
+    }
+}

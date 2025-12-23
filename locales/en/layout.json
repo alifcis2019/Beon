@@ -1,0 +1,73 @@
+{
+    "header": {
+        "home": "Home",
+        "solutions": {
+            "label": "Our Solutions",
+            "otp": {
+                "label": "Fast & Secure OTP Generation",
+                "description": "Send secure one-time passwords instantly"
+            },
+            "sms": {
+                "label": "SMS Messages",
+                "description": "Deliver marketing and transactional texts"
+            },
+            "whatsapp": {
+                "label": "WhatsApp Messaging",
+                "description": "Engage customers through WhatsApp"
+            }
+        },
+        "contact": "Contact us",
+        "support": "Support",
+        "blogs": "Blogs",
+        "login": "Login",
+        "start_trial": "Start Your Free Trial",
+        "solutions_footer": "All customer communication tools in one smart platform"
+    },
+    "footer": {
+        "home": "Home",
+        "contact": "Contact us",
+        "privacy_policy": "Privacy Policy",
+        "terms_conditions": "Terms & Conditions",
+        "cta": {
+            "title": "Ready to transform your",
+            "title_highlight": "customer communication?",
+            "description": "Join thousands of businesses using BeOn to connect with their customers on WhatsApp, SMS, and more.",
+            "start_trial": "Start Free Trial",
+            "contact_sales": "Contact Sales"
+        },
+        "brand": {
+            "description": "The all-in-one platform for WhatsApp marketing, automation, and customer support. Empower your team to do more with less."
+        },
+        "newsletter": {
+            "title": "Subscribe to our newsletter",
+            "placeholder": "Enter your email",
+            "button": "Subscribe"
+        },
+        "product": {
+            "title": "Product",
+            "whatsapp_api": "WhatsApp API",
+            "sms_marketing": "SMS Marketing",
+            "otp_service": "OTP Service",
+            "pricing": "Pricing"
+        },
+        "company": {
+            "title": "Company",
+            "about": "About Us",
+            "blog": "Blog",
+            "careers": "Careers",
+            "contact": "Contact"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "security": "Security"
+        },
+        "app_download": {
+            "google_play_alt": "Get it on Google Play",
+            "app_store_alt": "Download on the App Store"
+        },
+        "copyright": "Copyright © {year} Unlimited Software. All Rights Reserved.",
+        "meta_partner": "Meta Business Partner"
+    }
+}

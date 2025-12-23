@@ -1,0 +1,73 @@
+{
+    "header": {
+        "home": "الرئيسية",
+        "solutions": {
+            "label": "حلولنا",
+            "otp": {
+                "label": "توليد رموز OTP سريعة وآمنة",
+                "description": "أرسل كلمات مرور لمرة واحدة آمنة فوراً"
+            },
+            "sms": {
+                "label": "رسائل SMS",
+                "description": "أرسل رسائل تسويقية ومعاملات"
+            },
+            "whatsapp": {
+                "label": "مراسلات واتساب",
+                "description": "تفاعل مع العملاء عبر واتساب"
+            }
+        },
+        "contact": "اتصل بنا",
+        "support": "الدعم",
+        "blogs": "المدونة",
+        "login": "تسجيل الدخول",
+        "start_trial": "ابدأ تجربتك المجانية",
+        "solutions_footer": "جميع أدوات التواصل مع العملاء في منصة ذكية واحدة"
+    },
+    "footer": {
+        "home": "الرئيسية",
+        "contact": "اتصل بنا",
+        "privacy_policy": "سياسة الخصوصية",
+        "terms_conditions": "الشروط والأحكام",
+        "cta": {
+            "title": "هل أنت مستعد لتحويل",
+            "title_highlight": "تواصلك مع العملاء؟",
+            "description": "انضم إلى آلاف الشركات التي تستخدم BeOn للتواصل مع عملائها عبر واتساب، الرسائل النصية، والمزيد.",
+            "start_trial": "ابدأ تجربتك المجانية",
+            "contact_sales": "تواصل مع المبيعات"
+        },
+        "brand": {
+            "description": "المنصة الشاملة للتسويق عبر واتساب، الأتمتة، ودعم العملاء. مكّن فريقك من إنجاز المزيد بجهد أقل."
+        },
+        "newsletter": {
+            "title": "اشترك في نشرتنا الإخبارية",
+            "placeholder": "أدخل بريدك الإلكتروني",
+            "button": "اشترك"
+        },
+        "product": {
+            "title": "المنتجات",
+            "whatsapp_api": "واتساب API",
+            "sms_marketing": "التسويق عبر الرسائل النصية",
+            "otp_service": "خدمة OTP",
+            "pricing": "الأسعار"
+        },
+        "company": {
+            "title": "الشركة",
+            "about": "من نحن",
+            "blog": "المدونة",
+            "careers": "الوظائف",
+            "contact": "اتصل بنا"
+        },
+        "legal": {
+            "title": "قانوني",
+            "privacy": "سياسة الخصوصية",
+            "terms": "شروط الخدمة",
+            "security": "الأمان"
+        },
+        "app_download": {
+            "google_play_alt": "احصل عليه من Google Play",
+            "app_store_alt": "حمله من App Store"
+        },
+        "copyright": "حقوق النشر © {year} Unlimited Software. جميع الحقوق محفوظة.",
+        "meta_partner": "شريك ميتا للأعمال"
+    }
+}

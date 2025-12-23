@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Customer Communication Platform - WhatsApp, SMS, CRM",
+    "description": "Streamline your customer communication with Beon. Integrate WhatsApp, SMS, CRM, and team management in one smart platform. Try for free."
+  },
+  "hero": {
+    "meta_provider": "Meta Provider & SMS Integration",
+    "try_now": "Try now",
+    "headline_1": "Do without any other",
+    "headline_2": "communication tools",
+    "subscribe_now": "Subscribe now",
+    "description": "All customer communication tools in one smart platform",
+    "try_free_trial": "Try Free Trial",
+    "features": {
+      "communication_tools": "Communication Tools",
+      "crm": "Customer Management CRM",
+      "team_management": "Communication Team Management"
+    },
+    "watch_demo": "Watch Demo"
+  },
+  "logos": {
+    "trusted_by": "Trusted By More Than",
+    "brand_count": "+1000 Brand"
+  },
+  "services": {
+    "title": "Get to know BeOn services",
+    "learn_more": "Learn More",
+    "items": {
+      "whatsapp": {
+        "label": "WhatsApp Campaigns",
+        "title": "Mass WhatsApp campaigns without blocking",
+        "features": {
+          "1": "Start by activating your official account with Meta through BeOn",
+          "2": "Communicate with your customers all over the world",
+          "3": "With the most important and widespread communication channel with complete security"
+        }
+      },
+      "sms": {
+        "label": "SMS Campaigns",
+        "title": "SMS campaigns in your company name",
+        "features": {
+          "1": "SMS campaigns remain one of the most powerful communication tools",
+          "2": "They are excellent at gaining customer trust",
+          "3": "Enhance brand identity and increase sales"
+        }
+      },
+      "otp": {
+        "label": "OTP - Verification Code",
+        "title": "OTP verification code message arrives instantly",
+        "features": {
+          "1": "Your customers won't wait for the OTP verification code for more than a few seconds",
+          "2": "Connect your API system with BeOn and enjoy the fastest OTP message that arrives instantly",
+          "3": "Which is better, WhatsApp or SMS OTP message? Click for details"
+        }
+      },
+      "live_chat": {
+        "label": "Live Chat",
+        "title": "Conversation management made easier with live chat",
+        "features": {
+          "1": "Collect all your customer conversations in one organized inbox",
+          "2": "Distribute them intelligently between automation, your team members, or artificial intelligence",
+          "3": "Benefit from a comprehensive monitoring dashboard to measure your team's performance and improve results"
+        }
+      },
+      "crm": {
+        "label": "Customer Management CRM",
+        "title": "Manage your customer relationships more easily without switching to a CRM",
+        "features": {
+          "1": "Don't let any potential customer slip away, keep your customer data and record your notes",
+          "2": "Classify them according to the sales funnel stage with adding appointment and follow-up alerts",
+          "3": "All of this from within the conversations themselves without moving to any other tool"
+        }
+      }
+    }
+  },
+  "client_journey": {
+    "title": "Your Client Journey with BeOn Step by Step",
+    "steps": {
+      "1": {
+        "title": "1- Send Your Marketing Campaigns",
+        "description": {
+          "1": "Choose the appropriate channel:",
+          "2": "WhatsApp Broadcast - Bulk SMS",
+          "3": "Accurate statistics on message engagement."
+        }
+      },
+      "2": {
+        "title": "2- Receive Advertising Messages with Maximum Efficiency:",
+        "description": {
+          "1": "Automatic distribution to:",
+          "2": "Team members - AI Agent - Workflow",
+          "3": "Fast responses - Performance tracking - Reports and analytics"
+        }
+      },
+      "3": {
+        "title": "3- Collect Client Data Accurately:",
+        "description": {
+          "1": "Customer interests - Client stage in the sales funnel",
+          "2": "Detailed data (location, purchasing power, etc.)",
+          "3": "Follow-up schedules - Notes and reminders"
+        }
+      },
+      "4": {
+        "title": "4- Take the Appropriate Action:",
+        "description": {
+          "1": "Feed advertising platforms with data to improve performance.",
+          "2": "Customized messages for each stage in the sales funnel.",
+          "3": "Identify high-value customers."
+        }
+      }
+    }
+  },
+  "smart_messages": {
+    "title": "Smart Messages Powered by Artificial Intelligence",
+    "subtitle": "(AI-Message)",
+    "new_team_member": "You've got a new team member!",
+    "description": "Your AI employee handles many tasks — supporting your team with intelligent responses and helping them understand and analyze customer conversations. Receive more chats, with less effort, and greater intelligence...",
+    "cards": {
+      "empower_team": {
+        "title": "Empower Your Team",
+        "description": "I'm your AI assistant — helping your team craft the right replies to customer messages, saving their time, and offering valuable suggestions."
+      },
+      "analyze_intent": {
+        "title": "Analyze Customer Intent",
+        "description": "I'm your AI assistant — helping your team understand and analyze customer intent (inquiry, complaint, purchase), suggesting suitable responses, and boosting conversion."
+      },
+      "instant_replies": {
+        "title": "Instant Replies",
+        "description": "I'm your AI assistant — no need to burden your team with repetitive questions. I handle instant responses and provide your customers with immediate answers."
+      }
+    }
+  },
+  "why_beon": {
+    "title": "Why choose",
+    "brand_name": "BeOn ?",
+    "description": "We are considered the best provider of business communication services because we rely on the best technical engineers, and we work on developing systems that meet market needs and make it easier for companies to communicate with customers, so BeOn always remains at the forefront when it comes to customer communication services.",
+    "cards": {
+      "competitive_prices": {
+        "title": "Competitive prices",
+        "description": "We are distinguished by our competitive prices for all the services we provide, transparent pricing with no hidden fees, and a variety of packages to suit all business sizes."
+      },
+      "ease_of_use": {
+        "title": "Ease of control and use",
+        "description": "The BeOn development team always works on building a system and dashboard that is easy to use and easy to integrate via API with any software system."
+      },
+      "customer_service": {
+        "title": "Customer service that protects BeOn's reputation",
+        "description": "We provide outstanding and fast support that befits our valued customers and enhances BeOn's position."
+      }
+    }
+  }
+}
