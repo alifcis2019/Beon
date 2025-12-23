@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import { services } from '~/data/services'
+import { services } from "~/data/services";
 
-const { t } = useI18n()
+const { t } = useI18n();
+const localePath = useLocalePath();
 
 // Define grid spans for bento layout
 const getGridClass = (index: number) => {
   const classes = [
-    'md:col-span-8', // WhatsApp
-    'md:col-span-4', // SMS
-    'md:col-span-4', // OTP
-    'md:col-span-4', // Live Chat
-    'md:col-span-4' // CRM
-  ]
-  return classes[index] || 'md:col-span-4'
-}
+    "md:col-span-8", // WhatsApp
+    "md:col-span-4", // SMS
+    "md:col-span-4", // OTP
+    "md:col-span-4", // Live Chat
+    "md:col-span-4", // CRM
+  ];
+  return classes[index] || "md:col-span-4";
+};
 
 const servicesWithKeys = computed(() => {
-  const keys = ['whatsapp', 'sms', 'otp', 'live_chat', 'crm']
+  const keys = ["whatsapp", "sms", "otp", "live_chat", "crm"];
   return services.map((service, index) => ({
     ...service,
     key: keys[index],
-    gridClass: getGridClass(index)
-  }))
-})
+    gridClass: getGridClass(index),
+  }));
+});
 </script>
 
 <template>
@@ -60,7 +61,7 @@ const servicesWithKeys = computed(() => {
           :key="item.key"
           :class="[
             item.gridClass,
-            'group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1'
+            'group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1',
           ]"
         >
           <div class="h-full flex flex-col relative">
@@ -76,7 +77,7 @@ const servicesWithKeys = computed(() => {
                 :src="item.image"
                 :alt="$t(`index.services.items.${item.key}.label`)"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-              >
+              />
               <div class="absolute bottom-4 left-4 z-20">
                 <div
                   class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white mb-3"
@@ -122,7 +123,7 @@ const servicesWithKeys = computed(() => {
                   <span class="text-sm text-gray-500 dark:text-gray-400">
                     {{
                       $t(
-                        `index.services.items.${item.key}.features.${fIndex + 1}`
+                        `index.services.items.${item.key}.features.${fIndex + 1}`,
                       )
                     }}
                   </span>
@@ -131,17 +132,14 @@ const servicesWithKeys = computed(() => {
 
               <div class="mt-auto">
                 <UButton
-                  :to="item.link"
+                  :to="localePath(item.link)"
                   variant="ghost"
                   color="primary"
                   class="group-hover:translate-x-2 transition-transform p-0"
                 >
                   {{ $t("index.services.learn_more") }}
                   <template #trailing>
-                    <UIcon
-                      name="i-heroicons-arrow-right"
-                      class="w-4 h-4"
-                    />
+                    <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
                   </template>
                 </UButton>
               </div>
